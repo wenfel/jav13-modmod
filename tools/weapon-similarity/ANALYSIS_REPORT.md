@@ -176,6 +176,7 @@ The checked-in configuration is:
 - `USE_SCOPE_MODES = TRUE`
 - `AP_MAXIMUM = 100`
 - `AUTOFIRE_SHOTS_AP_VALUE = 20`
+- `AUTOFIRE_TOHIT_BONUS_MULTIPLIER = 5`
 
 The default similarity profile therefore uses OCTH-relevant dimensions and excludes
 NCTH/heat dimensions from distance.
@@ -235,10 +236,10 @@ Strong correlations under the active OCTH profile include:
 | Feature A | Feature B | Pearson r |
 | --- | --- | ---: |
 | burst AP | burst size | 0.980 |
-| burst AP | burst penalty | 0.909 |
-| burst size | burst penalty | 0.908 |
-| 5-round autofire AP | autofire penalty | 0.902 |
-| autofire shots / 5 AP | autofire penalty | 0.866 |
+| burst size | burst penalty | 0.932 |
+| burst AP | burst penalty | 0.927 |
+| 5-round autofire AP | autofire penalty | 0.926 |
+| autofire shots / 5 AP | autofire penalty | 0.903 |
 | ready AP | item size | 0.825 |
 | ready AP | weight | 0.825 |
 | 5-round autofire AP | autofire shots / 5 AP | 0.775 |
@@ -256,41 +257,35 @@ PCA on robust-scaled, unweighted effective-intrinsic active-profile data:
 
 | Component | Variance | Cumulative | Dominant structure |
 | --- | ---: | ---: | --- |
-| PC1 | 27.9% | 27.9% | physical scale / range / capacity |
-| PC2 | 21.1% | 48.9% | burst behavior versus long-range/slow-fire role |
-| PC3 | 15.5% | 64.5% | magazine capacity versus burst behavior |
-| PC4 | 8.5% | 72.9% | built-in OCTH to-hit / aim bonuses |
-| PC5 | 5.7% | 78.6% | reliability/repair and intrinsic aiming |
-| PC6 | 4.6% | 83.2% | automatic-fire economy/control mix |
+| PC1 | 27.8% | 27.8% | physical scale / range / capacity |
+| PC2 | 21.2% | 49.0% | burst behavior versus long-range/slow-fire role |
+| PC3 | 15.6% | 64.7% | magazine capacity versus burst behavior |
+| PC4 | 8.5% | 73.1% | built-in OCTH to-hit / aim bonuses |
+| PC5 | 5.7% | 78.8% | reliability/repair and intrinsic aiming |
+| PC6 | 4.6% | 83.4% | automatic-fire economy/control mix |
 
-The first three components now explain about **64.5%** rather than the earlier 72.7%.
+The first three components now explain about **64.7%** rather than the earlier 72.7%.
 That change is expected: adding real burst-AP and intrinsic-control/sight dimensions
 creates additional independent variance.
 
-Eight components explain about **89.7%**.
+Eight components explain about **89.9%**.
 
 PCA remains a diagnostic/visualization technique, not the runtime replacement rule.
 
 ## 12. K-means after intrinsic-modifier correction
 
-Silhouette diagnostics:
+K-means remains an exploratory diagnostic only.
 
-| k | Silhouette |
-| ---: | ---: |
-| 2 | 0.179 |
-| 3 | 0.264 |
-| 4 | 0.293 |
-| 5 | 0.322 |
-| 6 | 0.338 |
-| 7 | **0.349** |
-| 8 | 0.334 |
-| 9 | 0.327 |
-| 10 | 0.306 |
-| 11 | 0.267 |
-| 12 | 0.290 |
+The effective-intrinsic model adds sparse built-in optics/control dimensions. That means
+low-k solutions can isolate a few unusual weapons and produce superficially improved
+silhouette values without discovering useful replacement classes. This is particularly
+visible around OICW / Rocket Rifle / other intrinsic-bonus outliers.
 
-The best value in this range is still only about **0.35**. The arsenal has structure but
-not clean spherical clusters. K-means remains useful for exploration only.
+Therefore the report no longer treats a single "best k" as a design result. Use the
+checked-in `diagnostics` / `kmeans` commands with the desired feature layer and profile
+to inspect cluster composition. The important stable conclusion is unchanged: cluster
+membership must not determine replacement; semantic tier + local nearest-neighbour
+distance does.
 
 ## 13. Semantic fallback tiers
 
@@ -357,7 +352,7 @@ is equally close.
 
 Across 313 weapons with an unrestricted tier-0 neighbour:
 
-- median nearest distance: **0.565**
+- median nearest distance: **0.561**
 - 75th percentile: **0.898**
 - 90th percentile: **1.494**
 - 95th percentile: **1.967**
