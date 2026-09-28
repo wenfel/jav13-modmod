@@ -24,3 +24,24 @@ jobs:
 
       - name: Check game data for paths that differ only in case
         run: python3 .github/scripts/check-data-case.py
+
+
+  weapon_similarity_snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout weapon similarity inputs
+        uses: actions/checkout@v7
+        with:
+          filter: 'blob:none'
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /tools/weapon-similarity/
+            /gamedir/Data-1.13/TableData/Items/Items.xml
+            /gamedir/Data-1.13/TableData/Items/Weapons.xml
+            /gamedir/Data-1.13/TableData/Items/AmmoStrings.xml
+            /gamedir/Data-1.13/Item_Settings.ini
+            /gamedir/Data-1.13/Ja2_Options.INI
+            /gamedir/Data-1.13/APBPConstants.ini
+
+      - name: Check generated weapon feature snapshot
+        run: python3 tools/weapon-similarity/check_weapon_features.py
