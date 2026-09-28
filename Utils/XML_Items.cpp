@@ -33,6 +33,7 @@
 	#include "XML.h"
 	#include "Utilities.h"
 	#include "Store Inventory.h"
+	#include <inttypes.h>
 
 // Flugente: in order not to loop over MAXITEMS items if we only have a few thousand, remember the actual number of items in the xml
 UINT32 gMAXITEMS_READ = 0;
@@ -115,6 +116,9 @@ itemStartElementHandle(void *userData, const XML_Char *name, const XML_Char **at
 				strcmp(name, "szBRName") == 0 ||
 				strcmp(name, "szBRDesc") == 0 ||
 				strcmp(name, "usItemClass") == 0 ||
+				strcmp(name, "ProductionYearStart") == 0 ||
+				strcmp(name, "ProductionYearEnd") == 0 ||
+				strcmp(name, "WeaponOriginFlags") == 0 ||
 				strcmp(name, "nasAttachmentClass") == 0 ||
 				strcmp(name, "nasLayoutClass") == 0 ||
 				strcmp(name, "AvailableAttachmentPoint") == 0 ||
@@ -503,6 +507,21 @@ itemEndElementHandle(void *userData, const XML_Char *name)
 		{
 			pData->curElement = ELEMENT;
 			pData->curItem.usItemClass = (UINT32) strtoul(pData->szCharData, NULL, 0);
+		}
+		else if(strcmp(name, "ProductionYearStart") == 0)
+		{
+			pData->curElement = ELEMENT;
+			pData->curItem.usProductionYearStart = (UINT16) strtoul(pData->szCharData, NULL, 0);
+		}
+		else if(strcmp(name, "ProductionYearEnd") == 0)
+		{
+			pData->curElement = ELEMENT;
+			pData->curItem.usProductionYearEnd = (UINT16) strtoul(pData->szCharData, NULL, 0);
+		}
+		else if(strcmp(name, "WeaponOriginFlags") == 0)
+		{
+			pData->curElement = ELEMENT;
+			pData->curItem.ulWeaponOriginFlags = (UINT64) strtoull(pData->szCharData, NULL, 0);
 		}
 		else if(strcmp(name, "nasAttachmentClass") == 0)
 		{
@@ -2185,6 +2204,9 @@ BOOLEAN WriteItemStats()
 			FilePrintf(hFile,"</szBRDesc>\r\n");
 
 			FilePrintf(hFile,"\t\t<usItemClass>%d</usItemClass>\r\n",						Item[cnt].usItemClass);
+			FilePrintf(hFile,"\t\t<ProductionYearStart>%u</ProductionYearStart>\r\n",		(unsigned int) Item[cnt].usProductionYearStart);
+			FilePrintf(hFile,"\t\t<ProductionYearEnd>%u</ProductionYearEnd>\r\n",			(unsigned int) Item[cnt].usProductionYearEnd);
+			FilePrintf(hFile,"\t\t<WeaponOriginFlags>%" PRIu64 "</WeaponOriginFlags>\r\n",		(uint64_t) Item[cnt].ulWeaponOriginFlags);
 			FilePrintf(hFile,"\t\t<nasAttachmentClass>%d</nasAttachmentClass>\r\n",			Item[cnt].nasAttachmentClass);
 			FilePrintf(hFile,"\t\t<nasLayoutClass>%d</nasLayoutClass>\r\n",					Item[cnt].nasLayoutClass);
 			FilePrintf(hFile,"\t\t<ubClassIndex>%d</ubClassIndex>\r\n",						Item[cnt].ubClassIndex);

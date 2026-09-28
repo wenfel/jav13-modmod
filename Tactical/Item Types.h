@@ -1106,6 +1106,7 @@ typedef struct
 	UINT64 ulAttachmentPoint;
 	FLAGS64 usItemFlag; // bitflags to store various item properties (better than introducing 64 BOOLEAN values). If I only had thought of this earlier....
 	FLAGS64 usItemFlag2; // bitflags to store various item properties
+	UINT64 ulWeaponOriginFlags;
 
 	UINT32 uiIndex;
 	UINT32 usItemClass;
@@ -1154,6 +1155,8 @@ typedef struct
 	UINT16 usPrice;
 	UINT16 discardedlauncheritem;
 	UINT16 randomitem; // Flugente: a link to RandomItemsClass.xml. Out of such an item, a random object is created, depending on the entries in the xml
+	UINT16 usProductionYearStart;
+	UINT16 usProductionYearEnd;
 	UINT16 usBuddyItem; // Flugente: item is connected to another item. Type of connection depends on item specifics
 	UINT16 usRiotShieldStrength;	// Flugente: riot shields. strength of shield
 	UINT16 usRiotShieldGraphic;	// Flugente: riot shields. graphic of shield (when deployed in tactical, taken from Tilecache/riotshield.sti)
