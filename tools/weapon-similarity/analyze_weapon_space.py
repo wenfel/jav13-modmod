@@ -60,6 +60,17 @@ OVERHEAT_WEIGHTS = {
     "heat_shots_to_jam_threshold": 0.35,
 }
 
+TYPE_ADJACENCY = {
+    1: {2},          # pistol -> machine pistol
+    2: {1, 3},       # machine pistol -> pistol / SMG
+    3: {2, 6},       # SMG -> machine pistol / assault rifle
+    4: {5, 6},       # rifle -> sniper / assault rifle
+    5: {4, 6},       # sniper -> rifle / assault rifle
+    6: {4, 3, 7},    # assault rifle -> rifle / SMG / LMG
+    7: {6},          # LMG -> assault rifle
+    8: set(),        # shotgun remains shotgun
+}
+
 
 def add_profile_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
@@ -99,7 +110,7 @@ def parse_args() -> argparse.Namespace:
     nn = sub.add_parser("neighbors")
     nn.add_argument("--index", type=int, required=True)
     nn.add_argument("--limit", type=int, default=10)
-    nn.add_argument("--max-tier", type=int, choices=(0, 1, 2), default=2)
+    nn.add_argument("--max-tier", type=int, choices=tuple(range(9)), default=8)
     nn.add_argument("--same-calibre", action="store_true")
     nn.add_argument(
         "--allowed-origin-mask",
@@ -223,18 +234,34 @@ def distance_matrix(
 
 
 def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
-    """Return semantic fallback tier, or None if the candidate is unsuitable.
+    """Return a semantic fallback tier, or None if the candidate is unsuitable.
 
-    Tier 0: same weapon type and preserves every fire mode the target has.
-    Tier 1: same weapon type and preserves broad rapid-fire capability.
-    Tier 2: same broad weapon class and preserves broad rapid-fire capability.
+    Heavy-gun status is never relaxed. Candidate type may be the same as the
+    target or one explicitly adjacent tactical type from TYPE_ADJACENCY.
 
-    Extra capabilities on the candidate are allowed.
+    0 same type, same handedness, preserve each required fire mode
+    1 same type, same handedness, preserve broad rapid-fire capability
+    2 adjacent type, same handedness, preserve broad rapid-fire capability
+    3 same type, relax handedness, preserve broad rapid-fire capability
+    4 adjacent type, relax handedness, preserve broad rapid-fire capability
+    5 same type, same handedness, allow fire-mode downgrade
+    6 adjacent type, same handedness, allow fire-mode downgrade
+    7 same type, relax handedness, allow fire-mode downgrade
+    8 adjacent type, relax handedness, allow fire-mode downgrade
     """
-    if bool(candidate["two_handed"]) != bool(target["two_handed"]):
+    if int(candidate["uiIndex"]) == int(target["uiIndex"]):
         return None
     if bool(candidate["heavy_gun"]) != bool(target["heavy_gun"]):
         return None
+
+    same_type = int(candidate["weapon_type"]) == int(target["weapon_type"])
+    adjacent_type = int(candidate["weapon_type"]) in TYPE_ADJACENCY.get(
+        int(target["weapon_type"]), set()
+    )
+    if not same_type and not adjacent_type:
+        return None
+
+    same_handedness = bool(candidate["two_handed"]) == bool(target["two_handed"])
 
     strict_modes = (
         (not bool(target["has_semi_auto"]) or bool(candidate["has_semi_auto"]))
@@ -242,33 +269,33 @@ def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
         and (not bool(target["has_autofire"]) or bool(candidate["has_autofire"]))
     )
 
-    if (
-        int(candidate["weapon_type"]) == int(target["weapon_type"])
-        and strict_modes
-    ):
-        return 0
-
     target_rapid = bool(target["has_burst"]) or bool(target["has_autofire"])
     candidate_rapid = bool(candidate["has_burst"]) or bool(candidate["has_autofire"])
-    capability_ok = (
+    broad_capability = (
         (not bool(target["has_semi_auto"]) or bool(candidate["has_semi_auto"]))
         and (not target_rapid or candidate_rapid)
     )
 
-    if (
-        int(candidate["weapon_type"]) == int(target["weapon_type"])
-        and capability_ok
-    ):
+    if same_type and same_handedness and strict_modes:
+        return 0
+    if same_type and same_handedness and broad_capability:
         return 1
-
-    if (
-        int(candidate["weapon_class"]) == int(target["weapon_class"])
-        and capability_ok
-    ):
+    if adjacent_type and same_handedness and broad_capability:
         return 2
+    if same_type and not same_handedness and broad_capability:
+        return 3
+    if adjacent_type and not same_handedness and broad_capability:
+        return 4
+    if same_type and same_handedness:
+        return 5
+    if adjacent_type and same_handedness:
+        return 6
+    if same_type and not same_handedness:
+        return 7
+    if adjacent_type and not same_handedness:
+        return 8
 
     return None
-
 
 def candidate_is_eligible(row: pd.Series, args: argparse.Namespace) -> bool:
     if args.same_calibre and int(row["calibre"]) != int(args._target_calibre):
@@ -350,7 +377,10 @@ def cmd_neighbors(
         f"target {int(target.uiIndex)}: {target['name']} "
         f"({target['weapon_type_name']}, {target['calibre_name']})"
     )
-    print("tier 0=same type/exact required modes; 1=same type/capability; 2=same class/capability")
+    print(
+        "tiers: 0 exact; 1 same-type capability; 2 adjacent-type capability; "
+        "3-4 relax handedness; 5-8 allow fire-mode downgrade"
+    )
     print("metric features:", ", ".join(features))
     if result.empty:
         print("no eligible candidates")
@@ -446,26 +476,24 @@ def cmd_kmeans(
 def candidate_count_summary(df: pd.DataFrame) -> pd.DataFrame:
     rows = []
     for _, target in df.iterrows():
-        counts = {0: 0, 1: 0, 2: 0}
+        counts = {tier: 0 for tier in range(9)}
         for _, candidate in df.iterrows():
-            if int(candidate["uiIndex"]) == int(target["uiIndex"]):
-                continue
             tier = candidate_tier(target, candidate)
             if tier is not None:
                 counts[tier] += 1
-        rows.append(
-            {
-                "uiIndex": int(target["uiIndex"]),
-                "name": target["name"],
-                "tier0": counts[0],
-                "tier1": counts[1],
-                "tier2": counts[2],
-                "through_tier1": counts[0] + counts[1],
-                "through_tier2": counts[0] + counts[1] + counts[2],
-            }
-        )
-    return pd.DataFrame(rows)
 
+        row = {
+            "uiIndex": int(target["uiIndex"]),
+            "name": target["name"],
+        }
+        for tier in range(9):
+            row[f"tier{tier}"] = counts[tier]
+        row["through_tier2"] = sum(counts[t] for t in range(3))
+        row["through_tier4"] = sum(counts[t] for t in range(5))
+        row["through_tier8"] = sum(counts.values())
+        rows.append(row)
+
+    return pd.DataFrame(rows)
 
 def cmd_diagnostics(
     payload: dict,
@@ -516,7 +544,7 @@ def cmd_diagnostics(
 
     counts = candidate_count_summary(df)
     print("\ncandidate coverage before country/year filtering:")
-    for col in ("tier0", "through_tier1", "through_tier2"):
+    for col in ("tier0", "through_tier2", "through_tier4", "through_tier8"):
         s = counts[col]
         print(
             f"  {col:14s} min={int(s.min())} p10={s.quantile(.10):.1f} "
