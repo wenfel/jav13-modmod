@@ -3,176 +3,303 @@
 Branch: `feature/weapon-similarity-analysis`  
 Base: `country-filter`
 
-This report records the first validation pass for a firearm replacement metric intended
-to choose tactically similar weapons after country / historical filters remove an item.
+This report records the current validation state of the offline firearm-similarity
+analysis used to design replacements after origin/year/status filters remove an item.
 
-## 1. Clean analysis population
+It is not a full tactical simulator. It deliberately separates source data, weapon-only
+base values, intrinsic item modifiers, and context that remains outside the model.
 
-The authoritative data comes from `Weapons.xml`, `Items.xml`, `AmmoStrings.xml`,
-`Item_Settings.ini`, and `Ja2_Options.INI`, with the relevant formulas mirrored from
-`Tactical/Weapons.cpp`, `Tactical/Points.cpp`, and `Tactical/Items.cpp`.
+## 1. Corrected source baseline
 
-The cleaned snapshot contains **314 conventional firearms**.
+A review of the original PR #3 metadata population found two manifest/XML mismatches:
 
-Six `IC_GUN` records were excluded from the statistical population because their
-mechanics are not ordinary firearm mechanics: creature spit attacks, tank cannon, and
-fire extinguisher. They should not influence firearm scaling, PCA, clustering, or
-replacement distances.
+- uiIndex 1 Glock 17 had accidentally received S&O Shorty's Germany / 1998-2002 data
+- uiIndex 779 S&O Shorty remained origin/year zeroed
 
-The checked-in configuration represented by the snapshot has:
+That defect was fixed separately in PR #6 and merged into `country-filter` at:
+
+`09a5f4a990febea69f69adde6bb95b6f5eb5b2ca`
+
+The full 347-row weapon-origin manifest was compared with the corrected `Items.xml`
+for production start, production end, and origin mask. Mismatches after the hotfix: **0**.
+
+PR #5's analysis branch then merged that corrected base before regenerating its snapshot.
+
+The checked-in snapshot now contains:
+
+- Glock 17: Austria, production years 0-0
+- S&O Shorty: Germany, production years 1998-2002
+
+## 2. Reproducible source fingerprints
+
+`weapon_features.json` records SHA-256 fingerprints for every source file that currently
+affects generated features:
+
+| Source | SHA-256 |
+| --- | --- |
+| `Items.xml` | `3617fb507f03f3da8c342d5644b5ae64509678523b09775a19942fb6dace0906` |
+| `Weapons.xml` | `52d759787c975137cafb0fc270420f7d42d40c0017a89adf61bf45e64342b87c` |
+| `AmmoStrings.xml` | `b80d0f9aa16d2491d45092e9310e0134d9ace9c0b6caa1d47eb7f7c0d46d5090` |
+| `Item_Settings.ini` | `237533ccb45f42ac6a4ecb26052d18a91248f1de925e1dd6c7275675f454f4cf` |
+| `Ja2_Options.INI` | `5a947e94009f766c1bda652f728d4ce971e4a62ccee3225fb8e5e902f20ff07b` |
+| `APBPConstants.ini` | `952ad289f72bec60e21cf3f78b925a11474f1c2abb08adc12539ba4286bc41ed` |
+
+A new CI job runs the standard-library extractor and compares the parsed regenerated JSON
+with the checked-in snapshot. Changes to inputs or extraction rules can therefore no
+longer leave a silently stale snapshot.
+
+## 3. Analysis population
+
+The snapshot contains **314 conventional firearm records**.
+
+Six `IC_GUN` records with weapon type 0 are excluded because their mechanics are not
+ordinary firearm mechanics:
+
+- Queen Spit
+- Infant Spit
+- Young Male Spit
+- Old Male Spit
+- Cannon
+- Extinguisher
+
+This explains the difference from the 347 gun/launcher origin-manifest population.
+
+There are still a few special-purpose objects encoded with ordinary weapon types, such
+as Pepper Spray, Flamethrower and Hand Mortar. They are retained for now and explicitly
+treated as benchmark cases for future semantic classification rather than being removed
+ad hoc.
+
+## 4. Feature layers
+
+Each weapon now has three conceptually distinct layers.
+
+### Raw
+
+`raw.weapon` and `raw.item` retain XML values without pretending they are final
+tactical quantities.
+
+### Base features
+
+`base_features` contain weapon values after global / weapon-type INI baseline modifiers,
+but before the item's own intrinsic modifiers.
+
+Examples:
+
+- `ubShotsPer4Turns` plus type INI modifier
+- `ubImpact` plus configured gun/type damage baseline
+- `usRange` plus configured gun/type range baseline
+- reference AP/shot using `BaseAPsToShootOrStabNoModifier` semantics
+- burst AP using `CalcAPsToBurstNoModifier` semantics
+
+### Effective intrinsic features
+
+`effective_intrinsic_features` start from the base layer and additionally apply the
+weapon item's own modifiers at **100% item status**, while excluding:
+
+- ammunition modifiers
+- attachments
+- soldier traits
+- stance
+- target state/range-dependent full CTH calculation
+- item-condition degradation
+- transient scope/attachment choices
+
+Replacement distance defaults to this layer.
+
+This is the intended meaning of "intrinsic": the weapon as defined by its own
+`Weapons.xml` + `Items.xml` data, not a complete combat situation.
+
+The analysis CLI can switch back to the base layer with:
+
+`--feature-layer base`
+
+## 5. Intrinsic modifier audit
+
+For the 314-firearm population, current nonzero inherent modifiers relevant to this
+analysis are:
+
+| Modifier | Firearms |
+| --- | ---: |
+| `PercentAPReduction` | 5 |
+| `PercentReadyTimeAPReduction` | 3 |
+| `AutoFireToHitBonus` | 23 |
+| `BurstToHitBonus` | 23 |
+| `ToHitBonus` | 8 |
+| `AimBonus` | 4 |
+
+The current data has no nonzero firearm values for the other audited flat/percent range,
+damage, magazine, ROF, reload-AP, burst/autofire-AP, recoil, or accuracy item modifiers.
+
+Thirty firearms differ between the base and effective-intrinsic feature layers.
+
+Observed differences in the current data:
+
+- reference shot AP: 5 weapons
+- 5-round autofire AP surcharge: 5
+- ready AP: 3
+- burst AP: 2
+- burst penalty: 4
+- autofire penalty: 18
+- OCTH intrinsic to-hit bonus: 8
+- OCTH intrinsic aim bonus: 4
+
+## 6. Concrete modifier examples
+
+The three AR57 variants have an inherent 30% ready-time AP reduction:
+
+| Weapon | Base ready AP | Effective intrinsic ready AP |
+| --- | ---: | ---: |
+| AR57 16" | 13 | 9 |
+| AR57 11" | 9 | 6 |
+| AR57 6"-S | 11 | 7 |
+
+The five weapons with 20% intrinsic general AP reduction now receive it in reference
+single-shot and autofire economy. Example P90:
+
+- reference AP/shot: 18 -> 15
+- reference 5-round autofire surcharge: 16 -> 12
+- autofire penalty: 7 -> 2 because of its built-in `AutoFireToHitBonus=5`
+
+Burst AP is now an explicit rapid-fire feature. It mirrors the configured
+`CalcAPsToBurst` arithmetic for the reference soldier and includes inherent general /
+burst AP reductions where present.
+
+A reference 5-round autofire AP surcharge is likewise included so that general AP
+reduction is not captured for single shots while silently omitted from automatic fire.
+
+## 7. OCTH/NCTH boundary
+
+The checked-in configuration is:
 
 - `NCTH = FALSE`
 - `OVERHEATING = FALSE`
-- gun damage modifier = 1.0
-- gun range modifier = 1.0
+- `USE_SCOPE_MODES = TRUE`
+- `AP_MAXIMUM = 100`
+- `AUTOFIRE_SHOTS_AP_VALUE = 20`
 
-The default replacement profile therefore uses OCTH-relevant accuracy/fire-mode
-variables and does not allow inactive NCTH or overheating variables to affect distance.
-The analysis script can explicitly switch profiles for sensitivity testing.
+The default similarity profile therefore uses OCTH-relevant dimensions and excludes
+NCTH/heat dimensions from distance.
 
-## 2. Engine-specific correction: fan-the-hammer
+OCTH's intrinsic terms are intentionally not collapsed into one invented "accuracy"
+score:
+
+- `bAccuracy`
+- item `ToHitBonus`
+- item `AimBonus`
+- effective burst penalty
+- effective autofire penalty
+
+These enter the engine through different formulas and some are contextual. The snapshot
+preserves them as separate axes; it does **not** claim to reproduce final chance-to-hit.
+
+## 8. Fan-the-hammer correction
 
 A naive `ubShotsPerBurst > 0` test incorrectly classifies some revolvers as native
-burst-fire weapons.
+burst weapons.
 
-`IsGunBurstCapable()` in `Tactical/Weapons.cpp` checks
-`fBurstOnlyByFanTheHammer` and makes that burst capability conditional on Gunslinger,
-alternate weapon hold, and the other fan-the-hammer requirements.
+`IsGunBurstCapable()` checks `fBurstOnlyByFanTheHammer` and makes that capability
+conditional on Gunslinger / alternate-hold requirements.
 
-The dataset now separates:
+The dataset therefore separates:
 
 - native `has_burst`
 - `has_trait_gated_burst`
 
-There are **13 trait-gated fan-the-hammer firearms** in the current data. Trait-gated
-burst size/penalty is not included in the baseline replacement vector.
+There are **13 trait-gated fan-the-hammer firearms**. Their trait-only burst data does not
+enter the baseline replacement role.
 
-This correction materially improves filter coverage for revolvers.
+## 9. Statistical representation
 
-## 3. Statistical representation
-
-The default active OCTH profile currently uses these continuous axes:
-
-- damage
-- effective range
-- reference AP per shot
-- ready AP
-- reload AP
-- magazine capacity
-- weight
-- item size
-- reliability
-- repair ease
-- native burst size
-- native burst penalty
-- autofire shots per 5 AP
-- autofire penalty
-- OCTH accuracy
-
-Raw values are transformed with robust scaling:
+Continuous replacement axes use robust scaling:
 
 ```text
 z = (x - median(x)) / IQR(x)
 ```
 
-If a conditional column has zero IQR, the implementation falls back to standard
-deviation; a constant column becomes inert.
+When a conditional column has zero IQR, the implementation falls back to its sample
+standard deviation; a constant column becomes inert.
 
-For replacement selection the scaled axes receive explicit gameplay weights and use
-weighted Euclidean distance:
+Replacement distance then uses an explicit weighted Euclidean metric:
 
 ```text
 distance(A, B) = sqrt(sum_j w_j * (z_Aj - z_Bj)^2)
 ```
 
-For PCA and k-means the weights are **not** applied. This is deliberate: exploratory
-statistics should describe the structure of the dataset rather than rediscover the
-subjective replacement weights.
+PCA and k-means use robust-scaled **unweighted** data so exploratory structure is not
+forced to reproduce subjective replacement weights.
 
-## 4. Correlation structure
+## 10. Effective-intrinsic correlation structure
 
-Strong correlations in the active profile include:
+Strong correlations under the active OCTH profile include:
 
 | Feature A | Feature B | Pearson r |
 | --- | --- | ---: |
-| burst size | burst penalty | 0.938 |
-| autofire shots / 5 AP | autofire penalty | 0.911 |
-| ready AP | item size | 0.827 |
-| ready AP | weight | 0.824 |
-| damage | reference shot AP | 0.748 |
-| range | ready AP | 0.741 |
+| burst AP | burst size | 0.980 |
+| burst AP | burst penalty | 0.909 |
+| burst size | burst penalty | 0.908 |
+| 5-round autofire AP | autofire penalty | 0.902 |
+| autofire shots / 5 AP | autofire penalty | 0.866 |
+| ready AP | item size | 0.825 |
+| ready AP | weight | 0.825 |
+| 5-round autofire AP | autofire shots / 5 AP | 0.775 |
+| damage | reference shot AP | 0.745 |
+| range | ready AP | 0.743 |
 | range | weight | 0.739 |
 | range | OCTH accuracy | 0.730 |
-| item size | OCTH accuracy | 0.708 |
-| damage | range | 0.704 |
 
-This is not merely a statistical nuisance. It describes how the XML balance is built:
-larger/longer-ranged guns tend to be heavier, slower to ready, and more accurate, while
-automatic-fire speed is intentionally coupled to control penalties.
+The correlations are expected: the XML balance deliberately couples firing speed with
+control costs and larger weapons with range, weight and ready cost.
 
-It also explains why blindly counting every raw XML column as an independent dimension
-would double-count several gameplay concepts.
+## 11. PCA after intrinsic-modifier correction
 
-## 5. PCA
+PCA on robust-scaled, unweighted effective-intrinsic active-profile data:
 
-PCA was run on robust-scaled, unweighted active-profile data.
-
-| Component | Variance | Cumulative | Strongest interpretation |
+| Component | Variance | Cumulative | Dominant structure |
 | --- | ---: | ---: | --- |
-| PC1 | 35.0% | 35.0% | physical scale / reach / firing tempo |
-| PC2 | 22.7% | 57.8% | magazine capacity and sustained-fire role |
-| PC3 | 15.0% | 72.7% | burst-fire behavior |
-| PC4 | 6.4% | 79.1% | repairability / reliability |
-| PC5 | 5.0% | 84.2% | size / reliability / automatic-fire mix |
-| PC6 | 3.4% | 87.6% | shot tempo versus range / automatic fire |
+| PC1 | 27.9% | 27.9% | physical scale / range / capacity |
+| PC2 | 21.1% | 48.9% | burst behavior versus long-range/slow-fire role |
+| PC3 | 15.5% | 64.5% | magazine capacity versus burst behavior |
+| PC4 | 8.5% | 72.9% | built-in OCTH to-hit / aim bonuses |
+| PC5 | 5.7% | 78.6% | reliability/repair and intrinsic aiming |
+| PC6 | 4.6% | 83.2% | automatic-fire economy/control mix |
 
-PC1 loads most heavily on weight, range, item size, reference shot AP and magazine
-capacity. PC2 is dominated by magazine capacity. PC3 is dominated by burst size and
-burst penalty.
+The first three components now explain about **64.5%** rather than the earlier 72.7%.
+That change is expected: adding real burst-AP and intrinsic-control/sight dimensions
+creates additional independent variance.
 
-The first three components explain roughly **72.7%** of the variance. Six components
-explain roughly **87.6%**.
+Eight components explain about **89.7%**.
 
-This means the arsenal has substantial lower-dimensional structure, but not enough to
-justify replacing the runtime metric with only two or three PCA coordinates. PCA is
-valuable for diagnosis and visualization, not as the final substitution rule.
+PCA remains a diagnostic/visualization technique, not the runtime replacement rule.
 
-## 6. K-means
+## 12. K-means after intrinsic-modifier correction
 
-Silhouette results for the active profile:
+Silhouette diagnostics:
 
 | k | Silhouette |
 | ---: | ---: |
-| 2 | 0.199 |
-| 3 | 0.276 |
-| 4 | 0.306 |
-| 5 | **0.338** |
-| 6 | 0.334 |
-| 7 | 0.315 |
-| 8 | 0.324 |
-| 9 | 0.282 |
-| 10 | 0.292 |
-| 11 | 0.265 |
-| 12 | 0.293 |
+| 2 | 0.179 |
+| 3 | 0.264 |
+| 4 | 0.293 |
+| 5 | 0.322 |
+| 6 | 0.338 |
+| 7 | **0.349** |
+| 8 | 0.334 |
+| 9 | 0.327 |
+| 10 | 0.306 |
+| 11 | 0.267 |
+| 12 | 0.290 |
 
-The best result in this range is only about **0.34**, which is moderate/weak separation.
-At k=8 the clusters still mix several XML weapon types. Examples include combined
-pistol/shotgun clusters, mixed SMG/assault-rifle clusters, and separate LMG subgroups.
+The best value in this range is still only about **0.35**. The arsenal has structure but
+not clean spherical clusters. K-means remains useful for exploration only.
 
-Conclusion: k-means is useful for exploring tactical regions, but cluster membership
-should not determine replacements.
+## 13. Semantic fallback tiers
 
-## 7. Semantic fallback tiers
+Eligibility is evaluated before similarity.
 
-The initial implementation used `weapon_class` as a broad fallback. Inspection showed
-that this field is not consistent enough for that purpose:
+Country/year/SciFi/historical metadata are filters, not distance dimensions.
 
-- machine pistols split between handgun and SMG classes
-- four LMGs are classed as rifles
-
-The scorer now uses an explicit tactical adjacency graph between weapon types.
-
-The ordered fallback tiers are:
+Within the surviving pool, candidates are ordered by semantic fallback tier before
+statistical distance:
 
 0. same type, same handedness, preserve every required fire mode
 1. same type, same handedness, preserve broad rapid-fire capability
@@ -186,50 +313,27 @@ The ordered fallback tiers are:
 
 Heavy-gun status is never relaxed.
 
-Current adjacency is deliberately conservative:
+The explicit adjacency graph is used instead of `weapon_class`, because the XML class
+field is inconsistent for machine pistols and several LMGs.
 
-- pistol <-> machine pistol
-- machine pistol <-> pistol / SMG
-- SMG <-> machine pistol / assault rifle
-- rifle <-> sniper rifle / assault rifle
-- sniper rifle <-> rifle / assault rifle
-- assault rifle <-> rifle / SMG / LMG
-- LMG <-> assault rifle
-- shotgun remains shotgun
+## 14. Country-filter stress tests with effective intrinsic distance
 
-Tier is ordered before statistical distance. Thus a slightly more distant semantically
-faithful candidate beats a numerically close but role-changing candidate.
-
-## 8. Country-filter stress tests
-
-These are diagnostic masks, not a statement of intended campaign composition.
+The semantic coverage result is unchanged by the intrinsic-stat correction.
 
 ### USA-only origin pool
 
-- eligible firearms: 92
-- removed weapons requiring replacement: 222
+- eligible: 92
+- replacements required: 222
 - tier 0: 200
 - tier 1: 4
 - tier 2: 3
 - tier 4: 15
 - unresolved: **0**
 
-The tier-4 cases are mainly one-handed machine pistols. The U.S.-origin pool lacks a
-matching one-handed automatic weapon for those targets, so the fallback becomes a
-two-handed adjacent SMG.
-
-Examples:
-
-- Glock 18 -> Colt SMG, tier 4, distance ~2.29
-- MP5KA4 -> KAC PDW, tier 4, distance ~1.62
-- AK-74 -> M468, tier 0, distance ~1.20
-
 ### Soviet / Russia lineage pool
 
-Mask includes Soviet Union, Russia, and Russian Empire origins.
-
-- eligible firearms: 56
-- removed weapons requiring replacement: 258
+- eligible: 56
+- replacements required: 258
 - tier 0: 237
 - tier 1: 15
 - tier 2: 1
@@ -237,59 +341,56 @@ Mask includes Soviet Union, Russia, and Russian Empire origins.
 - tier 5: 3
 - unresolved: **0**
 
-The tier-5 cases are full-auto shotguns for which the eligible pool has no equivalent
-automatic shotgun; a semiautomatic shotgun is therefore used as an explicit
-fire-mode downgrade.
-
-Examples:
-
-- CAWS -> Saiga 12K, tier 5, distance ~1.96
-- Sawed-Off -> MP-233B, tier 3, distance ~2.02
-
 ### German-lineage pool
 
-Mask includes Germany, East Germany, and pre-1949 Germany.
-
-- eligible firearms: 59
-- removed weapons requiring replacement: 255
+- eligible: 59
+- replacements required: 255
 - tier 0: 250
 - tier 2: 3
 - tier 3: 2
 - unresolved: **0**
 
-The remaining tier-3 cases are the one-handed short shotguns. The origin pool has no
-one-handed shotgun equivalent, so handedness must be relaxed.
+Full coverage here means "a semantic fallback exists"; it does not mean every fallback
+is equally close.
 
-## 9. Distance calibration
+## 15. Distance calibration after intrinsic correction
 
-Weighted robust Euclidean distance has no natural physical unit. Therefore an absolute
-cutoff such as "distance > 2 is bad" is poorly justified.
+Across 313 weapons with an unrestricted tier-0 neighbour:
 
-A better calibration is empirical: compare a filtered replacement's distance with the
-distribution of unrestricted tier-0 nearest-neighbour distances for the same weapon
-type.
+- median nearest distance: **0.565**
+- 75th percentile: **0.898**
+- 90th percentile: **1.494**
+- 95th percentile: **1.967**
 
-Across 313 firearms with at least one tier-0 neighbour:
+The distribution remains strongly weapon-type dependent, so the CLI reports a
+type-relative distance percentile rather than relying on a universal hard cutoff.
 
-- median nearest distance: **0.548**
-- 75th percentile: **0.911**
-- 90th percentile: **1.312**
-- 95th percentile: **1.794**
-
-The distribution differs substantially by weapon type. Pistols have a median of about
-0.26, while rifles and sniper rifles are much more heterogeneous.
-
-The analysis tool now reports a type-relative distance percentile and labels it:
+The existing bands remain diagnostics:
 
 - <= 75th percentile: `typical`
-- > 75th to 95th: `stretched`
-- > 95th: `far`
+- >75th to 95th: `stretched`
+- >95th: `far`
 
-This is a warning/diagnostic, not another hard eligibility rule.
+## 16. Intrinsic-bonus outliers
 
-## 10. Filter metadata coverage
+The effective layer intentionally exposes some extreme cases:
 
-Current conventional-firearm coverage:
+- OICW's closest unrestricted tier-0 neighbour is still very distant because OICW
+  combines 20% AP reduction, `ToHitBonus=20`, and `AimBonus=15`
+- OTs-39 and Rocket Rifle carry unusual built-in to-hit values
+- MG36 combines AP reduction with an intrinsic aim bonus
+
+These are not being "fixed" by lowering weights simply to compress the distribution.
+They belong in the manual benchmark set, where we can decide how strongly built-in
+optics/control should influence tactical equivalence.
+
+There is a separate semantic issue around special-purpose ordinary-type records such as
+Pepper Spray, Flamethrower and Hand Mortar. That is a role-classification problem, not
+something weight tuning should conceal.
+
+## 17. Filter metadata coverage
+
+Current conventional-firearm metadata coverage remains:
 
 - origin nonzero: **302 / 314**
 - production start year nonzero: **65 / 314**
@@ -297,37 +398,45 @@ Current conventional-firearm coverage:
 - historical-status flags nonzero: **0 / 314**
 - SciFi true: **18 / 314**
 
-Origin-filter stress tests are therefore meaningful now.
+Origin stress tests are meaningful.
 
-Year-filter conclusions are still weak because most production bounds are unknown.
-Historical-status filtering cannot yet be stress-tested because the new status metadata
-has deliberately not been populated in `Items.xml`.
+Production-year tests remain incomplete because most bounds are unknown.
 
-Unknown dates are treated as unknown, not as automatically unavailable.
+Historical-status filtering cannot yet be stress-tested because that follow-up data
+population has not been produced.
 
-## 11. Current recommendation
+## 18. Current recommendation before a C++ port
 
-For the eventual C++ implementation:
+The offline design should continue to use:
 
-1. filter candidate eligibility first;
-2. assign the lowest available semantic fallback tier;
-3. compare only candidates in that best tier using robust-scaled weighted distance;
-4. expose/log both tier and distance quality;
-5. never use k-means cluster membership as the replacement decision;
-6. choose OCTH/NCTH/overheating feature terms from the actual game configuration;
-7. keep country, year, SciFi and historical-status metadata out of the similarity vector.
+1. external eligibility filtering first;
+2. the lowest available semantic fallback tier;
+3. effective-intrinsic features by default;
+4. robust-scaled weighted distance only inside that tier;
+5. tier and distance percentile in diagnostics/logging;
+6. PCA/k-means strictly for analysis;
+7. explicit benchmark review before freezing weights.
 
-Do not port the statistical exploration stack to C++. The eventual runtime code only
-needs the frozen feature extraction, robust scaling constants/strategy, tier rules, and
-weighted distance.
+The next calibration set should include both obvious variants and difficult cases:
 
-## 12. Remaining validation work before C++ port
+- Glock 17 / Glock 19
+- AK-74 / AKS-74
+- SVD / SVDS
+- G36 family and MG36
+- P90
+- OICW
+- OTs-39
+- Rocket Rifle / A. R. Rifle
+- automatic shotguns
+- one-handed short shotguns
+- Pepper Spray
+- Flamethrower
+- Hand Mortar
 
-- populate historical-status metadata, then run the coverage command with exclusion masks;
-- improve production-year coverage before treating year tests as authoritative;
-- manually review a benchmark set of obvious variant pairs and difficult filtered cases;
-- decide policy for the 12 firearms whose origin mask is still zero;
-- decide whether calibre should remain optional, be a hard constraint in some modes, or
-  receive a categorical penalty;
-- tune weights only after reviewing failures; prefer changing semantic constraints when
-  the problem is categorical rather than numerical.
+Where a substitution is conceptually impossible, fix semantics/eligibility/tiering.
+Where two semantically valid weapons are merely ranked poorly, then tune numerical
+weights.
+
+Do not port PCA, k-means or the exploratory Python stack to C++. Once calibration is
+stable, the runtime port only needs the finalized intrinsic feature extraction,
+normalization/scaling policy, semantic tiers, weights, and distance calculation.
