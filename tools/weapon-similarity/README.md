@@ -12,10 +12,13 @@ easier to inspect and change with NumPy / pandas / scikit-learn than inside the 
 runtime. Once the feature set and distance rule are stable, the small deterministic
 scoring rule can be ported back to C++.
 
-The extractor mirrors only weapon-intrinsic or deterministic engine-side calculations.
-It deliberately does not try to reproduce the complete CTH calculation: CTH also depends
-on the soldier, target, stance, visibility, traits, optics, ammunition, attachments and
-game options.
+The extractor separates raw XML, weapon-only base features, and effective intrinsic
+features. "Effective intrinsic" means the weapon item at 100% status with its own
+inherent item modifiers applied, but without ammunition, attachments, soldier traits,
+stance, target state, or a full CTH simulation.
+
+It deliberately does not claim to reproduce complete tactical performance. Full CTH and
+several other mechanics remain contextual.
 
 ## Authoritative inputs
 
@@ -30,7 +33,9 @@ game options.
 - `gamedir/Data-1.13/Item_Settings.ini`
   - weapon-type multipliers used by the engine
 - `gamedir/Data-1.13/Ja2_Options.INI`
-  - global gun range/damage/autofire settings
+  - global gun range/damage/autofire and active OCTH/NCTH/overheating settings
+- `gamedir/Data-1.13/APBPConstants.ini`
+  - AP scale and autofire AP constants used by reference AP calculations
 
 Relevant engine implementation:
 
@@ -53,10 +58,26 @@ python tools/weapon-similarity/extract_weapon_features.py \
   --output tools/weapon-similarity/weapon_features.json
 ```
 
-The output contains raw XML values and separately named derived values. Derived values
-are scenario-specific where necessary. In particular, `reference_shot_ap` uses a
-reference soldier with 80 full AP and 80 aim skill by default, matching the explanatory
-example in `BaseAPsToShootOrStab`.
+The output contains:
+
+- `raw`: XML values
+- `base_features`: weapon + configured global/type baseline, before item modifiers
+- `effective_intrinsic_features`: base plus the weapon item's own modifiers at 100%
+  status
+
+Replacement analysis defaults to `effective_intrinsic_features`. Use
+`--feature-layer base` on analysis commands to inspect the pre-item-modifier baseline.
+
+Reference AP quantities use an 80-full-AP / 80-aim-skill reference soldier by default.
+The snapshot also records SHA-256 fingerprints for every source file above.
+
+Check that the committed snapshot can be exactly regenerated:
+
+```bash
+python tools/weapon-similarity/check_weapon_features.py
+```
+
+CI runs the same regeneration check without requiring NumPy, pandas, or scikit-learn.
 
 ## Statistical workflow
 
@@ -169,6 +190,8 @@ The score is configuration-aware. Core axes currently include:
 - reference AP per shot
 - ready AP
 - reload AP
+- burst AP surcharge
+- reference 5-round autofire AP surcharge
 - magazine capacity
 - weight and item size
 - reliability and repair ease
@@ -176,7 +199,8 @@ The score is configuration-aware. Core axes currently include:
 
 Accuracy/control axes depend on the selected CTH system:
 
-- OCTH: OCTH accuracy and OCTH fire-mode penalties
+- OCTH: weapon accuracy, inherent item to-hit/aim bonuses, and effective
+  burst/autofire penalties
 - NCTH: NCTH accuracy, handling, aim levels and recoil
 
 Heat endurance is included only when overheating is enabled.
