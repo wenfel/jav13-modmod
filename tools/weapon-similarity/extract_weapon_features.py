@@ -242,6 +242,24 @@ def reference_burst_ap(
     return max(0, min(ap_maximum, aps))
 
 
+def effective_octh_control_penalty(
+    raw_penalty: float,
+    intrinsic_bonus: int,
+    bonus_multiplier: int,
+) -> float:
+    """Mirror the configured bare-weapon OCTH burst/autofire stabilization path."""
+    if raw_penalty <= 0:
+        return 0.0
+
+    if bonus_multiplier > 0:
+        reduction_percent = intrinsic_bonus * bonus_multiplier
+        return float(
+            max(0, int(raw_penalty * max(0, 100 - reduction_percent) / 100))
+        )
+
+    return max(0.0, raw_penalty - intrinsic_bonus)
+
+
 def reference_autofire_ap(
     shots_per_5_ap: float,
     volley_rounds: int,
@@ -315,6 +333,9 @@ def main() -> int:
     global_damage_mod = ini_float(options, "GUN_DAMAGE_MODIFIER", 100.0) / 100.0
     global_range_mod = ini_float(options, "GUN_RANGE_MODIFIER", 100.0) / 100.0
     global_auto_bonus = ini_float(options, "AUTOFIRE_BULLETS_PER_5AP_MODIFIER", 0.0)
+    control_bonus_multiplier = int(
+        ini_float(options, "AUTOFIRE_TOHIT_BONUS_MULTIPLIER", 0.0)
+    )
     ap_maximum = int(ini_float(apbp, "AP_MAXIMUM", 100.0))
     autofire_shots_ap_value = int(
         ini_float(apbp, "AUTOFIRE_SHOTS_AP_VALUE", 20.0)
@@ -422,11 +443,21 @@ def main() -> int:
             parse_number(w.get("ubBurstPenalty")) if native_burst else 0.0
         )
         effective_burst_penalty = (
-            max(0.0, base_burst_penalty - burst_to_hit) if native_burst else 0.0
+            effective_octh_control_penalty(
+                base_burst_penalty,
+                burst_to_hit,
+                control_bonus_multiplier,
+            )
+            if native_burst
+            else 0.0
         )
         base_auto_penalty = parse_number(w.get("AutoPenalty"))
         effective_auto_penalty = (
-            max(0.0, base_auto_penalty - auto_to_hit)
+            effective_octh_control_penalty(
+                base_auto_penalty,
+                auto_to_hit,
+                control_bonus_multiplier,
+            )
             if auto_per_5ap > 0
             else 0.0
         )
@@ -638,6 +669,7 @@ def main() -> int:
             "scope_modes": ini_bool(options, "USE_SCOPE_MODES", False),
             "ap_maximum": ap_maximum,
             "autofire_shots_ap_value": autofire_shots_ap_value,
+            "autofire_tohit_bonus_multiplier": control_bonus_multiplier,
         },
         "reference_scenario": {
             "full_ap": args.reference_full_ap,
