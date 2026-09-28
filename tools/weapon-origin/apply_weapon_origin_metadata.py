@@ -15,6 +15,67 @@ IC_GUN = 0x00000002
 IC_LAUNCHER = 0x00000010
 IC_BOBBY_GUN = IC_GUN | IC_LAUNCHER
 
+# Frozen data contract from the weapon-origin metadata handoff.
+ORIGIN_BITS = {
+    "USA": 0,
+    "SOVIET_UNION": 1,
+    "RUSSIA": 2,
+    "GERMANY": 3,
+    "EAST_GERMANY": 4,
+    "GERMANY_PRE_1949": 5,
+    "FRANCE": 6,
+    "UNITED_KINGDOM": 7,
+    "BELGIUM": 8,
+    "AUSTRIA": 9,
+    "SWITZERLAND": 10,
+    "ITALY": 11,
+    "SPAIN": 12,
+    "PORTUGAL": 13,
+    "SWEDEN": 14,
+    "FINLAND": 15,
+    "NORWAY": 16,
+    "DENMARK": 17,
+    "NETHERLANDS": 18,
+    "CZECHOSLOVAKIA": 19,
+    "CZECH_REPUBLIC": 20,
+    "SLOVAKIA": 21,
+    "POLAND": 22,
+    "HUNGARY": 23,
+    "ROMANIA": 24,
+    "BULGARIA": 25,
+    "YUGOSLAVIA": 26,
+    "SERBIA": 27,
+    "CROATIA": 28,
+    "SLOVENIA": 29,
+    "UKRAINE": 30,
+    "CHINA": 31,
+    "TAIWAN": 32,
+    "JAPAN": 33,
+    "SOUTH_KOREA": 34,
+    "NORTH_KOREA": 35,
+    "ISRAEL": 36,
+    "TURKEY": 37,
+    "GREECE": 38,
+    "CANADA": 39,
+    "AUSTRALIA": 40,
+    "SOUTH_AFRICA": 41,
+    "BRAZIL": 42,
+    "ARGENTINA": 43,
+    "CHILE": 44,
+    "MEXICO": 45,
+    "INDIA": 46,
+    "PAKISTAN": 47,
+    "IRAN": 48,
+    "IRAQ": 49,
+    "EGYPT": 50,
+    "UAE": 51,
+    "SINGAPORE": 52,
+    "INDONESIA": 53,
+    "RUSSIAN_EMPIRE": 54,
+    "AUSTRIA_HUNGARY": 55,
+}
+RESERVED_ORIGIN_MASK = 0xFF00000000000000
+
 REQUIRED_COLUMNS = (
     "uiIndex",
     "xml_name",
@@ -37,8 +98,17 @@ STATUSES = {
     "FICTIONAL_UNFLAGGED",
     "AMBIGUOUS_VARIANT",
     "RANDOM_WRAPPER",
+    "GENERIC_GAMEPLAY_ITEM",
     "MISSING_ORIGIN_BIT",
     "UNRESOLVED",
+}
+ZERO_METADATA_STATUSES = {
+    "UNRESOLVED",
+    "FICTIONAL_SCIFI",
+    "FICTIONAL_UNFLAGGED",
+    "RANDOM_WRAPPER",
+    "AMBIGUOUS_VARIANT",
+    "GENERIC_GAMEPLAY_ITEM",
 }
 CONFIDENCE = {"HIGH", "MEDIUM", "LOW"}
 METADATA_TAGS = ("ProductionYearStart", "ProductionYearEnd", "WeaponOriginFlags")
@@ -93,6 +163,50 @@ def xml_unescape(text: str) -> str:
     )
 
 
+def canonical_item_class(item_class: int) -> str:
+    target_bits = item_class & IC_BOBBY_GUN
+    if target_bits == IC_GUN:
+        return "IC_GUN"
+    if target_bits == IC_LAUNCHER:
+        return "IC_LAUNCHER"
+    if target_bits == IC_BOBBY_GUN:
+        return "IC_GUN|IC_LAUNCHER"
+    raise MetadataError(f"item class 0x{item_class:X} is not a firearm/launcher target")
+
+
+def parse_origin_codes(text: str, ui_index: int) -> tuple[list[str], int]:
+    stripped = text.strip()
+    if not stripped:
+        return [], 0
+
+    codes = [code.strip() for code in stripped.split("|")]
+    if any(not code for code in codes):
+        raise MetadataError(
+            f"uiIndex {ui_index}: origin_codes contains an empty code"
+        )
+
+    seen: set[str] = set()
+    mask = 0
+    for code in codes:
+        if code in seen:
+            raise MetadataError(
+                f"uiIndex {ui_index}: duplicate origin code {code!r}"
+            )
+        seen.add(code)
+        if code not in ORIGIN_BITS:
+            raise MetadataError(
+                f"uiIndex {ui_index}: unknown origin code {code!r}; "
+                "use MISSING_ORIGIN_BIT with a zero mask when the frozen mapping lacks the required state"
+            )
+        bit = ORIGIN_BITS[code]
+        if bit >= 56:
+            raise MetadataError(
+                f"uiIndex {ui_index}: origin code {code!r} uses reserved bit {bit}"
+            )
+        mask |= 1 << bit
+    return codes, mask
+
+
 def read_items(xml_text: str) -> dict[int, dict[str, object]]:
     items: dict[int, dict[str, object]] = {}
     for match in ITEM_RE.finditer(xml_text):
@@ -108,16 +222,108 @@ def read_items(xml_text: str) -> dict[int, dict[str, object]]:
             item_class = int(get_tag(body, "usItemClass", required=True), 0)
         except ValueError as exc:
             raise MetadataError(f"uiIndex {ui_index}: invalid usItemClass") from exc
+        try:
+            randomitem = int(get_tag(body, "randomitem") or "0", 0)
+            scifi = int(get_tag(body, "SciFi") or "0", 0)
+        except ValueError as exc:
+            raise MetadataError(
+                f"uiIndex {ui_index}: invalid randomitem/SciFi value"
+            ) from exc
         items[ui_index] = {
             "body": body,
             "span": match.span(),
             "name": xml_unescape(get_tag(body, "szItemName", required=True)),
             "long_name": xml_unescape(get_tag(body, "szLongItemName")),
             "item_class": item_class,
+            "randomitem": randomitem,
+            "scifi": scifi,
         }
     if not items:
         raise MetadataError("no <ITEM> rows found")
     return items
+
+
+def validate_row_semantics(
+    row: dict[str, str],
+    ui_index: int,
+    start: int,
+    end: int,
+    mask: int,
+    calculated_mask: int,
+) -> None:
+    status = row["status"].strip()
+    confidence = row["confidence"].strip()
+    source_1 = row["source_1"].strip()
+    notes = row["notes"].strip()
+
+    if mask & RESERVED_ORIGIN_MASK:
+        raise MetadataError(
+            f"uiIndex {ui_index}: origin_mask_hex uses reserved bits 56-63"
+        )
+
+    if status == "MISSING_ORIGIN_BIT":
+        if mask != 0:
+            raise MetadataError(
+                f"uiIndex {ui_index}: MISSING_ORIGIN_BIT must keep origin_mask_hex at zero"
+            )
+        if row["origin_codes"].strip():
+            raise MetadataError(
+                f"uiIndex {ui_index}: MISSING_ORIGIN_BIT must leave origin_codes empty; name the missing state in notes"
+            )
+        if not notes:
+            raise MetadataError(
+                f"uiIndex {ui_index}: MISSING_ORIGIN_BIT requires notes naming the missing country/state"
+            )
+    elif calculated_mask != mask:
+        raise MetadataError(
+            f"uiIndex {ui_index}: origin_codes calculate to 0x{calculated_mask:016X}, "
+            f"but origin_mask_hex is 0x{mask:016X}"
+        )
+
+    if status in ZERO_METADATA_STATUSES and (start or end or mask):
+        raise MetadataError(
+            f"uiIndex {ui_index}: status {status} requires zero start/end/origin metadata"
+        )
+
+    if confidence == "LOW" and (start or end or mask):
+        raise MetadataError(
+            f"uiIndex {ui_index}: LOW-confidence rows must remain zero-valued"
+        )
+
+    if (start or end or mask) and not source_1:
+        raise MetadataError(
+            f"uiIndex {ui_index}: nonzero historical metadata requires source_1"
+        )
+
+    if status in {"CONFIRMED", "PROTOTYPE"} and not source_1:
+        raise MetadataError(
+            f"uiIndex {ui_index}: status {status} requires source_1"
+        )
+
+    if status == "CONFIRMED":
+        if confidence not in {"HIGH", "MEDIUM"}:
+            raise MetadataError(
+                f"uiIndex {ui_index}: CONFIRMED requires HIGH or MEDIUM confidence"
+            )
+        if mask == 0:
+            raise MetadataError(
+                f"uiIndex {ui_index}: CONFIRMED requires a nonzero origin mask; "
+                "use MISSING_ORIGIN_BIT when the frozen mapping lacks the required state"
+            )
+
+    if status == "PROTOTYPE":
+        if confidence not in {"HIGH", "MEDIUM"}:
+            raise MetadataError(
+                f"uiIndex {ui_index}: PROTOTYPE requires HIGH or MEDIUM confidence"
+            )
+        if mask == 0:
+            raise MetadataError(
+                f"uiIndex {ui_index}: PROTOTYPE requires a researched nonzero origin mask"
+            )
+        if (start or end) and not notes:
+            raise MetadataError(
+                f"uiIndex {ui_index}: PROTOTYPE proxy/build years require explanatory notes"
+            )
 
 
 def read_manifest(path: Path) -> dict[int, dict[str, str]]:
@@ -138,6 +344,7 @@ def read_manifest(path: Path) -> dict[int, dict[str, str]]:
                 ) from exc
             if ui_index in rows:
                 raise MetadataError(f"duplicate manifest uiIndex {ui_index}")
+
             status = row["status"].strip()
             confidence = row["confidence"].strip()
             if status not in STATUSES:
@@ -146,6 +353,7 @@ def read_manifest(path: Path) -> dict[int, dict[str, str]]:
                 raise MetadataError(
                     f"uiIndex {ui_index}: invalid confidence {confidence!r}"
                 )
+
             start = parse_int(
                 row["production_year_start"], "production_year_start", ui_index, 0xFFFF
             )
@@ -155,17 +363,21 @@ def read_manifest(path: Path) -> dict[int, dict[str, str]]:
             mask = parse_int(
                 row["origin_mask_hex"], "origin_mask_hex", ui_index, 0xFFFFFFFFFFFFFFFF
             )
+            _codes, calculated_mask = parse_origin_codes(row["origin_codes"], ui_index)
+
             if start and end and end < start:
                 raise MetadataError(
                     f"uiIndex {ui_index}: production end {end} precedes start {start}"
                 )
-            if confidence == "LOW" and (start or end or mask):
-                raise MetadataError(
-                    f"uiIndex {ui_index}: LOW-confidence rows must remain zero-valued"
-                )
+
+            validate_row_semantics(
+                row, ui_index, start, end, mask, calculated_mask
+            )
+
             row["_start"] = str(start)
             row["_end"] = str(end)
             row["_mask"] = f"0x{mask:016X}"
+            row["_calculated_mask"] = f"0x{calculated_mask:016X}"
             rows[ui_index] = row
     return rows
 
@@ -192,13 +404,47 @@ def validate_coverage(
             "manifest rows are not current firearm/launcher targets: "
             + ", ".join(map(str, extra))
         )
+
     for ui_index in targets:
-        expected = manifest[ui_index]["xml_name"]
-        actual = str(items[ui_index]["name"])
-        if expected != actual:
+        row = manifest[ui_index]
+        item = items[ui_index]
+
+        expected_name = row["xml_name"]
+        actual_name = str(item["name"])
+        if expected_name != actual_name:
             raise MetadataError(
-                f"uiIndex {ui_index}: XML name {actual!r} != manifest xml_name {expected!r}"
+                f"uiIndex {ui_index}: XML name {actual_name!r} != manifest xml_name {expected_name!r}"
             )
+
+        actual_class = canonical_item_class(int(item["item_class"]))
+        manifest_class = row["item_class"].strip()
+        if manifest_class != actual_class:
+            raise MetadataError(
+                f"uiIndex {ui_index}: manifest item_class {manifest_class!r} "
+                f"!= XML classification {actual_class!r}"
+            )
+
+        status = row["status"].strip()
+        randomitem = int(item["randomitem"])
+        scifi = int(item["scifi"])
+
+        if randomitem and status != "RANDOM_WRAPPER":
+            raise MetadataError(
+                f"uiIndex {ui_index}: XML randomitem={randomitem} requires RANDOM_WRAPPER status"
+            )
+        if status == "RANDOM_WRAPPER" and not randomitem:
+            raise MetadataError(
+                f"uiIndex {ui_index}: RANDOM_WRAPPER status requires XML randomitem != 0"
+            )
+        if status == "FICTIONAL_SCIFI" and scifi != 1:
+            raise MetadataError(
+                f"uiIndex {ui_index}: FICTIONAL_SCIFI requires existing <SciFi>1</SciFi>"
+            )
+        if status == "FICTIONAL_UNFLAGGED" and scifi == 1:
+            raise MetadataError(
+                f"uiIndex {ui_index}: FICTIONAL_UNFLAGGED requires existing SciFi != 1"
+            )
+
     return targets
 
 
@@ -362,6 +608,7 @@ def main() -> int:
     else:
         args.xml.write_bytes(new_text.encode("utf-8"))
         print(f"updated {args.xml}")
+
     # Re-parse and verify what was actually written.
     written = args.xml.read_bytes().decode("utf-8-sig")
     written_items = read_items(written)
