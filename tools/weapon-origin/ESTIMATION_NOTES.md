@@ -60,7 +60,8 @@ The project is not intended to be a museum-grade firearms catalogue. When a JA2 
 | 1201 | SL8 RAS | GERMANY | 1998–0 | Treat SL8 RAS as a railed German HK SL8 configuration; inherit the base SL8's late-1998 production start. |
 | 1333 | AR57 11" | USA | 2008–0 | Treat 11-inch AR57 as a US AR57-family configuration; use the family-level 2008 production-era start. |
 | 1334 | AR57 6"-S | USA | 2008–0 | Treat 6-inch silenced AR57 as a US AR57-family/custom configuration; use the family-level 2008 production-era start. |
+| 779 | S&O Shorty | GERMANY | 1998–2002 | Resolved as the real Sommer & Ockenfuss Shorty. The dates are a gameplay-oriented proxy: documented 1998 public debut through the company's 2002 bankruptcy/closure, not confirmed serial-production endpoints. |
 
 ## Remaining ambiguous rows
 
-- **779 S&O Shorty:** Still genuinely opaque: JA2 'S&O Shorty' is a .300 WinMag straight-pull rifle, but no reliable manufacturer/model match was found. Leave runtime metadata zero until someone recognizes it.
+None.
