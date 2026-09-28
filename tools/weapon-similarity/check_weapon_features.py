@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import difflib
 import json
+import math
 import subprocess
 import sys
 import tempfile
@@ -41,7 +42,21 @@ def first_difference(expected, generated, path="$"):
                 return diff
         return None
 
-    # Python numeric equality intentionally treats 1 and 1.0 as equivalent.
+    if (
+        isinstance(expected, (int, float))
+        and not isinstance(expected, bool)
+        and isinstance(generated, (int, float))
+        and not isinstance(generated, bool)
+    ):
+        if not math.isclose(
+            float(expected),
+            float(generated),
+            rel_tol=1e-12,
+            abs_tol=1e-12,
+        ):
+            return path, expected, generated
+        return None
+
     if expected != generated:
         return path, expected, generated
     return None
@@ -68,7 +83,8 @@ def main() -> int:
 
         expected_data = json.loads(expected.read_text(encoding="utf-8"))
         generated_data = json.loads(generated.read_text(encoding="utf-8"))
-        if expected_data == generated_data:
+        diff_value = first_difference(expected_data, generated_data)
+        if diff_value is None:
             print("weapon feature snapshot is up to date")
             return 0
 
@@ -77,12 +93,10 @@ def main() -> int:
             "tools/weapon-similarity/extract_weapon_features.py",
             file=sys.stderr,
         )
-        diff_value = first_difference(expected_data, generated_data)
-        if diff_value is not None:
-            diff_path, expected_value, generated_value = diff_value
-            print(f"first semantic difference: {diff_path}", file=sys.stderr)
-            print(f"  expected:  {expected_value!r}", file=sys.stderr)
-            print(f"  generated: {generated_value!r}", file=sys.stderr)
+        diff_path, expected_value, generated_value = diff_value
+        print(f"first semantic difference: {diff_path}", file=sys.stderr)
+        print(f"  expected:  {expected_value!r}", file=sys.stderr)
+        print(f"  generated: {generated_value!r}", file=sys.stderr)
 
         old = expected.read_text(encoding="utf-8").splitlines()
         new = generated.read_text(encoding="utf-8").splitlines()
