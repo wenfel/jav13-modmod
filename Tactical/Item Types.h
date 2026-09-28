@@ -1091,6 +1091,10 @@ extern OBJECTTYPE gTempObject;
 // autofiretohitbonus,
 // bursttohitbonus
 
+#define WEAPON_HISTORICAL_PROTOTYPE         0x00000001
+#define WEAPON_HISTORICAL_FICTIONAL         0x00000002
+#define WEAPON_HISTORICAL_GENERIC_GAMEPLAY  0x00000004
+
 typedef struct
 {
 	CHAR16 szItemDesc[400];
@@ -1107,6 +1111,7 @@ typedef struct
 	FLAGS64 usItemFlag; // bitflags to store various item properties (better than introducing 64 BOOLEAN values). If I only had thought of this earlier....
 	FLAGS64 usItemFlag2; // bitflags to store various item properties
 	UINT64 ulWeaponOriginFlags;
+	UINT32 uiWeaponHistoricalStatusFlags;
 
 	UINT32 uiIndex;
 	UINT32 usItemClass;
