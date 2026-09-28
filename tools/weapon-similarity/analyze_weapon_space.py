@@ -311,8 +311,17 @@ def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
 
     return None
 
-def candidate_is_eligible(row: pd.Series, args: argparse.Namespace) -> bool:
-    if args.same_calibre and int(row["calibre"]) != int(args._target_calibre):
+def filter_is_eligible(
+    row: pd.Series,
+    args: argparse.Namespace,
+    *,
+    target_calibre: int | None = None,
+) -> bool:
+    if (
+        getattr(args, "same_calibre", False)
+        and target_calibre is not None
+        and int(row["calibre"]) != int(target_calibre)
+    ):
         return False
 
     if args.allowed_origin_mask is not None:
@@ -344,6 +353,52 @@ def candidate_is_eligible(row: pd.Series, args: argparse.Namespace) -> bool:
     return True
 
 
+def nearest_tier0_reference(
+    df: pd.DataFrame,
+    matrix: np.ndarray,
+) -> dict[str, np.ndarray]:
+    """Empirical best-neighbour distance distributions by weapon type."""
+    values: dict[str, list[float]] = {}
+
+    for target_pos, target in df.iterrows():
+        distances = []
+        for candidate_pos, candidate in df.iterrows():
+            if candidate_tier(target, candidate) != 0:
+                continue
+            delta = matrix[candidate_pos] - matrix[target_pos]
+            distances.append(float(np.sqrt(np.dot(delta, delta))))
+
+        if distances:
+            values.setdefault(target["weapon_type_name"], []).append(min(distances))
+
+    return {
+        weapon_type: np.sort(np.asarray(distances, dtype=float))
+        for weapon_type, distances in values.items()
+    }
+
+
+def distance_percentile(
+    reference: dict[str, np.ndarray],
+    weapon_type: str,
+    distance: float,
+) -> float:
+    values = reference.get(weapon_type)
+    if values is None or len(values) == 0:
+        return float("nan")
+    rank = np.searchsorted(values, distance, side="right")
+    return 100.0 * float(rank) / float(len(values))
+
+
+def distance_band(percentile: float) -> str:
+    if np.isnan(percentile):
+        return "unknown"
+    if percentile <= 75.0:
+        return "typical"
+    if percentile <= 95.0:
+        return "stretched"
+    return "far"
+
+
 def cmd_neighbors(
     payload: dict,
     df: pd.DataFrame,
@@ -355,10 +410,10 @@ def cmd_neighbors(
 
     target_pos = hit[0]
     target = df.loc[target_pos]
-    args._target_calibre = int(target["calibre"])
 
     weights = resolve_profile(payload, args.cth_system, args.overheating)
     matrix, features, scale = distance_matrix(df, weights)
+    reference = nearest_tier0_reference(df, matrix)
 
     records = []
     for pos, candidate in df.iterrows():
@@ -368,11 +423,20 @@ def cmd_neighbors(
         tier = candidate_tier(target, candidate)
         if tier is None or tier > args.max_tier:
             continue
-        if not candidate_is_eligible(candidate, args):
+        if not filter_is_eligible(
+            candidate,
+            args,
+            target_calibre=int(target["calibre"]),
+        ):
             continue
 
         delta = matrix[pos] - matrix[target_pos]
         distance = float(np.sqrt(np.dot(delta, delta)))
+        percentile = distance_percentile(
+            reference,
+            target["weapon_type_name"],
+            distance,
+        )
         records.append(
             {
                 "tier": tier,
@@ -381,6 +445,8 @@ def cmd_neighbors(
                 "weapon_type": candidate["weapon_type_name"],
                 "calibre": candidate["calibre_name"],
                 "distance": distance,
+                "distance_percentile": percentile,
+                "distance_band": distance_band(percentile),
             }
         )
 
@@ -396,6 +462,11 @@ def cmd_neighbors(
         "3-4 relax handedness; 5-8 allow fire-mode downgrade"
     )
     print("metric features:", ", ".join(features))
+    print(
+        "distance percentile compares this distance with unrestricted tier-0 "
+        "nearest-neighbour distances for the target weapon type"
+    )
+
     if result.empty:
         print("no eligible candidates")
         return 0
@@ -422,6 +493,121 @@ def cmd_neighbors(
     print(pd.DataFrame(details).to_string(index=False, float_format=lambda x: f"{x:.4f}"))
     return 0
 
+
+def cmd_coverage(
+    payload: dict,
+    df: pd.DataFrame,
+    args: argparse.Namespace,
+) -> int:
+    weights = resolve_profile(payload, args.cth_system, args.overheating)
+    matrix, features, _ = distance_matrix(df, weights)
+    reference = nearest_tier0_reference(df, matrix)
+
+    # Whether a weapon survives the external filter is independent of a target
+    # calibre constraint. Same-calibre, when requested, applies only while
+    # selecting a replacement for each removed target.
+    eligible_positions = [
+        pos
+        for pos, row in df.iterrows()
+        if filter_is_eligible(row, args, target_calibre=None)
+    ]
+    eligible_set = set(eligible_positions)
+    target_positions = [pos for pos in df.index if pos not in eligible_set]
+
+    print("metric features:", ", ".join(features))
+    print(f"eligible candidates: {len(eligible_positions)}/{len(df)}")
+    print(f"weapons requiring replacement: {len(target_positions)}")
+
+    if not target_positions:
+        print("current filter removes no weapons in this dataset")
+        return 0
+
+    selected = []
+    holes = []
+
+    for target_pos in target_positions:
+        target = df.loc[target_pos]
+        best: dict | None = None
+
+        for candidate_pos in eligible_positions:
+            candidate = df.loc[candidate_pos]
+
+            if (
+                getattr(args, "same_calibre", False)
+                and int(candidate["calibre"]) != int(target["calibre"])
+            ):
+                continue
+
+            tier = candidate_tier(target, candidate)
+            if tier is None or tier > args.max_tier:
+                continue
+
+            delta = matrix[candidate_pos] - matrix[target_pos]
+            distance = float(np.sqrt(np.dot(delta, delta)))
+
+            if (
+                best is None
+                or tier < best["tier"]
+                or (tier == best["tier"] and distance < best["distance"])
+            ):
+                percentile = distance_percentile(
+                    reference,
+                    target["weapon_type_name"],
+                    distance,
+                )
+                best = {
+                    "target_uiIndex": int(target["uiIndex"]),
+                    "target": target["name"],
+                    "candidate_uiIndex": int(candidate["uiIndex"]),
+                    "candidate": candidate["name"],
+                    "tier": tier,
+                    "distance": distance,
+                    "distance_percentile": percentile,
+                    "distance_band": distance_band(percentile),
+                }
+
+        if best is None:
+            holes.append(
+                {
+                    "uiIndex": int(target["uiIndex"]),
+                    "name": target["name"],
+                    "weapon_type": target["weapon_type_name"],
+                    "calibre": target["calibre_name"],
+                }
+            )
+        else:
+            selected.append(best)
+
+    result = pd.DataFrame(selected)
+    print("\nfirst available fallback tier:")
+    if result.empty:
+        print("  none")
+    else:
+        counts = result["tier"].value_counts().sort_index()
+        for tier in range(args.max_tier + 1):
+            if tier in counts:
+                print(f"  tier {tier}: {int(counts[tier])}")
+
+        print("\ndistance bands:")
+        bands = result["distance_band"].value_counts()
+        for band in ("typical", "stretched", "far", "unknown"):
+            if band in bands:
+                print(f"  {band}: {int(bands[band])}")
+
+        print("\ndistance summary:")
+        print(result["distance"].describe(percentiles=[.25, .5, .75, .9, .95]).to_string())
+
+        print("\n20 most stretched selected replacements:")
+        worst = result.sort_values(
+            ["distance_percentile", "tier", "distance"],
+            ascending=[False, False, False],
+        ).head(20)
+        print(worst.to_string(index=False, float_format=lambda x: f"{x:.3f}"))
+
+    print(f"\nunresolved targets: {len(holes)}")
+    if holes:
+        print(pd.DataFrame(holes).to_string(index=False))
+    return 0
 
 def cmd_pca(
     payload: dict,
@@ -589,6 +775,8 @@ def main() -> int:
 
     if args.command == "neighbors":
         return cmd_neighbors(payload, df, args)
+    if args.command == "coverage":
+        return cmd_coverage(payload, df, args)
     if args.command == "pca":
         return cmd_pca(payload, df, args)
     if args.command == "kmeans":
