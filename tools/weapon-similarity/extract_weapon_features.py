@@ -82,6 +82,7 @@ NUMERIC_WEAPON_FIELDS = (
     "HeavyGun",
     "NoSemiAuto",
     "EasyUnjam",
+    "fBurstOnlyByFanTheHammer",
 )
 
 NUMERIC_ITEM_FIELDS = (
@@ -329,6 +330,8 @@ def main() -> int:
         }
 
         shots_per_burst = parse_int(w.get("ubShotsPerBurst"))
+        fan_the_hammer_burst = bool(parse_int(w.get("fBurstOnlyByFanTheHammer")))
+        native_burst = shots_per_burst > 0 and not fan_the_hammer_burst
         auto_per_5ap = parse_number(w.get("bAutofireShotsPerFiveAP"))
         effective_auto = 0.0
         if auto_per_5ap > 0:
@@ -349,7 +352,8 @@ def main() -> int:
             "two_handed": bool(parse_int(item.get("TwoHanded"))),
             "heavy_gun": bool(parse_int(w.get("HeavyGun"))),
             "has_semi_auto": not bool(parse_int(w.get("NoSemiAuto"))),
-            "has_burst": shots_per_burst > 0,
+            "has_burst": native_burst,
+            "has_trait_gated_burst": fan_the_hammer_burst and shots_per_burst > 0,
             "has_autofire": auto_per_5ap > 0,
             # Store UINT64 bitmasks as decimal strings in JSON so consumers
             # implemented in languages with IEEE-754 numbers do not lose bits.
@@ -379,8 +383,10 @@ def main() -> int:
                 "aim_levels": parse_number(w.get("ubAimLevels")),
                 "handling": parse_number(w.get("Handling")) * handling_mod,
                 "magazine_capacity": parse_number(w.get("ubMagSize")),
-                "burst_size": float(shots_per_burst),
-                "burst_penalty": parse_number(w.get("ubBurstPenalty")),
+                "burst_size": float(shots_per_burst if native_burst else 0),
+                "burst_penalty": (
+                    parse_number(w.get("ubBurstPenalty")) if native_burst else 0.0
+                ),
                 "autofire_shots_per_5ap": effective_auto,
                 "autofire_penalty": parse_number(w.get("AutoPenalty")),
                 "recoil_x": effective_recoil_x,
