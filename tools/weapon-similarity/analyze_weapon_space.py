@@ -87,6 +87,29 @@ def add_profile_args(parser: argparse.ArgumentParser) -> None:
     )
 
 
+def add_filter_args(
+    parser: argparse.ArgumentParser,
+    *,
+    include_same_calibre: bool = False,
+) -> None:
+    if include_same_calibre:
+        parser.add_argument("--same-calibre", action="store_true")
+    parser.add_argument(
+        "--allowed-origin-mask",
+        type=lambda x: int(x, 0),
+        help="candidate must overlap this origin bitmask; accepts decimal or 0x...",
+    )
+    parser.add_argument("--allow-unknown-origin", action="store_true")
+    parser.add_argument("--year", type=int)
+    parser.add_argument(
+        "--exclude-historical-mask",
+        type=lambda x: int(x, 0),
+        default=0,
+        help="exclude candidates whose historical-status mask overlaps this value",
+    )
+    parser.add_argument("--exclude-scifi", action="store_true")
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument("dataset", type=Path)
@@ -111,22 +134,13 @@ def parse_args() -> argparse.Namespace:
     nn.add_argument("--index", type=int, required=True)
     nn.add_argument("--limit", type=int, default=10)
     nn.add_argument("--max-tier", type=int, choices=tuple(range(9)), default=8)
-    nn.add_argument("--same-calibre", action="store_true")
-    nn.add_argument(
-        "--allowed-origin-mask",
-        type=lambda x: int(x, 0),
-        help="candidate must overlap this origin bitmask; accepts decimal or 0x...",
-    )
-    nn.add_argument("--allow-unknown-origin", action="store_true")
-    nn.add_argument("--year", type=int)
-    nn.add_argument(
-        "--exclude-historical-mask",
-        type=lambda x: int(x, 0),
-        default=0,
-        help="exclude candidates whose historical-status mask overlaps this value",
-    )
-    nn.add_argument("--exclude-scifi", action="store_true")
+    add_filter_args(nn, include_same_calibre=True)
     add_profile_args(nn)
+
+    coverage = sub.add_parser("coverage")
+    coverage.add_argument("--max-tier", type=int, choices=tuple(range(9)), default=8)
+    add_filter_args(coverage, include_same_calibre=True)
+    add_profile_args(coverage)
 
     return p.parse_args()
 
