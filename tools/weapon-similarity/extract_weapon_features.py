@@ -186,6 +186,18 @@ def ini_float(values: dict[str, str], key: str, default: float = 1.0) -> float:
         return default
 
 
+def ini_bool(values: dict[str, str], key: str, default: bool = False) -> bool:
+    value = values.get(key.upper())
+    if value is None:
+        return default
+    normalized = value.strip().upper()
+    if normalized in {"TRUE", "1", "YES", "ON"}:
+        return True
+    if normalized in {"FALSE", "0", "NO", "OFF"}:
+        return False
+    return default
+
+
 def round_cpp_nearest(top: int, bottom: int) -> int:
     """Mirror the positive integer rounding in BaseAPsToShootOrStab."""
     if bottom <= 0:
@@ -268,6 +280,9 @@ def main() -> int:
         calibre = parse_int(w.get("ubCalibre"))
 
         suffix = TYPE_SUFFIX.get(weapon_type)
+        if suffix is None:
+            continue
+
         if is_firearm and suffix:
             range_type_mod = ini_float(item_settings, f"RANGE_{suffix}_MODIFIER", 1.0)
             damage_type_mod = ini_float(item_settings, f"DAMAGE_{suffix}_MODIFIER", 1.0)
@@ -299,10 +314,11 @@ def main() -> int:
         }
         raw_item = {
             field: (
-                parse_int(item.get(field))
+                str(parse_int(item.get(field)))
+                if field == "WeaponOriginFlags"
+                else parse_int(item.get(field))
                 if field in {
                     "usItemClass",
-                    "WeaponOriginFlags",
                     "WeaponHistoricalStatusFlags",
                     "ProductionYearStart",
                     "ProductionYearEnd",
@@ -386,13 +402,19 @@ def main() -> int:
         rows.append(row)
 
     payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "source": {
             "weapons_xml": str(weapons_path.relative_to(repo)),
             "items_xml": str(items_path.relative_to(repo)),
             "ammo_strings_xml": str(ammo_path.relative_to(repo)),
             "item_settings_ini": str(item_settings_path.relative_to(repo)),
             "ja2_options_ini": str(options_path.relative_to(repo)),
+        },
+        "settings": {
+            "ncth": ini_bool(options, "NCTH", False),
+            "overheating": ini_bool(options, "OVERHEATING", False),
+            "gun_damage_modifier": global_damage_mod,
+            "gun_range_modifier": global_range_mod,
         },
         "reference_scenario": {
             "full_ap": args.reference_full_ap,
@@ -405,6 +427,13 @@ def main() -> int:
             "weapon_rows": len(rows),
             "firearms": sum(1 for r in rows if r["is_firearm"]),
             "launchers": sum(1 for r in rows if r["is_launcher"]),
+        },
+        "notes": {
+            "origin_flags": "Decimal string to preserve the full UINT64 mask exactly in JSON.",
+            "population": (
+                "Conventional firearm weapon types 1..8 only; special IC_GUN records "
+                "such as creature spit/tank cannon/extinguisher are excluded."
+            ),
         },
         "weapons": rows,
     }
