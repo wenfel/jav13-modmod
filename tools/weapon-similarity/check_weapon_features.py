@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import difflib
+import json
 import subprocess
 import sys
 import tempfile
@@ -29,9 +30,9 @@ def main() -> int:
             check=True,
         )
 
-        expected_bytes = expected.read_bytes()
-        generated_bytes = generated.read_bytes()
-        if expected_bytes == generated_bytes:
+        expected_data = json.loads(expected.read_text(encoding="utf-8"))
+        generated_data = json.loads(generated.read_text(encoding="utf-8"))
+        if expected_data == generated_data:
             print("weapon feature snapshot is up to date")
             return 0
 
