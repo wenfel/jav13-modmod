@@ -119,6 +119,7 @@ itemStartElementHandle(void *userData, const XML_Char *name, const XML_Char **at
 				strcmp(name, "ProductionYearStart") == 0 ||
 				strcmp(name, "ProductionYearEnd") == 0 ||
 				strcmp(name, "WeaponOriginFlags") == 0 ||
+				strcmp(name, "WeaponHistoricalStatusFlags") == 0 ||
 				strcmp(name, "nasAttachmentClass") == 0 ||
 				strcmp(name, "nasLayoutClass") == 0 ||
 				strcmp(name, "AvailableAttachmentPoint") == 0 ||
@@ -522,6 +523,11 @@ itemEndElementHandle(void *userData, const XML_Char *name)
 		{
 			pData->curElement = ELEMENT;
 			pData->curItem.ulWeaponOriginFlags = (UINT64) strtoull(pData->szCharData, NULL, 0);
+		}
+		else if(strcmp(name, "WeaponHistoricalStatusFlags") == 0)
+		{
+			pData->curElement = ELEMENT;
+			pData->curItem.uiWeaponHistoricalStatusFlags = (UINT32) strtoul(pData->szCharData, NULL, 0);
 		}
 		else if(strcmp(name, "nasAttachmentClass") == 0)
 		{
@@ -2207,6 +2213,7 @@ BOOLEAN WriteItemStats()
 			FilePrintf(hFile,"\t\t<ProductionYearStart>%u</ProductionYearStart>\r\n",		(unsigned int) Item[cnt].usProductionYearStart);
 			FilePrintf(hFile,"\t\t<ProductionYearEnd>%u</ProductionYearEnd>\r\n",			(unsigned int) Item[cnt].usProductionYearEnd);
 			FilePrintf(hFile,"\t\t<WeaponOriginFlags>%" PRIu64 "</WeaponOriginFlags>\r\n",		(uint64_t) Item[cnt].ulWeaponOriginFlags);
+			FilePrintf(hFile,"\t\t<WeaponHistoricalStatusFlags>%u</WeaponHistoricalStatusFlags>\r\n",	(unsigned int) Item[cnt].uiWeaponHistoricalStatusFlags);
 			FilePrintf(hFile,"\t\t<nasAttachmentClass>%d</nasAttachmentClass>\r\n",			Item[cnt].nasAttachmentClass);
 			FilePrintf(hFile,"\t\t<nasLayoutClass>%d</nasLayoutClass>\r\n",					Item[cnt].nasLayoutClass);
 			FilePrintf(hFile,"\t\t<ubClassIndex>%d</ubClassIndex>\r\n",						Item[cnt].ubClassIndex);
