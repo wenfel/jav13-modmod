@@ -39,6 +39,7 @@ CORE_WEIGHTS = {
 }
 
 RAPID_FIRE_WEIGHTS = {
+    "burst_ap": 0.65,
     "burst_size": 0.35,
     "burst_penalty": 0.60,
     "autofire_shots_per_5ap": 0.60,
@@ -47,6 +48,8 @@ RAPID_FIRE_WEIGHTS = {
 
 OCTH_WEIGHTS = {
     "octh_accuracy": 0.90,
+    "octh_to_hit_bonus": 0.45,
+    "octh_aim_bonus": 0.35,
 }
 
 NCTH_WEIGHTS = {
@@ -73,6 +76,12 @@ TYPE_ADJACENCY = {
 
 
 def add_profile_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--feature-layer",
+        choices=("base", "effective_intrinsic"),
+        default="effective_intrinsic",
+        help="use weapon-only base features or base plus inherent item modifiers",
+    )
     parser.add_argument(
         "--cth-system",
         choices=("active", "octh", "ncth", "both"),
@@ -145,8 +154,16 @@ def parse_args() -> argparse.Namespace:
     return p.parse_args()
 
 
-def load_dataset(path: Path) -> tuple[dict, pd.DataFrame]:
+def load_dataset(
+    path: Path,
+    feature_layer: str,
+) -> tuple[dict, pd.DataFrame]:
     payload = json.loads(path.read_text(encoding="utf-8"))
+    feature_key = (
+        "base_features"
+        if feature_layer == "base"
+        else "effective_intrinsic_features"
+    )
     rows = []
 
     for w in payload["weapons"]:
@@ -174,7 +191,7 @@ def load_dataset(path: Path) -> tuple[dict, pd.DataFrame]:
             "production_year_end": int(w["production_year_end"]),
             "scifi": bool(w["scifi"]),
         }
-        row.update({k: float(v) for k, v in w["features"].items()})
+        row.update({k: float(v) for k, v in w[feature_key].items()})
         rows.append(row)
 
     return payload, pd.DataFrame(rows)
@@ -461,6 +478,7 @@ def cmd_neighbors(
         "tiers: 0 exact; 1 same-type capability; 2 adjacent-type capability; "
         "3-4 relax handedness; 5-8 allow fire-mode downgrade"
     )
+    print(f"feature layer: {args.feature_layer}")
     print("metric features:", ", ".join(features))
     print(
         "distance percentile compares this distance with unrestricted tier-0 "
@@ -621,6 +639,7 @@ def cmd_pca(
     pca = PCA(n_components=n_components)
     scores = pca.fit_transform(matrix)
 
+    print(f"feature layer: {args.feature_layer}")
     print("PCA uses robust scaling but no replacement weights.")
     print("features:", ", ".join(features))
     print("explained variance ratio:")
@@ -663,6 +682,7 @@ def cmd_kmeans(
     out["cluster"] = labels
     out = out.sort_values(["cluster", "weapon_type_name", "uiIndex"])
 
+    print(f"feature layer: {args.feature_layer}")
     print("k-means uses robust scaling but no replacement weights.")
     print("features:", ", ".join(features))
     print(f"k={args.k} silhouette={sil:.4f} inertia={km.inertia_:.2f}")
@@ -704,6 +724,7 @@ def cmd_diagnostics(
     matrix, features = analysis_matrix(df, weights)
 
     print(f"weapons={len(df)}")
+    print(f"feature layer: {args.feature_layer}")
     print("active exploratory features:", ", ".join(features))
     print("dataset settings:", json.dumps(payload.get("settings", {}), sort_keys=True))
 
@@ -771,7 +792,7 @@ def cmd_diagnostics(
 
 def main() -> int:
     args = parse_args()
-    payload, df = load_dataset(args.dataset)
+    payload, df = load_dataset(args.dataset, args.feature_layer)
 
     if args.command == "neighbors":
         return cmd_neighbors(payload, df, args)
