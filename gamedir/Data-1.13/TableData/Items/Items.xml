@@ -279,9 +279,9 @@
 		<szBRName>Glock 17</szBRName>
 		<szBRDesc>Even though most of this Austrian pistol's parts are plastic, it will get detected by airport x-ray machines. The simple design of this recoil-operated self-loader contains only 32 components and is a common army issue worldwide.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>1998</ProductionYearStart>
-		<ProductionYearEnd>2002</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
+		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearEnd>0</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24443,9 +24443,9 @@
 		<szBRName>S&amp;O Shorty</szBRName>
 		<szBRDesc>The S&amp;O Shorty is a straight-pull bolt-action bullpup design with a very unique action: To chamber a new round, you pull the pistol grip. It's made for hunting, despite the futuristic look. And if you're hunting the most dangerous animal of all, then it can also act as a mid-range sniper rifle.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1998</ProductionYearStart>
+		<ProductionYearEnd>2002</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>779</ubClassIndex>
 		<ubCursor>3</ubCursor>
