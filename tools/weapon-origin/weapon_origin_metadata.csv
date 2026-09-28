@@ -3,7 +3,7 @@ uiIndex,xml_name,item_class,normalized_identity,production_year_start,production
 2,Glock 18,IC_GUN,Glock 18,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 3,Beretta 92F,IC_GUN,Beretta 92F,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 4,Beretta 93R,IC_GUN,Beretta 93R,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-5,.38 Special,IC_GUN,.38 Special,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+5,.38 Special,IC_GUN,.38 Special,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic '.38 Special' police revolver row; repository data does not identify a specific manufactured model/variant.
 6,Barracuda,IC_GUN,Barracuda,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 7,Desert Eagle .357,IC_GUN,Desert Eagle .357,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 8,M1911A1,IC_GUN,Colt M1911A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
@@ -37,19 +37,19 @@ uiIndex,xml_name,item_class,normalized_identity,production_year_start,production
 36,HK 21E,IC_GUN,HK 21E,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 40,M79,IC_LAUNCHER,M79 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 41,Mortar,IC_LAUNCHER,M224 Mortar,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-48,Queen Spit,IC_GUN,Queen Creature Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-50,Talon,IC_LAUNCHER,Talon Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+48,Queen Spit,IC_GUN,Queen Creature Spit,0,0,,0x0000000000000000,FICTIONAL_UNFLAGGED,HIGH,,,Repository data identifies this row as a creature attack rather than a manufactured weapon; existing SciFi flag is 0 and is intentionally unchanged.
+50,Talon,IC_LAUNCHER,Talon Grenade Launcher,0,0,,0x0000000000000000,FICTIONAL_UNFLAGGED,HIGH,,,Repository description identifies the Talon as a game-specific US launcher that is merely a carbon copy of the real M203PI; no distinct historical manufactured Talon variant is established.
 51,LAW,IC_LAUNCHER,M72A4 LAW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-55,Rocket Rifle,IC_GUN,Rocket Rifle,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-56,Automag III,IC_GUN,Automag III Custom,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-57,Infant Spit,IC_GUN,Infant Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-58,Young Male Spit,IC_GUN,Young Male Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-59,Old Male Spit,IC_GUN,Old Male Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-60,Cannon,IC_GUN,Tank Cannon,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-61,Dart Gun,IC_GUN,Dart Gun,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-63,Flamethrower,IC_GUN,Flamethrower,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-65,A. R. Rifle,IC_GUN,Auto Rocket Rifle,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-66,Hartford 6,IC_GUN,Modified EMF Hartford 6 Shooter,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+55,Rocket Rifle,IC_GUN,Rocket Rifle,0,0,,0x0000000000000000,FICTIONAL_SCIFI,HIGH,,,Repository data presents this as JA2 rocket-rifle technology; existing SciFi=1 is retained and no fictional origin bit is invented.
+56,Automag III,IC_GUN,Automag III Custom,0,0,,0x0000000000000000,FICTIONAL_UNFLAGGED,HIGH,,,"Repository data describes a game-specific custom Automag III modified to fire .50 Beowulf and engraved 'Big Bertha'; treat the represented custom variant as fictional/unverified, not the real Automag III family."
+57,Infant Spit,IC_GUN,Infant Spit,0,0,,0x0000000000000000,FICTIONAL_UNFLAGGED,HIGH,,,Repository data identifies this row as a creature attack rather than a manufactured weapon; existing SciFi flag is 0 and is intentionally unchanged.
+58,Young Male Spit,IC_GUN,Young Male Spit,0,0,,0x0000000000000000,FICTIONAL_UNFLAGGED,HIGH,,,Repository data identifies this row as a creature attack rather than a manufactured weapon; existing SciFi flag is 0 and is intentionally unchanged.
+59,Old Male Spit,IC_GUN,Old Male Spit,0,0,,0x0000000000000000,FICTIONAL_UNFLAGGED,HIGH,,,Repository data identifies this row as a creature attack rather than a manufactured weapon; existing SciFi flag is 0 and is intentionally unchanged.
+60,Cannon,IC_GUN,Tank Cannon,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic tank-cannon gameplay row with no specific manufactured cannon variant identified.
+61,Dart Gun,IC_GUN,Dart Gun,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic dart-gun gameplay row with no specific manufactured weapon variant identified.
+63,Flamethrower,IC_GUN,Flamethrower,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic portable flamethrower row; repository data names no model or manufacturer. Existing SciFi=1 is unchanged.
+65,A. R. Rifle,IC_GUN,Auto Rocket Rifle,0,0,,0x0000000000000000,FICTIONAL_SCIFI,HIGH,,,Repository data presents this as JA2 rocket-rifle technology; existing SciFi=1 is retained and no fictional origin bit is invented.
+66,Hartford 6,IC_GUN,Modified EMF Hartford 6 Shooter,0,0,,0x0000000000000000,FICTIONAL_UNFLAGGED,HIGH,,,Repository data describes a custom EMF Hartford revolver modified specifically for JA2 character Tex Colburn; no distinct historical production variant is represented.
 67,M-950,IC_GUN,Calico M-950,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 68,M-900,IC_GUN,Calico M-900,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 69,M-960A,IC_GUN,Calico M-960A,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
@@ -185,7 +185,7 @@ uiIndex,xml_name,item_class,normalized_identity,production_year_start,production
 708,SA vz.58,IC_GUN,SA vz.58,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 709,TRG 22,IC_GUN,Sako TRG 22,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 710,TRG 42,IC_GUN,Sako TRG 42,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-711,Sawed-Off,IC_GUN,Sawed-Off Shotgun,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+711,Sawed-Off,IC_GUN,Sawed-Off Shotgun,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,"Generic sawed-off shotgun row; no base shotgun model/manufacturer is identified, so no specific production history can be assigned."
 712,SG542,IC_GUN,SIG SG542,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 713,SG550,IC_GUN,SIG SG550,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 714,SG551,IC_GUN,SIG SG551 SWAT,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
@@ -281,14 +281,14 @@ uiIndex,xml_name,item_class,normalized_identity,production_year_start,production
 890,Forty-Nine,IC_GUN,FN Forty-Nine,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 891,FNP-45,IC_GUN,FN FNP-45,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 892,S&W M29,IC_GUN,Smith & Wesson M29,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-893,M29 SATAN,IC_GUN,M29 SATAN,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+893,M29 SATAN,IC_GUN,M29 SATAN,0,0,,0x0000000000000000,FICTIONAL_SCIFI,HIGH,,,Repository data presents M29 SATAN as a game-specific/science-fiction variant; existing SciFi=1 is retained and no fictional origin bit is invented.
 894,MR-73,IC_GUN,Manurhin MR-73,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 896,M14 EBR,IC_GUN,M14 EBR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 897,M21 EBR,IC_GUN,M21 EBR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 898,FP6,IC_GUN,Fabarm FP6,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 899,SDASS,IC_GUN,Fabarm SDASS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 900,Pro II,IC_GUN,Kimber Eclipse Pro II,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-901,Commando Mortar,IC_LAUNCHER,Commando Mortar,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+901,Commando Mortar,IC_LAUNCHER,Commando Mortar,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic 'Commando Mortar' gameplay row; repository data supplies 60 mm characteristics but no manufacturer/model sufficient to identify one historical variant.
 902,M203PI,IC_LAUNCHER,Colt M203PI Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 903,GM-94,IC_LAUNCHER,GM-94 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 904,GP-30,IC_LAUNCHER,GP-30 Obuvka Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
@@ -338,11 +338,11 @@ uiIndex,xml_name,item_class,normalized_identity,production_year_start,production
 1332,"AR57 16""",IC_GUN,"AR57 16""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 1333,"AR57 11""",IC_GUN,"AR57 11""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 1334,"AR57 6""-S",IC_GUN,"AR57 6""-Silenced",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-1352,Hand Mortar,IC_GUN,Hand Mortar,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1352,Hand Mortar,IC_GUN,Hand Mortar,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic 18th-century hand mortar row; 'JOURSON' engraving is insufficient to establish a specific serial-production variant.
 1522,KAC Masterkey,IC_GUN,KAC Masterkey,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-1581,Rifle Grenade Device,IC_LAUNCHER,Rifle Grenade Device,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-1627,Pepper Spray,IC_GUN,Pepper Spray,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1581,Rifle Grenade Device,IC_LAUNCHER,Rifle Grenade Device,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic rifle-grenade device gameplay row rather than a specific manufactured launcher model.
+1627,Pepper Spray,IC_GUN,Pepper Spray,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,Generic pepper-spray gameplay row rather than a specific firearm/launcher variant.
 1736,Strela-2,IC_LAUNCHER,Strela-2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
-1761,Extinguisher,IC_GUN,Fire Extinguisher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1761,Extinguisher,IC_GUN,Fire Extinguisher,0,0,,0x0000000000000000,GENERIC_GAMEPLAY_ITEM,HIGH,,,"Generic fire-extinguisher gameplay row classified as a gun by the engine, not a historically manufactured weapon variant."
 1762,PS90,IC_GUN,FN PS90,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
 1775,M82A1,IC_GUN,Barrett M82A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
