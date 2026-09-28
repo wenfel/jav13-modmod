@@ -7,6 +7,7 @@ This is an offline analysis tool. It does not change game XML or runtime behavio
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import xml.etree.ElementTree as ET
@@ -101,6 +102,9 @@ NUMERIC_ITEM_FIELDS = (
     "ProductionYearStart",
     "ProductionYearEnd",
     "BR_ROF",
+    "ToHitBonus",
+    "AimBonus",
+    "MinRangeForAimBonus",
     "RangeBonus",
     "PercentRangeBonus",
     "DamageBonus",
@@ -210,13 +214,40 @@ def reference_shot_ap(
     shots_per_4_turns: float,
     full_ap: int,
     aim_skill: int,
+    percent_ap_reduction: int = 0,
 ) -> int:
-    # Tactical/Points.cpp, BaseAPsToShootOrStabNoModifier:
-    # Top = 8 * bAPs * 100
-    # Bottom = (100 + bAimSkill) * rof
-    # result = (Top + Bottom / 2) / Bottom
+    """Mirror BaseAPsToShootOrStab(NoModifier) for a reference soldier."""
     bottom = int((100 + aim_skill) * shots_per_4_turns)
-    return round_cpp_nearest(8 * full_ap * 100, bottom)
+    reduction = max(0, min(100, percent_ap_reduction))
+    return round_cpp_nearest(8 * full_ap * (100 - reduction), bottom)
+
+
+def reference_burst_ap(
+    burst_ap: float,
+    burst_ap_modifier: float,
+    full_ap: int,
+    ap_maximum: int,
+    percent_ap_reduction: int = 0,
+    percent_burst_reduction: int = 0,
+) -> int:
+    """Mirror CalcAPsToBurst for an unmodified 100%-status weapon object."""
+    modified = int(burst_ap * burst_ap_modifier)
+    if modified <= 0 or ap_maximum <= 0:
+        return 0
+
+    aps = (modified * full_ap + (ap_maximum - 1)) // ap_maximum
+    aps = aps * max(0, 100 - percent_ap_reduction) // 100
+    aps = max(aps, (modified + 1) // 2)
+    aps = aps * max(0, 100 - percent_burst_reduction) // 100
+    return max(0, min(ap_maximum, aps))
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def read_ammo_names(path: Path) -> dict[int, str]:
@@ -238,6 +269,7 @@ def main() -> int:
     ammo_path = repo / "gamedir/Data-1.13/TableData/Items/AmmoStrings.xml"
     item_settings_path = repo / "gamedir/Data-1.13/Item_Settings.ini"
     options_path = repo / "gamedir/Data-1.13/Ja2_Options.INI"
+    apbp_path = repo / "gamedir/Data-1.13/APBPConstants.ini"
 
     weapon_root = ET.parse(weapons_path).getroot()
     item_root = ET.parse(items_path).getroot()
@@ -253,10 +285,12 @@ def main() -> int:
     ammo_names = read_ammo_names(ammo_path)
     item_settings = load_ini(item_settings_path)
     options = load_ini(options_path)
+    apbp = load_ini(apbp_path)
 
     global_damage_mod = ini_float(options, "GUN_DAMAGE_MODIFIER", 100.0) / 100.0
     global_range_mod = ini_float(options, "GUN_RANGE_MODIFIER", 100.0) / 100.0
     global_auto_bonus = ini_float(options, "AUTOFIRE_BULLETS_PER_5AP_MODIFIER", 0.0)
+    ap_maximum = int(ini_float(apbp, "AP_MAXIMUM", 100.0))
 
     rows: list[dict[str, Any]] = []
 
@@ -293,9 +327,11 @@ def main() -> int:
             recoil_x_mod = ini_float(item_settings, f"RECOILX_{suffix}_MODIFIER", 1.0)
             recoil_y_mod = ini_float(item_settings, f"RECOILY_{suffix}_MODIFIER", 1.0)
             af_mod = ini_float(item_settings, f"AF_SP5AP_{suffix}_MODIFIER", 1.0)
+            burst_ap_mod = ini_float(item_settings, f"BURST_AP_{suffix}_MODIFIER", 1.0)
         else:
             range_type_mod = damage_type_mod = sp4t_mod = reload_mod = 1.0
             handling_mod = recoil_x_mod = recoil_y_mod = af_mod = 1.0
+            burst_ap_mod = 1.0
 
         raw_sp4t = parse_number(w.get("ubShotsPer4Turns"))
         effective_sp4t = raw_sp4t * sp4t_mod
@@ -337,6 +373,80 @@ def main() -> int:
         if auto_per_5ap > 0:
             effective_auto = max(1.0, auto_per_5ap * af_mod + global_auto_bonus)
 
+        percent_ap = parse_int(item.get("PercentAPReduction"))
+        percent_ready = parse_int(item.get("PercentReadyTimeAPReduction"))
+        percent_reload = parse_int(item.get("PercentReloadTimeAPReduction"))
+        percent_burst_ap = parse_int(item.get("PercentBurstFireAPReduction"))
+        burst_to_hit = parse_int(item.get("BurstToHitBonus"))
+        auto_to_hit = parse_int(item.get("AutoFireToHitBonus"))
+        item_burst_size = parse_int(item.get("BurstSizeBonus"))
+        item_mag_size = parse_int(item.get("MagSizeBonus"))
+        item_rate_bonus = parse_number(item.get("RateOfFireBonus"))
+        item_to_hit = parse_number(item.get("ToHitBonus"))
+        item_aim_bonus = parse_number(item.get("AimBonus"))
+
+        base_burst_size = float(shots_per_burst if native_burst else 0)
+        effective_burst_size = (
+            base_burst_size + item_burst_size if native_burst else 0.0
+        )
+        base_burst_penalty = (
+            parse_number(w.get("ubBurstPenalty")) if native_burst else 0.0
+        )
+        effective_burst_penalty = (
+            max(0.0, base_burst_penalty - burst_to_hit) if native_burst else 0.0
+        )
+        base_auto_penalty = parse_number(w.get("AutoPenalty"))
+        effective_auto_penalty = (
+            max(0.0, base_auto_penalty - auto_to_hit)
+            if auto_per_5ap > 0
+            else 0.0
+        )
+
+        base_shot_ap = reference_shot_ap(
+            effective_sp4t,
+            args.reference_full_ap,
+            args.reference_aim_skill,
+        )
+        intrinsic_shot_ap = reference_shot_ap(
+            effective_sp4t + item_rate_bonus,
+            args.reference_full_ap,
+            args.reference_aim_skill,
+            percent_ap,
+        )
+
+        base_ready_ap = parse_int(w.get("ubReadyTime"))
+        intrinsic_ready_ap = (
+            base_ready_ap * max(0, 100 - percent_ready) // 100
+        )
+
+        base_reload_ap = parse_number(w.get("APsToReload")) * reload_mod
+        intrinsic_reload_ap = (
+            base_reload_ap * max(0, 100 - percent_reload) / 100.0
+        )
+
+        base_burst_ap = (
+            reference_burst_ap(
+                parse_number(w.get("bBurstAP")),
+                burst_ap_mod,
+                args.reference_full_ap,
+                ap_maximum,
+            )
+            if native_burst
+            else 0
+        )
+        intrinsic_burst_ap = (
+            reference_burst_ap(
+                parse_number(w.get("bBurstAP")),
+                burst_ap_mod,
+                args.reference_full_ap,
+                ap_maximum,
+                percent_ap,
+                percent_burst_ap,
+            )
+            if native_burst
+            else 0
+        )
+
         row = {
             "uiIndex": ui_index,
             "name": item.get("szItemName") or w.get("szWeaponName") or str(ui_index),
@@ -366,32 +476,71 @@ def main() -> int:
                 "weapon": raw_weapon,
                 "item": raw_item,
             },
-            "features": {
-                # Deterministic baseline values with no ammo/attachment/status bonuses.
+            "base_features": {
+                # Weapon + global/type INI baseline, before inherent item modifiers.
                 "damage": raw_damage * global_damage_mod * damage_type_mod,
                 "range": raw_range * global_range_mod * range_type_mod,
                 "shots_per_4_turns": effective_sp4t,
-                "reference_shot_ap": reference_shot_ap(
-                    effective_sp4t,
-                    args.reference_full_ap,
-                    args.reference_aim_skill,
-                ),
-                "ready_ap": parse_number(w.get("ubReadyTime")),
-                "reload_ap": parse_number(w.get("APsToReload")) * reload_mod,
+                "reference_shot_ap": base_shot_ap,
+                "ready_ap": base_ready_ap,
+                "reload_ap": base_reload_ap,
+                "burst_ap": base_burst_ap,
                 "octh_accuracy": parse_number(w.get("bAccuracy")),
+                "octh_to_hit_bonus": 0.0,
+                "octh_aim_bonus": 0.0,
                 "ncth_accuracy": parse_number(w.get("nAccuracy")),
                 "aim_levels": parse_number(w.get("ubAimLevels")),
                 "handling": parse_number(w.get("Handling")) * handling_mod,
                 "magazine_capacity": parse_number(w.get("ubMagSize")),
-                "burst_size": float(shots_per_burst if native_burst else 0),
-                "burst_penalty": (
-                    parse_number(w.get("ubBurstPenalty")) if native_burst else 0.0
-                ),
+                "burst_size": base_burst_size,
+                "burst_penalty": base_burst_penalty,
                 "autofire_shots_per_5ap": effective_auto,
-                "autofire_penalty": parse_number(w.get("AutoPenalty")),
+                "autofire_penalty": (
+                    base_auto_penalty if auto_per_5ap > 0 else 0.0
+                ),
                 "recoil_x": effective_recoil_x,
                 "recoil_y": effective_recoil_y,
-                "recoil_magnitude": math.hypot(effective_recoil_x, effective_recoil_y),
+                "recoil_magnitude": math.hypot(
+                    effective_recoil_x, effective_recoil_y
+                ),
+                "heat_shots_to_jam_threshold": (
+                    jam_threshold / heat_per_shot if heat_per_shot > 0 else 0.0
+                ),
+                "heat_shots_to_damage_threshold": (
+                    damage_threshold / heat_per_shot if heat_per_shot > 0 else 0.0
+                ),
+                "weight": parse_number(item.get("ubWeight")),
+                "item_size": parse_number(item.get("ItemSize")),
+                "reliability": parse_number(item.get("bReliability")),
+                "repair_ease": parse_number(item.get("bRepairEase")),
+                "coolness": parse_number(item.get("ubCoolness")),
+            },
+            "effective_intrinsic_features": {
+                # Base features plus the weapon item's own 100%-status modifiers.
+                # No ammo, attachments, soldier traits, stance, condition loss, etc.
+                "damage": raw_damage * global_damage_mod * damage_type_mod,
+                "range": raw_range * global_range_mod * range_type_mod,
+                "shots_per_4_turns": effective_sp4t + item_rate_bonus,
+                "reference_shot_ap": intrinsic_shot_ap,
+                "ready_ap": intrinsic_ready_ap,
+                "reload_ap": intrinsic_reload_ap,
+                "burst_ap": intrinsic_burst_ap,
+                "octh_accuracy": parse_number(w.get("bAccuracy")),
+                "octh_to_hit_bonus": item_to_hit,
+                "octh_aim_bonus": item_aim_bonus,
+                "ncth_accuracy": parse_number(w.get("nAccuracy")),
+                "aim_levels": parse_number(w.get("ubAimLevels")),
+                "handling": parse_number(w.get("Handling")) * handling_mod,
+                "magazine_capacity": parse_number(w.get("ubMagSize")) + item_mag_size,
+                "burst_size": effective_burst_size,
+                "burst_penalty": effective_burst_penalty,
+                "autofire_shots_per_5ap": effective_auto,
+                "autofire_penalty": effective_auto_penalty,
+                "recoil_x": effective_recoil_x,
+                "recoil_y": effective_recoil_y,
+                "recoil_magnitude": math.hypot(
+                    effective_recoil_x, effective_recoil_y
+                ),
                 "heat_shots_to_jam_threshold": (
                     jam_threshold / heat_per_shot if heat_per_shot > 0 else 0.0
                 ),
@@ -408,26 +557,41 @@ def main() -> int:
         rows.append(row)
 
     payload = {
-        "schema_version": 2,
+        "schema_version": 3,
         "source": {
             "weapons_xml": str(weapons_path.relative_to(repo)),
             "items_xml": str(items_path.relative_to(repo)),
             "ammo_strings_xml": str(ammo_path.relative_to(repo)),
             "item_settings_ini": str(item_settings_path.relative_to(repo)),
             "ja2_options_ini": str(options_path.relative_to(repo)),
+            "apbp_constants_ini": str(apbp_path.relative_to(repo)),
+            "sha256": {
+                str(items_path.relative_to(repo)): sha256_file(items_path),
+                str(weapons_path.relative_to(repo)): sha256_file(weapons_path),
+                str(ammo_path.relative_to(repo)): sha256_file(ammo_path),
+                str(item_settings_path.relative_to(repo)): sha256_file(item_settings_path),
+                str(options_path.relative_to(repo)): sha256_file(options_path),
+                str(apbp_path.relative_to(repo)): sha256_file(apbp_path),
+            },
         },
         "settings": {
             "ncth": ini_bool(options, "NCTH", False),
             "overheating": ini_bool(options, "OVERHEATING", False),
             "gun_damage_modifier": global_damage_mod,
             "gun_range_modifier": global_range_mod,
+            "scope_modes": ini_bool(options, "USE_SCOPE_MODES", False),
+            "ap_maximum": ap_maximum,
         },
         "reference_scenario": {
             "full_ap": args.reference_full_ap,
             "aim_skill": args.reference_aim_skill,
             "attachments": "none",
             "ammo_modifiers": "none",
-            "weapon_status": "baseline",
+            "weapon_status": 100,
+            "intrinsic_layer": (
+                "weapon item at 100% status; no ammo, attachments, traits, stance, "
+                "or other soldier/target context"
+            ),
         },
         "counts": {
             "weapon_rows": len(rows),
@@ -439,6 +603,11 @@ def main() -> int:
             "population": (
                 "Conventional firearm weapon types 1..8 only; special IC_GUN records "
                 "such as creature spit/tank cannon/extinguisher are excluded."
+            ),
+            "feature_layers": (
+                "base_features are weapon + INI baseline before item modifiers; "
+                "effective_intrinsic_features additionally apply the weapon item's "
+                "own modifiers at 100% status."
             ),
         },
         "weapons": rows,
