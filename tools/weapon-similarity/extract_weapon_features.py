@@ -255,6 +255,14 @@ def main() -> int:
         item_class = parse_int(item.get("usItemClass"))
         is_firearm = bool(item_class & IC_GUN)
         is_launcher = bool(item_class & IC_LAUNCHER)
+
+        # The present metric is calibrated for firearms only. Launchers, melee
+        # attacks and monster/utility weapon records have different mechanics
+        # and should receive separate feature models rather than being forced
+        # into the same Euclidean space.
+        if not is_firearm:
+            continue
+
         weapon_type = parse_int(w.get("ubWeaponType"))
         weapon_class = parse_int(w.get("ubWeaponClass"))
         calibre = parse_int(w.get("ubCalibre"))
@@ -327,7 +335,9 @@ def main() -> int:
             "has_semi_auto": not bool(parse_int(w.get("NoSemiAuto"))),
             "has_burst": shots_per_burst > 0,
             "has_autofire": auto_per_5ap > 0,
-            "origin_flags": parse_int(item.get("WeaponOriginFlags")),
+            # Store UINT64 bitmasks as decimal strings in JSON so consumers
+            # implemented in languages with IEEE-754 numbers do not lose bits.
+            "origin_flags": str(parse_int(item.get("WeaponOriginFlags"))),
             "historical_status_flags": parse_int(item.get("WeaponHistoricalStatusFlags")),
             "production_year_start": parse_int(item.get("ProductionYearStart")),
             "production_year_end": parse_int(item.get("ProductionYearEnd")),
