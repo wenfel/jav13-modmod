@@ -699,7 +699,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>12</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -10167,7 +10167,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>336</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -17774,7 +17774,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>613</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -18062,9 +18062,9 @@
 		<szBRName>Barrett M98</szBRName>
 		<szBRDesc>With a completely uncovered barrel that is free to vibrate in any way it likes, you'll be sending "good" vibrations downrange and on target every time.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1998</ProductionYearStart>
+		<ProductionYearEnd>1998</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>620</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -18496,7 +18496,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>631</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -18687,9 +18687,9 @@
 		<szBRName>CZ-75B</szBRName>
 		<szBRDesc>This Czech-made, full-size, semiautomatic pistol first appeared in 1975, intended for the export market. An aesthetically attractive, comfortable to handle, accurate, and reliable sidearm.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000100000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>636</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -19131,7 +19131,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>647</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -19167,9 +19167,9 @@
 		<szBRName>FN FAL OSW</szBRName>
 		<szBRDesc>The FAL OSW is extremely versatile. Featuring Picatinny rails and a folding stock, this carbine is for someone who means business.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>648</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -19536,9 +19536,9 @@
 		<szBRName>Gepard M2</szBRName>
 		<szBRDesc>Ugly as sin, but so what? Whether it's knocking the treads off a tank or popping an enemy combatant like a water balloon, this gun makes it easy to feel like God.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1989</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000800000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>657</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -19985,7 +19985,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>668</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -20025,9 +20025,9 @@
 		<szBRName>HK MG43</szBRName>
 		<szBRDesc>First shown in 2001 in London, the all-new MG43 continues HK's long-standing tradition of fine weaponry. It comes standard with an integral bipod. Since 2006 it's introduced into the Bundeswehr (German Army) as the MG4.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>669</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -20143,9 +20143,9 @@
 		<szBRName>OTs 39</szBRName>
 		<szBRDesc>The latest and most modern SMG for the 7.62x25mm round. Comes with integrated folding stock and lasersight in the forward handguard.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1998</ProductionYearStart>
+		<ProductionYearEnd>1998</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>672</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -20322,9 +20322,9 @@
 		<szBRName>HK SL9SD</szBRName>
 		<szBRDesc>Leave it to HK to design a gun that gives new meaning to the phrase "silent but deadly." We love those guys.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>2007</ProductionYearStart>
+		<ProductionYearEnd>2007</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>676</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -20819,7 +20819,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>688</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -21090,7 +21090,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>695</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -21964,7 +21964,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>717</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -22038,9 +22038,9 @@
 		<szBRName>SIG Pro</szBRName>
 		<szBRDesc>The SIG Pro pistol represents the latest advances in modern handgun technology. Lightweight and requiring no maintenance, it is one of the most reliable pistols available.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000408</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>719</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -22428,7 +22428,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>729</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -22508,9 +22508,9 @@
 		<szBRName>Street Sweeper</szBRName>
 		<szBRDesc>This is the US-made version of the South African Striker shotgun. The key advantage of this shotgun is its large magazine capacity, but it is slow to reload.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1989</ProductionYearStart>
+		<ProductionYearEnd>1993</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>731</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -23457,7 +23457,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>754</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -23858,7 +23858,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>764</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -23895,9 +23895,9 @@
 		<szBRName>OA-93</szBRName>
 		<szBRDesc>In production for over a decade now, this model uses the OA operations system, which incorporates the recoil system into the upper receiver, eliminating the need for an extension tube or buttstock.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>765</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24090,7 +24090,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>770</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24365,7 +24365,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>777</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24484,9 +24484,9 @@
 		<szBRName>SA-24</szBRName>
 		<szBRDesc>An older Czech SMG that fires the Russian 7.62x25mm cartridge. It is claimed that it will also fire the 7.63 Mauser pistol cartridge.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1949</ProductionYearStart>
+		<ProductionYearEnd>1968</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000080000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>780</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24637,9 +24637,9 @@
 		<szBRName>Mauser M-03</szBRName>
 		<szBRDesc>The bolt-action system of the old Mauser Kar98k lives on in this hunting rifle. Comes with a 7x magnification scope.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>784</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24679,7 +24679,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>785</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24763,7 +24763,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>787</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24802,7 +24802,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>788</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24882,7 +24882,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>790</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24921,7 +24921,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>791</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -24960,7 +24960,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>792</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -25001,7 +25001,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>793</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -25078,9 +25078,9 @@
 		<szBRName>Barrett M468</szBRName>
 		<szBRDesc>Not what you usually expect when you hear 'Barrett', but rest assured that this 6.8mm SPC rifle has the usual high quality and precision of any other Barrett rifle.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>2004</ProductionYearStart>
+		<ProductionYearEnd>2010</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>795</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -25119,7 +25119,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>796</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -25157,9 +25157,9 @@
 		<szBRName>Robarms XCR-1</szBRName>
 		<szBRDesc>Another new entry on the 6.8mm SPC market, the XCR-1 comes with a folding stock, which looks a bit unusual on a M4 clone, but works very well.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2006</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>797</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -25196,9 +25196,9 @@
 		<szBRName>P-08 Parabellum</szBRName>
 		<szBRDesc>A somewhat complicated pistol for the serious gun collector. Be careful when taking it apart. Call us for spare parts.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1908</ProductionYearStart>
+		<ProductionYearEnd>1942</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000020</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>798</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -25236,7 +25236,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>799</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -25273,7 +25273,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>800</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -28481,9 +28481,9 @@
 		<szBRName>Colt Anaconda</szBRName>
 		<szBRDesc>I hate to say it, but Harry Callahan would've looked cooler carrying an Anaconda instead of a Model 29.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1990</ProductionYearStart>
+		<ProductionYearEnd>2003</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>887</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -28519,9 +28519,9 @@
 		<szBRName>Manurhin MR-96</szBRName>
 		<szBRDesc>The patented Manurhin MR-96 design is a revolution in revolver engineering. The grip, a long-lasting rubber design, specific to this revolver, allows continuous firing of the most powerful loads, without fatigue.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1996</ProductionYearStart>
+		<ProductionYearEnd>1998</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000040</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>888</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -28558,9 +28558,9 @@
 		<szBRName>FN PRO-9</szBRName>
 		<szBRDesc>This is the civilian version of the new all-black military FNP-9, with the same high quality, of course.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>889</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -28849,7 +28849,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>897</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -28884,9 +28884,9 @@
 		<szBRName>Fabarm FP6</szBRName>
 		<szBRDesc>An Italian shotgun for police/military use, especially useful in house clearing. It includes Picatinny rails on the receiver and the pump-action handle.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>898</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -28924,9 +28924,9 @@
 		<szBRName>Fabarm SDASS</szBRName>
 		<szBRDesc>This is a new Italian shotgun developed for police/military use. It includes Picatinny rails on the receiver and the pump-action handle.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2005</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>899</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -28967,7 +28967,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>900</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -29801,9 +29801,9 @@
 		<szBRName>FN EGLM Grenade Launcher</szBRName>
 		<szBRDesc>FN Herstal redeveloped their F2000 launcher to make it fit on the SCAR. Will fire grenades of any length and can use future medium velocity grenades.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2004</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>921</ubClassIndex>
@@ -34173,7 +34173,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1065</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -34529,7 +34529,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1074</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -34609,9 +34609,9 @@
 		<szBRName>Ares M4 Shrike</szBRName>
 		<szBRDesc>Ares changed the M4 assault rifle to a LMG with a completely new upper receiver. Comes with a foregrip for better control during full auto.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2002</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1076</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -34689,9 +34689,9 @@
 		<szBRName>Beretta Cx4 Storm</szBRName>
 		<szBRDesc>A futuristic-looking rifle, firing an unsurpassed pistol round, the .45ACP. This version has a magazine well that accepts hi-cap magazines.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1078</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -38019,9 +38019,9 @@
 		<szBRName>SIG MP41/44</szBRName>
 		<szBRDesc>This old Swiss SMG is full auto-only and is quite heavy, but its range is up to par with modern SMGs. It was developed in the 1930s by Adolf Furrer, manager of SIG Armory at Bern, Switzerland.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1941</ProductionYearStart>
+		<ProductionYearEnd>1942</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1179</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -38410,9 +38410,9 @@
 		<szBRName>KAC PDW</szBRName>
 		<szBRDesc>A new PDW on the market, this little beauty was made by the Knight Armament Corporation and fires the new 6x35mm round.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2006</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1190</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -38449,7 +38449,7 @@
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>0</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1191</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -38562,9 +38562,9 @@
 		<szBRName>Colt Python</szBRName>
 		<szBRDesc>The first 'modern' revolver after W.W.II, it was made in several different versions.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<ProductionYearStart>1955</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1194</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -38600,9 +38600,9 @@
 		<szBRName>FR Ordnance MC51</szBRName>
 		<szBRDesc>An even shorter version of the G3KA4 battle rifle, this was made in Great Britain for the SAS.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000080</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1195</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -38797,9 +38797,9 @@
 		<szBRName>HK SL8 RAS</szBRName>
 		<szBRDesc>Not buyable at BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1201</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -42213,9 +42213,9 @@
 		<szBRName>AR57 11"</szBRName>
 		<szBRDesc>Not buyable at BR</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2008</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1333</ubClassIndex>
 		<ubCursor>3</ubCursor>
@@ -42258,9 +42258,9 @@
 		<szBRName>AR57 6"-Silenced</szBRName>
 		<szBRDesc>Not buyable at BR</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2008</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
-		<WeaponOriginFlags>0x0000000000000000</WeaponOriginFlags>
+		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1334</ubClassIndex>
 		<ubCursor>3</ubCursor>
