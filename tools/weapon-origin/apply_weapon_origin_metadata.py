@@ -14,6 +14,7 @@ from pathlib import Path
 IC_GUN = 0x00000002
 IC_LAUNCHER = 0x00000010
 IC_BOBBY_GUN = IC_GUN | IC_LAUNCHER
+UTF8_BOM = b"\xef\xbb\xbf"
 
 # Frozen data contract from the weapon-origin metadata handoff.
 ORIGIN_BITS = {
@@ -602,6 +603,7 @@ def main() -> int:
     args = parser.parse_args()
 
     xml_bytes = args.xml.read_bytes()
+    had_bom = xml_bytes.startswith(UTF8_BOM)
     xml_text = xml_bytes.decode("utf-8-sig")
     items = read_items(xml_text)
     manifest = read_manifest(args.manifest)
@@ -621,7 +623,10 @@ def main() -> int:
     if new_text == xml_text:
         print("Items.xml already matches manifest")
     else:
-        args.xml.write_bytes(new_text.encode("utf-8"))
+        output_bytes = new_text.encode("utf-8")
+        if had_bom:
+            output_bytes = UTF8_BOM + output_bytes
+        args.xml.write_bytes(output_bytes)
         print(f"updated {args.xml}")
 
     # Re-parse and verify what was actually written.

@@ -20,7 +20,7 @@ The project is not intended to be a museum-grade firearms catalogue. When a JA2 
 | uiIndex | JA2 item | Best-fit origin | Years | Rationale |
 | ---: | --- | --- | --- | --- |
 | 12 | Commando | USA | 0–0 | Treat JA2 'Colt M4 Commando' as a US Colt Commando/M4-family carbine; exact Colt model number is intentionally not distinguished. |
-| 336 | SIG P226R | USA|GERMANY | 0–0 | Rail-era P226 manufacture spans SIG Sauer facilities in Germany and the USA; use both as a pragmatic best-fit. |
+| 336 | SIG P226R | USA\|GERMANY | 0–0 | Rail-era P226 manufacture spans SIG Sauer facilities in Germany and the USA; use both as a pragmatic best-fit. |
 | 613 | AKS-47 | SOVIET_UNION | 0–0 | Treat game label AKS-47 as the folding-stock Soviet AK/AKS lineage rather than requiring a formal model-name match. |
 | 631 | M1911A1 Hi-Cap | USA | 0–0 | Treat the high-capacity M1911A1 as a US commercial/custom M1911 derivative; exact Colt catalog model is not required for gameplay metadata. |
 | 647 | FAL Carbine | BELGIUM | 0–0 | Treat generic FN FAL Carbine as an FN Herstal Belgian short/Para FAL variant; exact 50.xx submodel is not material to the mod. |
@@ -30,8 +30,8 @@ The project is not intended to be a museum-grade firearms catalogue. When a JA2 
 | 669 | MG43 | GERMANY | 2001–0 | Interpret JA2 HK MG43 as the early MG43 designation of the German HK MG4 family; approximate start 2001. |
 | 688 | Cobray M11/9 | USA | 0–0 | Treat Cobray M11/9 as the US-made SWD/Cobray MAC-pattern commercial variant represented by the JA2 name. |
 | 695 | Varjag | RUSSIA | 0–0 | Treat MP-445 Varjag as a Russian Izhevsk/MP-series pistol concept; exact serial-production status is not important for gameplay. |
-| 717 | P226R .40 | USA|GERMANY | 0–0 | Treat rail-era .40 P226 as a SIG Sauer Germany/USA production-family weapon. |
-| 719 | SIG Pro | SWITZERLAND|GERMANY | 1999–0 | SIG Pro is a Swiss-origin design produced by SIG Sauer in Germany; 1999 is the approximate production start. |
+| 717 | P226R .40 | USA\|GERMANY | 0–0 | Treat rail-era .40 P226 as a SIG Sauer Germany/USA production-family weapon. |
+| 719 | SIG Pro | SWITZERLAND\|GERMANY | 1999–0 | SIG Pro is a Swiss-origin design produced by SIG Sauer in Germany; 1999 is the approximate production start. |
 | 729 | SSG-P1 | AUSTRIA | 0–0 | Treat Steyr SSG-P1 as an Austrian Steyr SSG-family precision rifle; exact suffix provenance is not required. |
 | 731 | Street Sweeper | USA | 1989–1993 | Interpret 'Street Sweeper' specifically as the US SWD/Cobray copy of the Striker, marketed 1989-1993. |
 | 754 | MP-233B | RUSSIA | 0–0 | Treat Baikal MP-233B as a Russian Baikal/Izhmash-family shotgun; exact variant production dates are omitted. |
@@ -40,12 +40,12 @@ The project is not intended to be a museum-grade firearms catalogue. When a JA2 
 | 777 | Benelli R-1 | ITALY | 0–0 | Treat Benelli R1 .300 WinMag as an Italian Benelli commercial rifle; exact production start omitted. |
 | 784 | Mauser M-03 | GERMANY | 2003–0 | Mauser M03 is a German hunting-rifle system introduced in 2003. |
 | 785 | AKMSU | SOVIET_UNION | 0–0 | Treat AKMSU as a Soviet AKMS-derived compact variant for gameplay purposes despite disputed formal designation. |
-| 787 | SCAR-H SV | BELGIUM|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
-| 788 | SCAR-L SV | BELGIUM|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
-| 790 | SCAR-WP CQC | BELGIUM|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
-| 791 | SCAR-WP SV | BELGIUM|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
-| 792 | SCAR-68 CQC | BELGIUM|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
-| 793 | SCAR-68 SV | BELGIUM|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
+| 787 | SCAR-H SV | BELGIUM\|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
+| 788 | SCAR-L SV | BELGIUM\|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
+| 790 | SCAR-WP CQC | BELGIUM\|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
+| 791 | SCAR-WP SV | BELGIUM\|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
+| 792 | SCAR-68 CQC | BELGIUM\|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
+| 793 | SCAR-68 SV | BELGIUM\|USA | 0–0 | Treat JA2 SCAR SV/WP/6.8 configurations as FN SCAR-family derivatives; use Belgian FN design plus US SCAR-program manufacture, without claiming exact factory submodels. |
 | 796 | M4A3 | USA | 0–0 | Treat Bushmaster M4A3 6.8 SPC as a US Bushmaster commercial M4-family configuration; exact catalog years omitted. |
 | 797 | XCR-1 | USA | 2006–0 | Robinson XCR is a US multi-caliber rifle family including 6.8 SPC; approximate market production start 2006. |
 | 798 | Luger P-08 | GERMANY_PRE_1949 | 1908–1942 | Treat P-08 as the standard German Luger service-pistol production era; 1908-1942 is a gameplay-oriented production window. |
@@ -65,3 +65,4 @@ The project is not intended to be a museum-grade firearms catalogue. When a JA2 
 ## Remaining ambiguous rows
 
 None.
+
