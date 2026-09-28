@@ -7,7 +7,6 @@ This is an offline analysis tool. It does not change game XML or runtime behavio
 from __future__ import annotations
 
 import argparse
-import configparser
 import json
 import math
 import xml.etree.ElementTree as ET
@@ -157,7 +156,13 @@ def parse_number(value: str | None, default: float = 0.0) -> float:
 
 
 def parse_int(value: str | None, default: int = 0) -> int:
-    return int(parse_number(value, float(default)))
+    if value is None or value == "":
+        return default
+    text = value.strip()
+    try:
+        return int(text, 0)
+    except ValueError:
+        return int(float(text))
 
 
 def load_ini(path: Path) -> dict[str, str]:
@@ -285,7 +290,17 @@ def main() -> int:
             for field in NUMERIC_WEAPON_FIELDS
         }
         raw_item = {
-            field: parse_number(item.get(field))
+            field: (
+                parse_int(item.get(field))
+                if field in {
+                    "usItemClass",
+                    "WeaponOriginFlags",
+                    "WeaponHistoricalStatusFlags",
+                    "ProductionYearStart",
+                    "ProductionYearEnd",
+                }
+                else parse_number(item.get(field))
+            )
             for field in NUMERIC_ITEM_FIELDS
         }
 
