@@ -2,9 +2,6 @@ name: build
 
 on:
   pull_request:
-  push:
-    branches:
-      - country-filter
   workflow_dispatch:
   # release.yml calls this workflow for upstream-style release builds. Keeping
   # the release jobs out of here keeps them off the pull request check list,
@@ -101,7 +98,7 @@ jobs:
       matrix:
         # Routine mod CI skips the map editors. Release/manual builds retain
         # the complete upstream matrix because release.yml packages all four.
-        application: ${{ fromJSON((github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/country-filter')) && '["ja2","ja2ub"]' || '["ja2","ja2mapeditor","ja2ub","ja2ubmapeditor"]') }}
+        application: ${{ fromJSON(github.event_name == 'pull_request' && '["ja2","ja2ub"]' || '["ja2","ja2mapeditor","ja2ub","ja2ubmapeditor"]') }}
     env:
       # store the compiler cache in the GitHub Actions cache
       SCCACHE_GHA_ENABLED: 'true'
