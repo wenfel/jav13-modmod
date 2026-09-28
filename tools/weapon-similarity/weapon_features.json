@@ -23,7 +23,8 @@
     "gun_range_modifier": 1,
     "scope_modes": true,
     "ap_maximum": 100,
-    "autofire_shots_ap_value": 20
+    "autofire_shots_ap_value": 20,
+    "autofire_tohit_bonus_multiplier": 5
   },
   "reference_scenario": {
     "full_ap": 80,
@@ -671,7 +672,7 @@
         "octh_aim_bonus": 0,
         "magazine_capacity": 15,
         "burst_size": 3,
-        "burst_penalty": 3,
+        "burst_penalty": 6,
         "autofire_shots_per_5ap": 0,
         "autofire_penalty": 0,
         "autofire_ap_5_rounds": 0
@@ -1461,9 +1462,9 @@
         "octh_aim_bonus": 0,
         "magazine_capacity": 30,
         "burst_size": 3,
-        "burst_penalty": 3,
+        "burst_penalty": 6,
         "autofire_shots_per_5ap": 4,
-        "autofire_penalty": 4,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 16
       }
     },
@@ -2411,7 +2412,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 4,
-        "autofire_penalty": 2,
+        "autofire_penalty": 5,
         "autofire_ap_5_rounds": 12
       }
     },
@@ -6517,7 +6518,7 @@
         "octh_aim_bonus": 0,
         "magazine_capacity": 5,
         "burst_size": 5,
-        "burst_penalty": 0,
+        "burst_penalty": 1,
         "autofire_shots_per_5ap": 0,
         "autofire_penalty": 0,
         "autofire_ap_5_rounds": 0
@@ -7151,7 +7152,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 4,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -11259,7 +11260,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 4,
-        "autofire_penalty": 4,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 16
       }
     },
@@ -11417,7 +11418,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 2,
+        "autofire_penalty": 5,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -12997,7 +12998,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 3,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -17103,9 +17104,9 @@
         "octh_aim_bonus": 0,
         "magazine_capacity": 30,
         "burst_size": 3,
-        "burst_penalty": 3,
+        "burst_penalty": 6,
         "autofire_shots_per_5ap": 4,
-        "autofire_penalty": 4,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 16
       }
     },
@@ -20107,7 +20108,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 5,
+        "autofire_penalty": 7,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -22161,7 +22162,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 4,
-        "autofire_penalty": 3,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 16
       }
     },
@@ -23425,7 +23426,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 3,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -24215,7 +24216,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 11,
-        "autofire_penalty": 2,
+        "autofire_penalty": 5,
         "autofire_ap_5_rounds": 6
       }
     },
@@ -31167,7 +31168,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 4,
-        "autofire_penalty": 4,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 16
       }
     },
@@ -32273,7 +32274,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 4,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -39857,7 +39858,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 3,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -44913,7 +44914,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 3,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -45387,7 +45388,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 5,
+        "autofire_penalty": 7,
         "autofire_ap_5_rounds": 22
       }
     },
@@ -46651,7 +46652,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 4,
-        "autofire_penalty": 3,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 16
       }
     },
@@ -46809,7 +46810,7 @@
         "burst_size": 0,
         "burst_penalty": 0,
         "autofire_shots_per_5ap": 3,
-        "autofire_penalty": 3,
+        "autofire_penalty": 6,
         "autofire_ap_5_rounds": 22
       }
     },
