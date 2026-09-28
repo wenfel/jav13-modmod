@@ -66,6 +66,13 @@ Install the optional analysis dependencies:
 python -m pip install -r tools/weapon-similarity/requirements.txt
 ```
 
+Run the complete diagnostic pass:
+
+```bash
+python tools/weapon-similarity/analyze_weapon_space.py \
+  tools/weapon-similarity/weapon_features.json diagnostics
+```
+
 Inspect PCA:
 
 ```bash
@@ -73,12 +80,31 @@ python tools/weapon-similarity/analyze_weapon_space.py \
   tools/weapon-similarity/weapon_features.json pca
 ```
 
-Find tactically similar replacements for uiIndex 25:
+Find replacements for uiIndex 25 using the current game mechanics profile:
 
 ```bash
 python tools/weapon-similarity/analyze_weapon_space.py \
   tools/weapon-similarity/weapon_features.json neighbors --index 25
 ```
+
+Restrict candidates to a country/origin mask:
+
+```bash
+python tools/weapon-similarity/analyze_weapon_space.py \
+  tools/weapon-similarity/weapon_features.json neighbors \
+  --index 25 --allowed-origin-mask 0x1
+```
+
+Evaluate an entire filter configuration rather than one target:
+
+```bash
+python tools/weapon-similarity/analyze_weapon_space.py \
+  tools/weapon-similarity/weapon_features.json coverage \
+  --allowed-origin-mask 0x1
+```
+
+The `coverage` command reports the first fallback tier used for every removed weapon,
+distance-quality bands, the most stretched substitutions, and unresolved targets.
 
 Explore k-means clusters:
 
@@ -86,6 +112,9 @@ Explore k-means clusters:
 python tools/weapon-similarity/analyze_weapon_space.py \
   tools/weapon-similarity/weapon_features.json kmeans --k 8
 ```
+
+See `ANALYSIS_REPORT.md` for the current validation results and country-filter stress
+tests.
 
 ## Interpretation
 
@@ -105,40 +134,72 @@ It should not automatically define the runtime score. ICA is not currently justi
 there is no strong generative assumption that JA2 weapon stats are mixtures of
 statistically independent latent sources.
 
-## Initial hard constraints
+## Semantic fallback tiers
 
-These are deliberately conservative and can be relaxed later:
+Eligibility and tactical similarity are separate.
 
-- firearm item class
-- same `ubWeaponType` by default
-- preserve two-handedness
-- preserve heavy-gun status
-- preserve the target weapon's required fire modes
-- optional same-calibre constraint
+Country, production-year, SciFi and historical-status metadata determine whether a
+candidate may be used. They are **not** coordinates in the distance vector.
 
-Country, production-year, SciFi and historical-status metadata are eligibility
-constraints, not similarity features.
+Among eligible weapons, candidates are ordered by semantic fallback tier before
+statistical distance:
 
-## Initial distance axes
+0. same type, same handedness, preserve every required fire mode
+1. same type, same handedness, preserve broad rapid-fire capability
+2. adjacent tactical type, same handedness, preserve broad rapid-fire capability
+3. same type, relax handedness, preserve broad rapid-fire capability
+4. adjacent tactical type, relax handedness, preserve broad rapid-fire capability
+5. same type, same handedness, allow fire-mode downgrade
+6. adjacent tactical type, same handedness, allow fire-mode downgrade
+7. same type, relax handedness, allow fire-mode downgrade
+8. adjacent tactical type, relax handedness, allow fire-mode downgrade
 
-The default nearest-neighbour score uses a relatively small set of interpretable axes:
+Heavy-gun status is never relaxed. The adjacency graph is explicit in
+`analyze_weapon_space.py`; it is used instead of `weapon_class` because the XML
+class field is not fully consistent for machine pistols and some LMGs.
+
+The candidate with the smallest distance is chosen only inside the best available tier.
+
+## Mechanics-aware distance profile
+
+The score is configuration-aware. Core axes currently include:
 
 - damage
 - effective range
 - reference AP per shot
 - ready AP
 - reload AP
-- OCTH and NCTH accuracy
-- handling
 - magazine capacity
-- recoil magnitude
-- heat endurance
-- weight
-- reliability
+- weight and item size
+- reliability and repair ease
+- burst/autofire characteristics
 
-The script standardizes these columns before weighting them. This prevents range (hundreds
-of units) from numerically dominating reliability (roughly -4..+5) merely because of
-units.
+Accuracy/control axes depend on the selected CTH system:
 
-The weights are provisional. They are meant to be inspected against real replacement
-pairs before any C++ implementation is frozen.
+- OCTH: OCTH accuracy and OCTH fire-mode penalties
+- NCTH: NCTH accuracy, handling, aim levels and recoil
+
+Heat endurance is included only when overheating is enabled.
+
+The checked-in snapshot currently represents `NCTH = FALSE` and
+`OVERHEATING = FALSE`, so inactive NCTH/heat columns do not influence the default
+replacement score.
+
+All continuous axes use robust scaling before weighting:
+
+```text
+z = (x - median) / IQR
+```
+
+This prevents large-unit or outlier-heavy columns from dominating merely because of
+their units.
+
+The tool also reports a type-relative distance percentile. It compares a filtered
+replacement with the unrestricted tier-0 nearest-neighbour distribution for the same
+weapon type:
+
+- <= 75th percentile: `typical`
+- 75th-95th: `stretched`
+- > 95th: `far`
+
+Weights remain provisional until a manual benchmark set has been reviewed.
