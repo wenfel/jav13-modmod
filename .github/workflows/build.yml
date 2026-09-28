@@ -11,6 +11,10 @@ on:
   # where they would only ever show up as skipped.
   workflow_call:
 
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   workflow_setup:
     runs-on: ubuntu-latest
@@ -95,7 +99,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        application: [ja2, ja2mapeditor, ja2ub, ja2ubmapeditor]
+        # Routine mod CI skips the map editors. Release/manual builds retain
+        # the complete upstream matrix because release.yml packages all four.
+        application: ${{ fromJSON((github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/country-filter')) && '["ja2","ja2ub"]' || '["ja2","ja2mapeditor","ja2ub","ja2ubmapeditor"]') }}
     env:
       # store the compiler cache in the GitHub Actions cache
       SCCACHE_GHA_ENABLED: 'true'
