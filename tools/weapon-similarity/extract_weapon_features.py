@@ -666,6 +666,10 @@ def main() -> int:
                 "effective_intrinsic_features additionally apply the weapon item's "
                 "own modifiers at 100% status."
             ),
+            "fan_the_hammer": (
+                "fBurstOnlyByFanTheHammer is recorded as trait-gated burst, "
+                "not native baseline burst capability."
+            ),
         },
         "weapons": rows,
     }
