@@ -94,6 +94,7 @@ REQUIRED_COLUMNS = (
 STATUSES = {
     "CONFIRMED",
     "PROTOTYPE",
+    "ESTIMATED",
     "FICTIONAL_SCIFI",
     "FICTIONAL_UNFLAGGED",
     "AMBIGUOUS_VARIANT",
@@ -295,10 +296,24 @@ def validate_row_semantics(
             f"uiIndex {ui_index}: nonzero historical metadata requires source_1"
         )
 
-    if status in {"CONFIRMED", "PROTOTYPE"} and not source_1:
+    if status in {"CONFIRMED", "PROTOTYPE", "ESTIMATED"} and not source_1:
         raise MetadataError(
             f"uiIndex {ui_index}: status {status} requires source_1"
         )
+
+    if status == "ESTIMATED":
+        if confidence != "MEDIUM":
+            raise MetadataError(
+                f"uiIndex {ui_index}: ESTIMATED requires MEDIUM confidence"
+            )
+        if mask == 0:
+            raise MetadataError(
+                f"uiIndex {ui_index}: ESTIMATED requires a nonzero best-fit origin mask"
+            )
+        if not notes:
+            raise MetadataError(
+                f"uiIndex {ui_index}: ESTIMATED requires notes explaining the assumption"
+            )
 
     if status == "CONFIRMED":
         if confidence not in {"HIGH", "MEDIUM"}:
