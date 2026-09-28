@@ -242,6 +242,31 @@ def reference_burst_ap(
     return max(0, min(ap_maximum, aps))
 
 
+def reference_autofire_ap(
+    shots_per_5_ap: float,
+    volley_rounds: int,
+    full_ap: int,
+    ap_maximum: int,
+    autofire_shots_ap_value: int,
+    percent_ap_reduction: int = 0,
+    percent_autofire_reduction: int = 0,
+) -> int:
+    """Mirror CalcAPsToAutofire surcharge for a fixed-size reference volley."""
+    if shots_per_5_ap <= 0 or volley_rounds <= 1 or ap_maximum <= 0:
+        return 0
+
+    extra_rounds = volley_rounds - 1
+    numerator = autofire_shots_ap_value * extra_rounds * full_ap
+    base_aps = int(
+        (numerator / shots_per_5_ap + (ap_maximum - 1)) / ap_maximum
+    )
+
+    aps = base_aps * max(0, 100 - percent_ap_reduction) // 100
+    aps = max(aps, (base_aps + 1) // 2)
+    aps = aps * max(0, 100 - percent_autofire_reduction) // 100
+    return max(0, min(255, aps))
+
+
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -291,6 +316,9 @@ def main() -> int:
     global_range_mod = ini_float(options, "GUN_RANGE_MODIFIER", 100.0) / 100.0
     global_auto_bonus = ini_float(options, "AUTOFIRE_BULLETS_PER_5AP_MODIFIER", 0.0)
     ap_maximum = int(ini_float(apbp, "AP_MAXIMUM", 100.0))
+    autofire_shots_ap_value = int(
+        ini_float(apbp, "AUTOFIRE_SHOTS_AP_VALUE", 20.0)
+    )
 
     rows: list[dict[str, Any]] = []
 
@@ -377,6 +405,7 @@ def main() -> int:
         percent_ready = parse_int(item.get("PercentReadyTimeAPReduction"))
         percent_reload = parse_int(item.get("PercentReloadTimeAPReduction"))
         percent_burst_ap = parse_int(item.get("PercentBurstFireAPReduction"))
+        percent_autofire_ap = parse_int(item.get("PercentAutofireAPReduction"))
         burst_to_hit = parse_int(item.get("BurstToHitBonus"))
         auto_to_hit = parse_int(item.get("AutoFireToHitBonus"))
         item_burst_size = parse_int(item.get("BurstSizeBonus"))
@@ -447,6 +476,31 @@ def main() -> int:
             else 0
         )
 
+        base_autofire_ap_5_rounds = (
+            reference_autofire_ap(
+                effective_auto,
+                5,
+                args.reference_full_ap,
+                ap_maximum,
+                autofire_shots_ap_value,
+            )
+            if auto_per_5ap > 0
+            else 0
+        )
+        intrinsic_autofire_ap_5_rounds = (
+            reference_autofire_ap(
+                effective_auto,
+                5,
+                args.reference_full_ap,
+                ap_maximum,
+                autofire_shots_ap_value,
+                percent_ap,
+                percent_autofire_ap,
+            )
+            if auto_per_5ap > 0
+            else 0
+        )
+
         row = {
             "uiIndex": ui_index,
             "name": item.get("szItemName") or w.get("szWeaponName") or str(ui_index),
@@ -485,6 +539,7 @@ def main() -> int:
                 "ready_ap": base_ready_ap,
                 "reload_ap": base_reload_ap,
                 "burst_ap": base_burst_ap,
+                "autofire_ap_5_rounds": base_autofire_ap_5_rounds,
                 "octh_accuracy": parse_number(w.get("bAccuracy")),
                 "octh_to_hit_bonus": 0.0,
                 "octh_aim_bonus": 0.0,
@@ -525,6 +580,7 @@ def main() -> int:
                 "ready_ap": intrinsic_ready_ap,
                 "reload_ap": intrinsic_reload_ap,
                 "burst_ap": intrinsic_burst_ap,
+                "autofire_ap_5_rounds": intrinsic_autofire_ap_5_rounds,
                 "octh_accuracy": parse_number(w.get("bAccuracy")),
                 "octh_to_hit_bonus": item_to_hit,
                 "octh_aim_bonus": item_aim_bonus,
@@ -581,6 +637,7 @@ def main() -> int:
             "gun_range_modifier": global_range_mod,
             "scope_modes": ini_bool(options, "USE_SCOPE_MODES", False),
             "ap_maximum": ap_maximum,
+            "autofire_shots_ap_value": autofire_shots_ap_value,
         },
         "reference_scenario": {
             "full_ap": args.reference_full_ap,
