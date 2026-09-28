@@ -40,6 +40,7 @@ CORE_WEIGHTS = {
 
 RAPID_FIRE_WEIGHTS = {
     "burst_ap": 0.65,
+    "autofire_ap_5_rounds": 0.65,
     "burst_size": 0.35,
     "burst_penalty": 0.60,
     "autofire_shots_per_5ap": 0.60,
