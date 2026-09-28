@@ -1,0 +1,348 @@
+uiIndex,xml_name,item_class,normalized_identity,production_year_start,production_year_end,origin_codes,origin_mask_hex,status,confidence,source_1,source_2,notes
+1,Glock 17,IC_GUN,Glock 17,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+2,Glock 18,IC_GUN,Glock 18,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+3,Beretta 92F,IC_GUN,Beretta 92F,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+4,Beretta 93R,IC_GUN,Beretta 93R,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+5,.38 Special,IC_GUN,.38 Special,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+6,Barracuda,IC_GUN,Barracuda,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+7,Desert Eagle .357,IC_GUN,Desert Eagle .357,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+8,M1911A1,IC_GUN,Colt M1911A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+9,MP5KA4,IC_GUN,HK MP5KA4,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+10,MAC-10,IC_GUN,Ingram M10,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+11,Thompson M1A1,IC_GUN,Thompson M1A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+12,Commando,IC_GUN,Colt M4 Commando,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+13,HK 53A3,IC_GUN,HK 53A3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+14,AKS-74U,IC_GUN,AKS-74U,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+15,P90,IC_GUN,FN P90,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+16,Type 85,IC_GUN,Type 85,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+17,SKS,IC_GUN,SKS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+18,SVD,IC_GUN,Dragunov SVD,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+19,M24,IC_GUN,M24,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+20,AUG-A2,IC_GUN,Steyr AUG-A2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+21,G41A2,IC_GUN,HK G41A2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+22,Mini-14,IC_GUN,Ruger Mini-14,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+23,C7A2,IC_GUN,Diemaco C7A2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+24,FAMAS,IC_GUN,FAMAS G2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+25,AK-74,IC_GUN,AK-74,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+26,AKM,IC_GUN,AKM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+27,M14,IC_GUN,M14,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+28,FN FAL,IC_GUN,FN FAL,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+29,G3A3,IC_GUN,HK G3A3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+30,G11,IC_GUN,HK G11,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+31,M870,IC_GUN,Remington M870,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+32,SPAS-15,IC_GUN,SPAS-15,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+33,CAWS,IC_GUN,HK CAWS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+34,Minimi,IC_GUN,FN Minimi,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+35,RPK-74,IC_GUN,RPK-74,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+36,HK 21E,IC_GUN,HK 21E,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+40,M79,IC_LAUNCHER,M79 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+41,Mortar,IC_LAUNCHER,M224 Mortar,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+48,Queen Spit,IC_GUN,Queen Creature Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+50,Talon,IC_LAUNCHER,Talon Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+51,LAW,IC_LAUNCHER,M72A4 LAW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+55,Rocket Rifle,IC_GUN,Rocket Rifle,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+56,Automag III,IC_GUN,Automag III Custom,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+57,Infant Spit,IC_GUN,Infant Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+58,Young Male Spit,IC_GUN,Young Male Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+59,Old Male Spit,IC_GUN,Old Male Spit,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+60,Cannon,IC_GUN,Tank Cannon,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+61,Dart Gun,IC_GUN,Dart Gun,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+63,Flamethrower,IC_GUN,Flamethrower,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+65,A. R. Rifle,IC_GUN,Auto Rocket Rifle,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+66,Hartford 6,IC_GUN,Modified EMF Hartford 6 Shooter,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+67,M-950,IC_GUN,Calico M-950,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+68,M-900,IC_GUN,Calico M-900,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+69,M-960A,IC_GUN,Calico M-960A,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+330,Micro-Uzi,IC_GUN,Micro-Uzi,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+331,L85A2,IC_GUN,Enfield L85A2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+332,TAR 21,IC_GUN,Tavor TAR 21,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+333,VSS,IC_GUN,VSS Vintorez,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+334,PSG1,IC_GUN,HK PSG1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+335,M82A2,IC_GUN,Barrett M82A2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+336,SIG P226R,IC_GUN,SIG P226R,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+337,Five-seveN,IC_GUN,FN Five-seveN,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+338,Grach,IC_GUN,MP-443 Grach,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+339,Viking,IC_GUN,MP-446 Viking,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+340,Saiga 12K,IC_GUN,Saiga 12K,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+341,M3 Convertible,IC_GUN,Benelli M3 Convertible,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+342,MP5A4,IC_GUN,HK MP5A4,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+343,MP5N,IC_GUN,HK MP5N,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+344,MP5SD5,IC_GUN,HK MP5SD5,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+345,Uzi,IC_GUN,Uzi,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+346,Colt SMG,IC_GUN,Colt 9mm SMG,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+347,AK-47,IC_GUN,AK-47,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+348,SL8,IC_GUN,HK SL8,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+349,Vikhr,IC_GUN,Vikhr SR-3 Compact,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+350,SG540,IC_GUN,SIG SG540,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+397,HP-35,IC_GUN,FN Browning HP-35,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+601,AEK-919K,IC_GUN,"AEK-919K ""Kashtan""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+602,AEK-971,IC_GUN,AEK-971,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+603,AEK-973,IC_GUN,AEK-973,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+604,Agram 2000,IC_GUN,Agram 2000,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+605,AICW,IC_GUN,AICW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+606,AK-102,IC_GUN,AK-102,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+607,AK-103,IC_GUN,AK-103,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+608,AK-104,IC_GUN,AK-104,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+609,AK-105,IC_GUN,AK-105,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+610,AK-107,IC_GUN,AK-107,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+611,AK-108,IC_GUN,AK-108,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+612,AKMS,IC_GUN,AKMS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+613,AKS-47,IC_GUN,AKS-47,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+614,AKS-74,IC_GUN,AKS-74,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+615,AMD-65M,IC_GUN,AMD-65M,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+616,AN-94,IC_GUN,"AN-94 ""Abakan""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+617,AS Val,IC_GUN,AS Val,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+618,AWM,IC_GUN,AI AWM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+619,Veresk,IC_GUN,SR-2 Veresk,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+620,M98,IC_GUN,Barrett M98,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+621,M4 Super 90,IC_GUN,Benelli M4 Super 90,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+622,Beretta 92FS,IC_GUN,Beretta 92FS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+623,Beretta 96FS,IC_GUN,Beretta 96FS Brigadier,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+624,AR-70/90,IC_GUN,Beretta AR-70/90,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+625,M501,IC_GUN,Beretta M501,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+626,Bizon 2-07,IC_GUN,Bizon 2-07,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+627,M1919 A6,IC_GUN,Browning M1919 A6,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+628,Carl Gustaf,IC_GUN,Carl Gustaf M/45B,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+629,Modelo C,IC_GUN,CETME Modelo C,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+630,SR-25,IC_GUN,Knight SR-25,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+631,M1911A1 Hi-Cap,IC_GUN,Colt High Capacity M1911A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+632,M16A4,IC_GUN,Colt M16A4,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+633,M4A1,IC_GUN,Colt M4A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+634,CZ 700,IC_GUN,CZ 700,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+635,CZ-52,IC_GUN,CZ-52,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+636,CZ-75B,IC_GUN,CZ-75B,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+637,Desert Eagle .44,IC_GUN,Desert Eagle .44,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+638,Desert Eagle .50,IC_GUN,Desert Eagle .50 AE,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+639,DSR-1,IC_GUN,DSR-1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+640,SR-100,IC_GUN,Erma SR-100,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+641,Mini SAF,IC_GUN,FAMAE Mini SAF,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+642,SAF,IC_GUN,FAMAE SAF,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+643,SAF Silenciada,IC_GUN,FAMAE SAF Silenciada,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+644,HP-35 .40,IC_GUN,FN Browning HP-35 .40,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+645,BDA 9,IC_GUN,FN BDA 9,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+646,F2000,IC_GUN,FN F2000,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+647,FAL Carbine,IC_GUN,FN FAL Carbine,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+648,FAL OSW,IC_GUN,FN FAL OSW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+649,FN MAG,IC_GUN,FN MAG,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+650,Minimi SPW,IC_GUN,FN Minimi SPW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+651,SCAR-H CQC,IC_GUN,FN SCAR-H CQC,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+652,SCAR-L CQC,IC_GUN,FN SCAR-L CQC,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+653,FNC,IC_GUN,FN FNC,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+654,FR-F2,IC_GUN,FR-F2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+655,AR,IC_GUN,Galil AR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+656,SAR,IC_GUN,Galil SAR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+657,Gepard M2,IC_GUN,Gepard M2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+658,Glock 19,IC_GUN,Glock 19,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+659,Groza OC-14,IC_GUN,Groza OC-14,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+660,Groza 14-4A,IC_GUN,Groza OC-14-4A-01,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+661,HK 23E,IC_GUN,HK 23E,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+662,"HK 416 14""",IC_GUN,"HK 416 14""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+663,G11 PDW,IC_GUN,HK G11 PDW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+664,G36C,IC_GUN,HK G36C,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+665,G36 RAS,IC_GUN,HK G36 RAS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+666,G36K RAS,IC_GUN,HK G36K RAS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+667,G3KA4,IC_GUN,HK G3KA4,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+668,MG36 RAS,IC_GUN,HK MG36 RAS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+669,MG43,IC_GUN,HK MG43,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+670,MK23 SOCOM,IC_GUN,HK Mark 23 SOCOM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+671,MP5/10A3,IC_GUN,HK MP5/10A3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+672,OTs 39,IC_GUN,OTs 39,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+673,MP7A1,IC_GUN,HK MP7A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+674,MSG90A1,IC_GUN,HK MSG90A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+675,P7M8,IC_GUN,HK P7M8,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+676,SL9SD,IC_GUN,HK SL9SD,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+677,UMP45,IC_GUN,HK UMP45,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+678,USP,IC_GUN,HK USP,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+679,Ithaca 37,IC_GUN,Ithaca Model 37,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+680,Jackhammer,IC_GUN,Jackhammer Mk3A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+681,Jati-Matic,IC_GUN,Jati-Matic GG-95 PDW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+682,KSVK,IC_GUN,KSVK,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+683,M1 Garand,IC_GUN,M1 Garand,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+684,M21,IC_GUN,M21 Tactical,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+685,M40A1,IC_GUN,M40A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+686,Surf Zone,IC_GUN,Metal Storm Surf Zone,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+687,M60E3,IC_GUN,M60E3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+688,Cobray M11/9,IC_GUN,Cobray M11/9,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+689,PM,IC_GUN,Makarov PM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+690,PMM,IC_GUN,Makarov PMM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+691,Micro Galil,IC_GUN,Micro Galil,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+692,Mini-Uzi,IC_GUN,Mini-Uzi,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+693,Mosin-Nagant,IC_GUN,Mosin-Nagant M1891/30,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+694,MP-133,IC_GUN,Baikal MP-133,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+695,Varjag,IC_GUN,MP-445 Varjag,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+696,Neostead,IC_GUN,Neostead,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+697,OSV-96,IC_GUN,OSV-96,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+698,M82,IC_GUN,Parker Hale M82,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+699,Pecheneg,IC_GUN,Pecheneg,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+700,PKM,IC_GUN,PKM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+701,PP-93,IC_GUN,PP-93,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+702,PPsh-41,IC_GUN,PPsh-41,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+703,PSM,IC_GUN,PSM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+704,QBZ-97,IC_GUN,QBZ-97,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+705,RPD,IC_GUN,RPD,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+706,RPK,IC_GUN,RPK,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+707,Redhawk,IC_GUN,Ruger Redhawk Revolver,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+708,SA vz.58,IC_GUN,SA vz.58,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+709,TRG 22,IC_GUN,Sako TRG 22,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+710,TRG 42,IC_GUN,Sako TRG 42,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+711,Sawed-Off,IC_GUN,Sawed-Off Shotgun,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+712,SG542,IC_GUN,SIG SG542,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+713,SG550,IC_GUN,SIG SG550,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+714,SG551,IC_GUN,SIG SG551 SWAT,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+715,SG552,IC_GUN,SIG SG552 Commando,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+716,P210,IC_GUN,SIG P210,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+717,P226R .40,IC_GUN,SIG P226R .40,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+718,P229R,IC_GUN,SIG P229R,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+719,SIG Pro,IC_GUN,SIG Pro,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+720,Skorpion,IC_GUN,Skorpion vz.82,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+721,Sphinx 3000,IC_GUN,Sphinx 3000,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+722,Springfield XD,IC_GUN,Springfield XD,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+723,Gyurza,IC_GUN,SR-1 Gyurza,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+724,Stechkin APS,IC_GUN,Stechkin APS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+725,L2A3,IC_GUN,Sterling L2A3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+726,AUG HBAR,IC_GUN,Steyr AUG HBAR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+727,AUG Para,IC_GUN,Steyr AUG Para,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+728,Scout,IC_GUN,Steyr Scout Tactical,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+729,SSG-P1,IC_GUN,Steyr SSG-P1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+730,TMP,IC_GUN,Steyr TMP,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+731,Street Sweeper,IC_GUN,Street Sweeper,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+732,Super-Shorty,IC_GUN,Super-Shorty Mini-Shotgun,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+733,SV-98,IC_GUN,SV-98,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+734,SVDS,IC_GUN,Dragunov SVDS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+735,SVU,IC_GUN,SVU,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+736,Raging Bull 444,IC_GUN,Taurus Raging Bull 444,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+737,Thompson M1928,IC_GUN,Thompson M1928,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+738,TT-33,IC_GUN,Tokarev TT-33,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+739,UDAR,IC_GUN,U-94S UDAR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+740,Ultimax,IC_GUN,Ultimax,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+741,USAS-12,IC_GUN,USAS-12,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+742,M76,IC_GUN,Valmet M76,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+743,M82,IC_GUN,Valmet M82,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+744,VIS-35,IC_GUN,VIS-35,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+745,VSk-94,IC_GUN,VSk-94,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+746,WA 2000,IC_GUN,Walther WA 2000,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+747,94 Trapper,IC_GUN,Winchester 94 Trapper,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+748,OICW,IC_GUN,XM-29 OICW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+749,XM8 Auto,IC_GUN,XM8 Automatic,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+750,XM8,IC_GUN,XM8 Baseline Carbine,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+751,XM8 Compact,IC_GUN,XM8 Compact Carbine,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+752,XM8 Sharpshooter,IC_GUN,XM8 Sharpshooter,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+753,Zastava,IC_GUN,Zastava M76,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+754,MP-233B,IC_GUN,Baikal MP-233B,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+755,G36,IC_GUN,HK G36,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+756,G36K,IC_GUN,HK G36K,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+757,INSAS,IC_GUN,INSAS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+758,Grizzly .50,IC_GUN,LAR Grizzly .50 AE,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+759,PA-15,IC_GUN,MAB PA-15,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+760,.50 Beo,IC_GUN,.50 Beowulf Rifle,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+761,MPL,IC_GUN,Walther MPL,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+762,M16A1,IC_GUN,Colt M16A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+763,XM177E1,IC_GUN,Colt XM177-E1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+764,CMMG 7.3,IC_GUN,CMMG 7.3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+765,OA-93,IC_GUN,OA-93,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+766,Automag IV,IC_GUN,Automag IV,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+767,Grizzly .45,IC_GUN,LAR Grizzly .45 WM,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+768,Wildey,IC_GUN,Wildey Survivor,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+769,C7CT,IC_GUN,ColtCanada C7CT,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+770,Encore,IC_GUN,Thompson Contender Encore,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+771,Alaskan,IC_GUN,Ruger S. Redhawk Alaskan,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+772,FA M83,IC_GUN,Fr. Arms M83 Premier Grade,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+773,KP M/31,IC_GUN,KP M/31 Suomi,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+774,VSSK,IC_GUN,VSSK Vykhlop,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+775,SPAS-12,IC_GUN,SPAS-12,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+776,Kar 98k,IC_GUN,Mauser Karabiner 98k,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+777,Benelli R-1,IC_GUN,Benelli R-1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+778,Blaser LRS2,IC_GUN,Blaser R93 LRS2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+779,S&O Shorty,IC_GUN,S&O Shorty,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+780,SA-24,IC_GUN,SA-24,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+781,SAR 21,IC_GUN,SAR 21,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+782,SR-47,IC_GUN,KAC SR-47,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+783,Walther P99,IC_GUN,Walther P99,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+784,Mauser M-03,IC_GUN,Mauser M-03,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+785,AKMSU,IC_GUN,AKMSU,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+786,Elite 10mm,IC_GUN,Colt Delta Elite,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+787,SCAR-H SV,IC_GUN,FN SCAR-H SV,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+788,SCAR-L SV,IC_GUN,FN SCAR-L SV,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+789,Steyr ACR,IC_GUN,Steyr ACR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+790,SCAR-WP CQC,IC_GUN,FN SCAR-WP CQC,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+791,SCAR-WP SV,IC_GUN,FN SCAR-WP SV,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+792,SCAR-68 CQC,IC_GUN,FN SCAR-68 CQC,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+793,SCAR-68 SV,IC_GUN,FN SCAR-68 SV,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+794,MP5/40A3,IC_GUN,HK MP5/40A3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+795,M468,IC_GUN,Barrett M468,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+796,M4A3,IC_GUN,Bushmaster M4A3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+797,XCR-1,IC_GUN,Robarms XCR-1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+798,Luger P-08,IC_GUN,P-08 Parabellum,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+799,P226 SAS,IC_GUN,SIG P226 SAS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+800,P226 SAS .40,IC_GUN,SIG P226 SAS .40,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+887,Anaconda,IC_GUN,Colt Anaconda,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+888,MR-96,IC_GUN,Manurhin MR-96,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+889,PRO-9,IC_GUN,FN PRO-9,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+890,Forty-Nine,IC_GUN,FN Forty-Nine,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+891,FNP-45,IC_GUN,FN FNP-45,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+892,S&W M29,IC_GUN,Smith & Wesson M29,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+893,M29 SATAN,IC_GUN,M29 SATAN,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+894,MR-73,IC_GUN,Manurhin MR-73,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+896,M14 EBR,IC_GUN,M14 EBR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+897,M21 EBR,IC_GUN,M21 EBR,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+898,FP6,IC_GUN,Fabarm FP6,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+899,SDASS,IC_GUN,Fabarm SDASS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+900,Pro II,IC_GUN,Kimber Eclipse Pro II,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+901,Commando Mortar,IC_LAUNCHER,Commando Mortar,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+902,M203PI,IC_LAUNCHER,Colt M203PI Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+903,GM-94,IC_LAUNCHER,GM-94 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+904,GP-30,IC_LAUNCHER,GP-30 Obuvka Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+905,AG36,IC_LAUNCHER,HK AG36 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+906,MGL-140,IC_LAUNCHER,Milkor MGL-140 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+907,RGM,IC_LAUNCHER,RGM Kastet Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+908,XM25,IC_LAUNCHER,XM25 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+909,AICW Launcher (built-in),IC_LAUNCHER,AICW Grenade Launcher (built-in),0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+910,F2000 Launcher (built-in),IC_LAUNCHER,F2000 Grenade Launcher (built-in),0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+911,GP-25 Launcher (built-in),IC_LAUNCHER,GP-25 Kostyor Grenade Launcher (Built-in),0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+912,OICW Launcher (built-in),IC_LAUNCHER,OICW Grenade Launcher (built-in),0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+913,HK 79 Launcher,IC_LAUNCHER,HK 79 Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+914,RPG-7,IC_LAUNCHER,RPG-7,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+915,RPG-16,IC_LAUNCHER,RPG-16 Grom,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+916,RPG-26,IC_LAUNCHER,RPG-26 Aglen,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+917,RPG-27,IC_LAUNCHER,RPG-27 Tavolga,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+918,RPO-M,IC_LAUNCHER,RPO-M Shmel,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+920,M203 CLS,IC_LAUNCHER,Colt Launcher System,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+921,FN EGLM,IC_LAUNCHER,FN EGLM Grenade Launcher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+922,KAC M203,IC_LAUNCHER,KAC Launcher System,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1064,P239 SAS,IC_GUN,SIG P239 SAS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1065,AUG-A3,IC_GUN,Steyr AUG-A3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1066,"HK 416 10""",IC_GUN,"HK 416 10""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1067,M12,IC_GUN,Beretta M12,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1069,Galatz,IC_GUN,Galil Sniper,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1070,"HK 416 16""",IC_GUN,"HK 416 16""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1071,Owen .45,IC_GUN,Owen .45,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1072,"HK 416 20""",IC_GUN,"HK 416 20""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1073,HK UCP,IC_GUN,HK UCP,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1074,HEZI SM-1,IC_GUN,HEZI SM-1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1075,MG3,IC_GUN,Rheinmetall MG3,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1076,Shrike,IC_GUN,Ares M4 Shrike,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1077,HK 417,IC_GUN,HK 417,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1078,Cx4 Storm,IC_GUN,Beretta Cx4 Storm,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1177,Spectre,IC_GUN,Spectre M4,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1178,MAT-49,IC_GUN,MAT-49,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1179,SIG MP41/44,IC_GUN,SIG MP41/44,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1187,MG36,IC_GUN,HK MG36,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1188,Ameli,IC_GUN,CETME Ameli,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1190,KAC PDW,IC_GUN,KAC PDW,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1191,Magpul PDR-D,IC_GUN,Magpul PDR-D,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1192,Automag V,IC_GUN,Automag V,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1193,M1 Carbine,IC_GUN,M1 Carbine,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1194,Python,IC_GUN,Colt Python,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1195,MC51,IC_GUN,FR Ordnance MC51,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1201,SL8 RAS,IC_GUN,HK SL8 RAS,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1332,"AR57 16""",IC_GUN,"AR57 16""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1333,"AR57 11""",IC_GUN,"AR57 11""",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1334,"AR57 6""-S",IC_GUN,"AR57 6""-Silenced",0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1352,Hand Mortar,IC_GUN,Hand Mortar,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1522,KAC Masterkey,IC_GUN,KAC Masterkey,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1581,Rifle Grenade Device,IC_LAUNCHER,Rifle Grenade Device,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1627,Pepper Spray,IC_GUN,Pepper Spray,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1736,Strela-2,IC_LAUNCHER,Strela-2,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1761,Extinguisher,IC_GUN,Fire Extinguisher,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1762,PS90,IC_GUN,FN PS90,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
+1775,M82A1,IC_GUN,Barrett M82A1,0,0,,0x0000000000000000,UNRESOLVED,LOW,,,Research pending; keep runtime metadata zero until resolved.
