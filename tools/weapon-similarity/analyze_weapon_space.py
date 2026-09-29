@@ -73,6 +73,12 @@ DISTANCE_SCALE_FLOORS = {
     "octh_aim_bonus": 10.0,
 }
 
+# Calibre is a logistics preference, not a tactical hard constraint by default.
+# Within the same family-priority + semantic-tier group, a same-calibre
+# candidate may replace the mechanical best only when it is no more than 5%
+# farther away. --same-calibre remains the explicit hard-filter mode.
+CALIBRE_NEAR_TIE_RATIO = 1.05
+
 TYPE_ADJACENCY = {
     1: {2},          # pistol -> machine pistol
     2: {1, 3},       # machine pistol -> pistol / SMG
@@ -190,6 +196,8 @@ def load_dataset(
             "weapon_class_name": w["weapon_class_name"],
             "calibre": int(w["calibre"]),
             "calibre_name": w["calibre_name"],
+            "tactical_role": w["tactical_role"],
+            "replacement_family": w.get("replacement_family", ""),
             "two_handed": bool(w["two_handed"]),
             "heavy_gun": bool(w["heavy_gun"]),
             "has_semi_auto": bool(w["has_semi_auto"]),
@@ -285,6 +293,29 @@ def distance_matrix(
     return z * np.sqrt(weights), features, scale
 
 
+def preserves_strict_fire_modes(
+    target: pd.Series,
+    candidate: pd.Series,
+) -> bool:
+    return (
+        (not bool(target["has_semi_auto"]) or bool(candidate["has_semi_auto"]))
+        and (not bool(target["has_burst"]) or bool(candidate["has_burst"]))
+        and (not bool(target["has_autofire"]) or bool(candidate["has_autofire"]))
+    )
+
+
+def preserves_broad_fire_capability(
+    target: pd.Series,
+    candidate: pd.Series,
+) -> bool:
+    target_rapid = bool(target["has_burst"]) or bool(target["has_autofire"])
+    candidate_rapid = bool(candidate["has_burst"]) or bool(candidate["has_autofire"])
+    return (
+        (not bool(target["has_semi_auto"]) or bool(candidate["has_semi_auto"]))
+        and (not target_rapid or candidate_rapid)
+    )
+
+
 def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
     """Return a semantic fallback tier, or None if the candidate is unsuitable.
 
@@ -317,19 +348,8 @@ def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
         return None
 
     same_handedness = bool(candidate["two_handed"]) == bool(target["two_handed"])
-
-    strict_modes = (
-        (not bool(target["has_semi_auto"]) or bool(candidate["has_semi_auto"]))
-        and (not bool(target["has_burst"]) or bool(candidate["has_burst"]))
-        and (not bool(target["has_autofire"]) or bool(candidate["has_autofire"]))
-    )
-
-    target_rapid = bool(target["has_burst"]) or bool(target["has_autofire"])
-    candidate_rapid = bool(candidate["has_burst"]) or bool(candidate["has_autofire"])
-    broad_capability = (
-        (not bool(target["has_semi_auto"]) or bool(candidate["has_semi_auto"]))
-        and (not target_rapid or candidate_rapid)
-    )
+    strict_modes = preserves_strict_fire_modes(target, candidate)
+    broad_capability = preserves_broad_fire_capability(target, candidate)
 
     if same_type and same_handedness and strict_modes:
         return 0
@@ -351,6 +371,53 @@ def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
         return 8
 
     return None
+
+
+def candidate_family_priority(target: pd.Series, candidate: pd.Series) -> int:
+    """0 only for a benchmark-audited, capability-preserving family match."""
+    family = str(target["replacement_family"])
+    if not family or family != str(candidate["replacement_family"]):
+        return 1
+    if int(target["calibre"]) != int(candidate["calibre"]):
+        return 1
+    if bool(target["two_handed"]) != bool(candidate["two_handed"]):
+        return 1
+    if not preserves_strict_fire_modes(target, candidate):
+        return 1
+    return 0
+
+
+def rank_candidate_records(records: list[dict]) -> list[dict]:
+    """Rank family/tier first, then apply a bounded same-calibre near-tie."""
+    if not records:
+        return records
+
+    group_best: dict[tuple[int, int], float] = {}
+    for record in records:
+        key = (int(record["family_priority"]), int(record["tier"]))
+        group_best[key] = min(group_best.get(key, float("inf")), record["distance"])
+
+    for record in records:
+        key = (int(record["family_priority"]), int(record["tier"]))
+        best_distance = group_best[key]
+        record["calibre_preference"] = (
+            0
+            if bool(record["same_calibre"])
+            and record["distance"] <= best_distance * CALIBRE_NEAR_TIE_RATIO
+            else 1
+        )
+
+    records.sort(
+        key=lambda r: (
+            r["family_priority"],
+            r["tier"],
+            r["calibre_preference"],
+            r["distance"],
+            r["uiIndex"],
+        )
+    )
+    return records
+
 
 def filter_is_eligible(
     row: pd.Series,
@@ -484,7 +551,9 @@ def cmd_neighbors(
         )
         records.append(
             {
+                "family_priority": candidate_family_priority(target, candidate),
                 "tier": tier,
+                "same_calibre": int(candidate["calibre"]) == int(target["calibre"]),
                 "uiIndex": int(candidate["uiIndex"]),
                 "name": candidate["name"],
                 "weapon_type": candidate["weapon_type_name"],
@@ -495,12 +564,16 @@ def cmd_neighbors(
             }
         )
 
-    records.sort(key=lambda r: (r["tier"], r["distance"], r["uiIndex"]))
+    rank_candidate_records(records)
     result = pd.DataFrame(records[: args.limit])
 
     print(
         f"target {int(target.uiIndex)}: {target['name']} "
         f"({target['weapon_type_name']}, {target['calibre_name']})"
+    )
+    print(
+        "selection: audited family match (strict modes + same calibre/handedness) "
+        "before tier; then a <=5% same-calibre near-tie preference; then distance"
     )
     print(
         "tiers: 0 exact; 1 same-type capability; 2 adjacent-type capability; "
@@ -573,7 +646,7 @@ def cmd_coverage(
 
     for target_pos in target_positions:
         target = df.loc[target_pos]
-        best: dict | None = None
+        candidate_records = []
 
         for candidate_pos in eligible_positions:
             candidate = df.loc[candidate_pos]
@@ -590,30 +663,30 @@ def cmd_coverage(
 
             delta = matrix[candidate_pos] - matrix[target_pos]
             distance = float(np.sqrt(np.dot(delta, delta)))
-
-            if (
-                best is None
-                or tier < best["tier"]
-                or (tier == best["tier"] and distance < best["distance"])
-            ):
-                percentile = distance_percentile(
-                    reference,
-                    target["tactical_role"],
-                    target["weapon_type_name"],
-                    distance,
-                )
-                best = {
+            percentile = distance_percentile(
+                reference,
+                target["tactical_role"],
+                target["weapon_type_name"],
+                distance,
+            )
+            candidate_records.append(
+                {
                     "target_uiIndex": int(target["uiIndex"]),
                     "target": target["name"],
                     "candidate_uiIndex": int(candidate["uiIndex"]),
                     "candidate": candidate["name"],
+                    "family_priority": candidate_family_priority(target, candidate),
                     "tier": tier,
+                    "same_calibre": int(candidate["calibre"]) == int(target["calibre"]),
+                    "uiIndex": int(candidate["uiIndex"]),
                     "distance": distance,
                     "distance_percentile": percentile,
                     "distance_band": distance_band(percentile),
                 }
+            )
 
-        if best is None:
+        rank_candidate_records(candidate_records)
+        if not candidate_records:
             holes.append(
                 {
                     "uiIndex": int(target["uiIndex"]),
@@ -623,6 +696,8 @@ def cmd_coverage(
                 }
             )
         else:
+            best = candidate_records[0]
+            best.pop("uiIndex", None)
             selected.append(best)
 
     result = pd.DataFrame(selected)

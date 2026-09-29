@@ -59,6 +59,22 @@ SPECIAL_TACTICAL_ROLES_BY_CALIBRE = {
     "Rocket": "rocket_rifle",
 }
 
+# Replacement-family tags are intentionally explicit rather than inferred from
+# display names. Only benchmarked families are asserted here; an empty string
+# means "no family preference", not "unrelated in real life".
+REPLACEMENT_FAMILY_BY_INDEX = {
+    664: "g36_rifle",
+    665: "g36_rifle",
+    666: "g36_rifle",
+    755: "g36_rifle",
+    756: "g36_rifle",
+    668: "mg36",
+    1187: "mg36",
+    1332: "ar57",
+    1333: "ar57",
+    1334: "ar57",
+}
+
 NUMERIC_WEAPON_FIELDS = (
     "ubWeaponClass",
     "ubWeaponType",
@@ -562,6 +578,7 @@ def main() -> int:
                 ammo_names.get(calibre, str(calibre)),
                 "conventional",
             ),
+            "replacement_family": REPLACEMENT_FAMILY_BY_INDEX.get(ui_index, ""),
             "two_handed": bool(parse_int(item.get("TwoHanded"))),
             "heavy_gun": bool(parse_int(w.get("HeavyGun"))),
             "has_semi_auto": not bool(parse_int(w.get("NoSemiAuto"))),
@@ -662,7 +679,7 @@ def main() -> int:
         rows.append(row)
 
     payload = {
-        "schema_version": 4,
+        "schema_version": 5,
         "source": {
             "weapons_xml": str(weapons_path.relative_to(repo)),
             "items_xml": str(items_path.relative_to(repo)),

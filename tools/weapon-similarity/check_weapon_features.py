@@ -83,6 +83,18 @@ def main() -> int:
 
         expected_data = json.loads(expected.read_text(encoding="utf-8"))
         generated_data = json.loads(generated.read_text(encoding="utf-8"))
+
+        required_fields = {"tactical_role", "replacement_family"}
+        for weapon in generated_data.get("weapons", []):
+            missing = required_fields - set(weapon)
+            if missing:
+                print(
+                    f"generated weapon {weapon.get('uiIndex')} missing semantic fields: "
+                    f"{sorted(missing)}",
+                    file=sys.stderr,
+                )
+                return 1
+
         diff_value = first_difference(expected_data, generated_data)
         if diff_value is None:
             print("weapon feature snapshot is up to date")
