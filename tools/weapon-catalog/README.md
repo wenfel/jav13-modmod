@@ -32,10 +32,14 @@ python tools/weapon-catalog/weapon_catalog.py attachments \
 ## Context-safety contract
 
 - Large XML is parsed locally; it is never printed by the tool.
-- `query`, `compare`, and `attachments` print at most 40 rows by default.
+- Row-oriented commands print at most 40 rows by default and never more than 100, even if a larger `--limit` is requested.
+- `validate` prints only compact counts, roots, hashes, and status; full validation detail requires `--output`.
+- `lobot --include-generic` prints only the generic-filter count; complete generic criteria require `--output`.
 - Complete large results are written only when `--output` is supplied.
 - Indexes retain source paths and SHA-256 hashes so later sessions can reuse pinned results.
 - Family normalization is deliberately conservative. It collapses obvious representation/configuration states such as folded/collapsed/RAS/tactical and known SDO display-state suffixes, but does not merge model numbers, calibres, or barrel lengths.
+- Catalogue comparison uses the normalized canonical family plus calibre as authoritative identity. Auxiliary aliases remain searchable/traceable but never establish equivalence on their own.
+- Cross-mod equivalences should be added only as explicit vetted full-family rules; generic descriptions and marketing text must not become family identities.
 - Exact source IDs and aliases are preserved for traceability.
 
 ## LOBOT
