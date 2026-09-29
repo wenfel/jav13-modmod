@@ -117,8 +117,9 @@ def comparison_signature(row: dict[str, Any]) -> tuple[str, int | None]:
     return key, calibre if isinstance(calibre, int) else None
 
 
-def stdout_limit(value: int) -> int:
-    return min(HARD_STDOUT_LIMIT, max(0, value))
+def stdout_limit(value: int | str) -> int:
+    parsed = int(value)
+    return min(HARD_STDOUT_LIMIT, max(0, parsed))
 
 
 def _unique(values: Iterable[str]) -> list[str]:
