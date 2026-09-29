@@ -269,3 +269,10 @@ The manual benchmark and country-filter probes are recorded in
 `BENCHMARK_CASES.md`. The cross-type family policy and default calibre policy are now
 resolved for the active OCTH model. NCTH remains exploratory because stance-specific
 intrinsic modifiers still lack a finalized aggregation policy.
+
+
+## Technical debt and follow-up
+
+Known non-blocking limitations, deferred parity questions, and resolved audit findings are
+tracked in [TECHNICAL_DEBT.md](TECHNICAL_DEBT.md). Read that ledger before reopening
+calibration or runtime-parity work that may already have been audited and resolved.
