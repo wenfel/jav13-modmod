@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import ast
 import difflib
 import json
 import math
@@ -10,6 +11,39 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+
+def loaded_metadata_fields(analyzer: Path) -> set[str]:
+    """Return metadata keys assigned into load_dataset()'s row dictionary."""
+    tree = ast.parse(analyzer.read_text(encoding="utf-8"))
+    load_dataset = next(
+        (
+            node
+            for node in tree.body
+            if isinstance(node, ast.FunctionDef) and node.name == "load_dataset"
+        ),
+        None,
+    )
+    if load_dataset is None:
+        return set()
+
+    for node in ast.walk(load_dataset):
+        if not isinstance(node, ast.Assign):
+            continue
+        if not any(
+            isinstance(target, ast.Name) and target.id == "row"
+            for target in node.targets
+        ):
+            continue
+        if not isinstance(node.value, ast.Dict):
+            continue
+        return {
+            key.value
+            for key in node.value.keys
+            if isinstance(key, ast.Constant) and isinstance(key.value, str)
+        }
+
+    return set()
 
 
 def first_difference(expected, generated, path="$"):
@@ -65,6 +99,7 @@ def first_difference(expected, generated, path="$"):
 def main() -> int:
     repo = Path(__file__).resolve().parents[2]
     extractor = Path(__file__).with_name("extract_weapon_features.py")
+    analyzer = Path(__file__).with_name("analyze_weapon_space.py")
     expected = Path(__file__).with_name("weapon_features.json")
 
     with tempfile.TemporaryDirectory() as tmpdir:
@@ -94,6 +129,16 @@ def main() -> int:
                     file=sys.stderr,
                 )
                 return 1
+
+        loaded_fields = loaded_metadata_fields(analyzer)
+        missing_loaded_fields = required_fields - loaded_fields
+        if missing_loaded_fields:
+            print(
+                "analyzer load_dataset() does not copy required semantic fields: "
+                f"{sorted(missing_loaded_fields)}",
+                file=sys.stderr,
+            )
+            return 1
 
         diff_value = first_difference(expected_data, generated_data)
         if diff_value is None:
