@@ -15,7 +15,8 @@ from pathlib import Path
 from typing import Any, Iterable
 
 DEFAULT_LIMIT = 40
-TOOL_VERSION = 1
+HARD_STDOUT_LIMIT = 100
+TOOL_VERSION = 2
 
 MANUFACTURER_ALIASES = (
     (re.compile(r"\bheckler\s*(?:&|and)\s*koch\b", re.I), "hk"),
@@ -96,6 +97,28 @@ def family_name(value: str) -> str:
 
 def family_key(value: str) -> str:
     return identity_key(family_name(value))
+
+
+# Vetted full-family equivalences may be added here. Auxiliary/display aliases are
+# deliberately excluded from comparison identity because short or descriptive
+# aliases can collide across distinct models.
+EXPLICIT_FAMILY_EQUIVALENTS: dict[str, str] = {}
+
+
+def comparison_family_key(value: str) -> str:
+    key = family_key(value)
+    return EXPLICIT_FAMILY_EQUIVALENTS.get(key, key)
+
+
+def comparison_signature(row: dict[str, Any]) -> tuple[str, int | None]:
+    canonical = clean_display_name(str(row.get("canonical_name") or ""))
+    key = str(row.get("canonical_family_key") or comparison_family_key(canonical))
+    calibre = row.get("calibre")
+    return key, calibre if isinstance(calibre, int) else None
+
+
+def stdout_limit(value: int) -> int:
+    return min(HARD_STDOUT_LIMIT, max(0, value))
 
 
 def _unique(values: Iterable[str]) -> list[str]:
@@ -202,6 +225,8 @@ def build_index(items_path: Path, weapons_path: Path, source: str) -> dict[str, 
             or clean_display_name(str(weapon.get("weapon_name") or ""))
             or aliases[0]
         )
+        canonical_identity_key = identity_key(canonical)
+        canonical_family_key = comparison_family_key(canonical)
         identity_keys = {identity_key(a) for a in aliases}
         family_keys = {family_key(a) for a in aliases}
         rows.append(
@@ -209,8 +234,12 @@ def build_index(items_path: Path, weapons_path: Path, source: str) -> dict[str, 
                 "id": idx,
                 "canonical_name": canonical,
                 "family_name": family_name(canonical),
+                "canonical_identity_key": canonical_identity_key,
+                "canonical_family_key": canonical_family_key,
                 "identity_keys": sorted(k for k in identity_keys if k),
                 "family_keys": sorted(k for k in family_keys if k),
+                "alias_identity_keys": sorted(k for k in identity_keys if k and k != canonical_identity_key),
+                "alias_family_keys": sorted(k for k in family_keys if k and k != family_key(canonical)),
                 "aliases": aliases,
                 "item_class": item.get("item_class"),
                 "class_index": item.get("class_index"),
@@ -223,7 +252,7 @@ def build_index(items_path: Path, weapons_path: Path, source: str) -> dict[str, 
             }
         )
 
-    family_counts = Counter((row["family_keys"] or [""])[0] for row in rows)
+    family_counts = Counter(row["canonical_family_key"] for row in rows)
     return {
         "schema": "ja2-weapon-catalog-index",
         "schema_version": TOOL_VERSION,
@@ -266,12 +295,14 @@ def _row_line(row: dict[str, Any]) -> str:
     )
 
 
-def print_bounded(rows: list[dict[str, Any]], limit: int) -> None:
-    limit = max(0, limit)
-    for row in rows[:limit]:
+def print_bounded(rows: list[dict[str, Any]], limit: int) -> int:
+    limit = stdout_limit(limit)
+    shown = min(len(rows), limit)
+    for row in rows[:shown]:
         print(_row_line(row))
-    if len(rows) > limit:
-        print(f"... {len(rows) - limit} more record(s) omitted; use --output for complete data")
+    if len(rows) > shown:
+        print(f"... {len(rows) - shown} more record(s) omitted; use --output for complete data")
+    return shown
 
 
 def query_rows(index: dict[str, Any], ids: list[int], name: str | None, family: str | None, regex: bool) -> list[dict[str, Any]]:
@@ -302,8 +333,7 @@ def query_rows(index: dict[str, Any], ids: list[int], name: str | None, family: 
 
 
 def compare_indexes(base: dict[str, Any], others: list[tuple[str, dict[str, Any]]]) -> dict[str, Any]:
-    base_family = {k for row in base["weapons"] for k in row.get("family_keys", []) if k}
-    base_identity = {k for row in base["weapons"] for k in row.get("identity_keys", []) if k}
+    base_signatures = {comparison_signature(row) for row in base["weapons"]}
     result: dict[str, Any] = {
         "schema": "ja2-weapon-catalog-comparison",
         "schema_version": TOOL_VERSION,
@@ -314,23 +344,23 @@ def compare_indexes(base: dict[str, Any], others: list[tuple[str, dict[str, Any]
     for label, other in others:
         missing = []
         overlap = 0
-        seen_family: set[str] = set()
+        seen_signatures: set[tuple[str, int | None]] = set()
         for row in other["weapons"]:
-            families = {k for k in row.get("family_keys", []) if k}
-            identities = {k for k in row.get("identity_keys", []) if k}
-            if families & base_family or identities & base_identity:
+            signature = comparison_signature(row)
+            if signature in base_signatures:
                 overlap += 1
                 continue
-            primary = next(iter(sorted(families)), f"id:{row['id']}")
-            if primary in seen_family:
+            if signature in seen_signatures:
                 continue
-            seen_family.add(primary)
+            seen_signatures.add(signature)
             missing.append(row)
         missing.sort(key=lambda r: r["canonical_name"].casefold())
         result["comparisons"][label] = {
             "source": other.get("source", label),
             "weapon_records": len(other["weapons"]),
             "overlapping_records": overlap,
+            "missing_unique_signatures": len(missing),
+            # Kept for consumers of schema v1; identity is now canonical family + calibre.
             "missing_unique_families": len(missing),
             "missing": missing,
         }
@@ -406,8 +436,16 @@ def cmd_validate(args: argparse.Namespace) -> int:
     report = {"source": data["source"], "source_files": data["source_files"], "stats": data["stats"], "validation": data["validation"]}
     if args.output:
         write_json(Path(args.output), report)
-    print(json.dumps(report, indent=2, ensure_ascii=False))
-    ok = report["validation"]["unique_item_ids"] and report["validation"]["unique_weapon_ids"]
+    items = report["source_files"]["items"]
+    weapons = report["source_files"]["weapons"]
+    validation = report["validation"]
+    print(f"source={report['source']} weapon_records={report['stats']['weapon_records']} canonical_families={report['stats']['family_keys']}")
+    print(f"items: root={items['root']} records={items['records']} sha256={items['sha256']} duplicate_ids={len(items['duplicate_ids'])} invalid_ids={items['invalid_id_records']}")
+    print(f"weapons: root={weapons['root']} records={weapons['records']} sha256={weapons['sha256']} duplicate_ids={len(weapons['duplicate_ids'])} invalid_ids={weapons['invalid_id_records']}")
+    print(f"validation: item_ids_unique={validation['unique_item_ids']} weapon_ids_unique={validation['unique_weapon_ids']} weapon_ids_missing_items={len(validation['weapon_ids_missing_item_record'])}")
+    if args.output:
+        print(f"full_report={args.output}")
+    ok = validation["unique_item_ids"] and validation["unique_weapon_ids"]
     return 0 if ok else 2
 
 
@@ -436,9 +474,11 @@ def cmd_compare(args: argparse.Namespace) -> int:
     others = [(label, load_index(path)) for label, path in args.other]
     result = compare_indexes(base, others)
     print(f"base={result['base']} weapon_records={result['base_weapon_records']}")
+    budget = stdout_limit(args.limit)
     for label, comp in result["comparisons"].items():
-        print(f"{label}: records={comp['weapon_records']} overlap={comp['overlapping_records']} missing_unique_families={comp['missing_unique_families']}")
-        print_bounded(comp["missing"], args.limit)
+        print(f"{label}: records={comp['weapon_records']} overlap={comp['overlapping_records']} missing_unique_signatures={comp['missing_unique_signatures']}")
+        shown = print_bounded(comp["missing"], budget)
+        budget = max(0, budget - shown)
     if args.output:
         write_json(Path(args.output), result)
         print(f"full_result={args.output}")
@@ -457,9 +497,25 @@ def cmd_lobot(args: argparse.Namespace) -> int:
             result["donors"][str(idx)] = exact.get(str(idx), [])
     if args.include_generic:
         result["generic_filters"] = data["generic_filters"]
-    print(json.dumps(result, indent=2, ensure_ascii=False))
+    print(f"filters={data['filters']} exact_item_ids={len(exact)} sha256={data['sha256']}")
+    budget = stdout_limit(args.limit)
+    for role in ("targets", "donors"):
+        entries = result.get(role, {})
+        print(f"{role}={len(entries)}")
+        for idx, names in list(entries.items())[:budget]:
+            shown_names = names[:10]
+            suffix = f" ... +{len(names) - 10}" if len(names) > 10 else ""
+            print(f"{role[:-1]} {idx}: {shown_names}{suffix}")
+            budget -= 1
+            if budget <= 0:
+                break
+        if budget <= 0:
+            break
+    if args.include_generic:
+        print(f"generic_filters={len(data['generic_filters'])}; use --output for complete generic criteria")
     if args.output:
         write_json(Path(args.output), result)
+        print(f"full_result={args.output}")
     return 0
 
 
@@ -469,15 +525,12 @@ def cmd_attachments(args: argparse.Namespace) -> int:
     item_ids = set(args.id or [])
     attachment_ids = set(args.attachment_id or [])
     matched = [row for row in rows if (not item_ids or row["item_id"] in item_ids) and (not attachment_ids or row["attachment_id"] in attachment_ids)]
-    counts = Counter(row["item_id"] for row in matched)
-    print(f"relationships={len(matched)} total_relationships={len(rows)} sha256={sha256_file(path)}")
-    if item_ids:
-        for idx in sorted(item_ids):
-            print(f"item {idx}: {counts.get(idx, 0)} relationship(s)")
-    for row in matched[: max(0, args.limit)]:
+    print(f"relationships={len(matched)} total_relationships={len(rows)} requested_items={len(item_ids)} requested_attachments={len(attachment_ids)} sha256={sha256_file(path)}")
+    limit = stdout_limit(args.limit)
+    for row in matched[:limit]:
         print(f"item={row['item_id']} attachment={row['attachment_id']} ap_cost={row['ap_cost']} nas_only={row['nas_only']}")
-    if len(matched) > args.limit:
-        print(f"... {len(matched) - args.limit} more relationship(s) omitted; use --output for complete data")
+    if len(matched) > limit:
+        print(f"... {len(matched) - limit} more relationship(s) omitted; use --output for complete data")
     if args.output:
         write_json(Path(args.output), {"source": {"path": str(path), "sha256": sha256_file(path)}, "matches": matched})
         print(f"full_result={args.output}")
@@ -508,14 +561,14 @@ def parser() -> argparse.ArgumentParser:
     qu.add_argument("--name")
     qu.add_argument("--family")
     qu.add_argument("--regex", action="store_true")
-    qu.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
+    qu.add_argument("--limit", type=stdout_limit, default=DEFAULT_LIMIT)
     qu.add_argument("--output")
     qu.set_defaults(func=cmd_query)
 
     co = sub.add_parser("compare", help="compare normalized weapon families against a base index")
     co.add_argument("--base", required=True)
     co.add_argument("--other", action="append", type=_parse_other, required=True, metavar="LABEL=INDEX.json")
-    co.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
+    co.add_argument("--limit", type=stdout_limit, default=DEFAULT_LIMIT)
     co.add_argument("--output")
     co.set_defaults(func=cmd_compare)
 
@@ -524,6 +577,7 @@ def parser() -> argparse.ArgumentParser:
     lo.add_argument("--id", action="append", type=int)
     lo.add_argument("--donor", action="append", type=int)
     lo.add_argument("--include-generic", action="store_true")
+    lo.add_argument("--limit", type=stdout_limit, default=DEFAULT_LIMIT)
     lo.add_argument("--output")
     lo.set_defaults(func=cmd_lobot)
 
@@ -531,7 +585,7 @@ def parser() -> argparse.ArgumentParser:
     at.add_argument("--attachments", required=True)
     at.add_argument("--id", action="append", type=int)
     at.add_argument("--attachment-id", action="append", type=int)
-    at.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
+    at.add_argument("--limit", type=stdout_limit, default=DEFAULT_LIMIT)
     at.add_argument("--output")
     at.set_defaults(func=cmd_attachments)
 
