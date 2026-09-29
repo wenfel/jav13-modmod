@@ -332,7 +332,9 @@ def main() -> int:
 
     global_damage_mod = ini_float(options, "GUN_DAMAGE_MODIFIER", 100.0) / 100.0
     global_range_mod = ini_float(options, "GUN_RANGE_MODIFIER", 100.0) / 100.0
-    global_auto_bonus = ini_float(options, "AUTOFIRE_BULLETS_PER_5AP_MODIFIER", 0.0)
+    global_auto_bonus = int(
+        ini_float(options, "AUTOFIRE_BULLETS_PER_5AP_MODIFIER", 0.0)
+    )
     control_bonus_multiplier = int(
         ini_float(options, "AUTOFIRE_TOHIT_BONUS_MULTIPLIER", 0.0)
     )
@@ -420,7 +422,11 @@ def main() -> int:
         auto_per_5ap = parse_number(w.get("bAutofireShotsPerFiveAP"))
         effective_auto = 0.0
         if auto_per_5ap > 0:
-            effective_auto = max(1.0, auto_per_5ap * af_mod + global_auto_bonus)
+            # GetAutofireShotsPerFiveAPs() stores the type-modified value in
+            # a UINT8 before applying the global flat modifier. Preserve that
+            # truncation; it matters for fractional type modifiers (shotguns).
+            type_modified_auto = int(auto_per_5ap * af_mod)
+            effective_auto = float(max(type_modified_auto + global_auto_bonus, 1))
 
         percent_ap = parse_int(item.get("PercentAPReduction"))
         percent_ready = parse_int(item.get("PercentReadyTimeAPReduction"))
@@ -479,8 +485,8 @@ def main() -> int:
             base_ready_ap * max(0, 100 - percent_ready) // 100
         )
 
-        base_reload_ap = parse_number(w.get("APsToReload")) * reload_mod
-        intrinsic_reload_ap = (
+        base_reload_ap = int(parse_number(w.get("APsToReload")) * reload_mod)
+        intrinsic_reload_ap = int(
             base_reload_ap * max(0, 100 - percent_reload) / 100.0
         )
 

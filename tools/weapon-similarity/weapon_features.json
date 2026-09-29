@@ -5224,9 +5224,9 @@
         "magazine_capacity": 10,
         "burst_size": 0,
         "burst_penalty": 0,
-        "autofire_shots_per_5ap": 1.3,
+        "autofire_shots_per_5ap": 1.0,
         "autofire_penalty": 13,
-        "autofire_ap_5_rounds": 50
+        "autofire_ap_5_rounds": 64
       },
       "effective_intrinsic_features": {
         "damage": 48,
@@ -5255,9 +5255,9 @@
         "magazine_capacity": 10,
         "burst_size": 0,
         "burst_penalty": 0,
-        "autofire_shots_per_5ap": 1.3,
+        "autofire_shots_per_5ap": 1.0,
         "autofire_penalty": 13,
-        "autofire_ap_5_rounds": 50
+        "autofire_ap_5_rounds": 64
       }
     },
     {
@@ -23236,9 +23236,9 @@
         "magazine_capacity": 12,
         "burst_size": 0,
         "burst_penalty": 0,
-        "autofire_shots_per_5ap": 1.3,
+        "autofire_shots_per_5ap": 1.0,
         "autofire_penalty": 9,
-        "autofire_ap_5_rounds": 50
+        "autofire_ap_5_rounds": 64
       },
       "effective_intrinsic_features": {
         "damage": 39,
@@ -23267,9 +23267,9 @@
         "magazine_capacity": 12,
         "burst_size": 0,
         "burst_penalty": 0,
-        "autofire_shots_per_5ap": 1.3,
+        "autofire_shots_per_5ap": 1.0,
         "autofire_penalty": 9,
-        "autofire_ap_5_rounds": 50
+        "autofire_ap_5_rounds": 64
       }
     },
     {
@@ -32874,9 +32874,9 @@
         "magazine_capacity": 20,
         "burst_size": 0,
         "burst_penalty": 0,
-        "autofire_shots_per_5ap": 2.6,
+        "autofire_shots_per_5ap": 2.0,
         "autofire_penalty": 10,
-        "autofire_ap_5_rounds": 25
+        "autofire_ap_5_rounds": 32
       },
       "effective_intrinsic_features": {
         "damage": 38,
@@ -32905,9 +32905,9 @@
         "magazine_capacity": 20,
         "burst_size": 0,
         "burst_penalty": 0,
-        "autofire_shots_per_5ap": 2.6,
+        "autofire_shots_per_5ap": 2.0,
         "autofire_penalty": 10,
-        "autofire_ap_5_rounds": 25
+        "autofire_ap_5_rounds": 32
       }
     },
     {

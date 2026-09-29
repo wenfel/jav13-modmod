@@ -167,6 +167,13 @@ burst AP reductions where present.
 A reference 5-round autofire AP surcharge is likewise included so that general AP
 reduction is not captured for single shots while silently omitted from automatic fire.
 
+The formula audit also found a C++ integer-width detail in
+`GetAutofireShotsPerFiveAPs()`: the weapon-type multiplier is assigned back to a
+`UINT8` before the global flat modifier is added. With the configured shotgun multiplier
+of 1.3, this means CAWS and Jackhammer remain at 1 shot / 5 AP rather than 1.3, and
+USAS-12 remains at 2 rather than 2.6. Their corrected reference 5-round autofire
+surcharges are 64, 64, and 32 AP respectively.
+
 ## 7. OCTH/NCTH boundary
 
 The checked-in configuration is:
@@ -180,6 +187,13 @@ The checked-in configuration is:
 
 The default similarity profile therefore uses OCTH-relevant dimensions and excludes
 NCTH/heat dimensions from distance.
+
+The optional NCTH profile is not yet a complete effective-intrinsic model. `Items.xml`
+contains nonzero stance-specific NCTH modifier blocks (for example `PercentHandling`,
+`PercentMaxCounterForce`, `PercentCounterForceAccuracy`, and `AimLevels`). Because
+the current intrinsic definition deliberately excludes stance, those modifiers are not
+yet folded into a single NCTH distance vector. This does not affect the active OCTH
+profile, but NCTH calibration should not be treated as finished.
 
 OCTH's intrinsic terms are intentionally not collapsed into one invented "accuracy"
 score:
@@ -238,11 +252,11 @@ Strong correlations under the active OCTH profile include:
 | burst AP | burst size | 0.980 |
 | burst size | burst penalty | 0.932 |
 | burst AP | burst penalty | 0.927 |
-| 5-round autofire AP | autofire penalty | 0.926 |
-| autofire shots / 5 AP | autofire penalty | 0.903 |
+| 5-round autofire AP | autofire penalty | 0.907 |
+| autofire shots / 5 AP | autofire penalty | 0.899 |
 | ready AP | item size | 0.825 |
 | ready AP | weight | 0.825 |
-| 5-round autofire AP | autofire shots / 5 AP | 0.775 |
+| 5-round autofire AP | autofire shots / 5 AP | 0.737 |
 | damage | reference shot AP | 0.745 |
 | range | ready AP | 0.743 |
 | range | weight | 0.739 |
@@ -259,16 +273,16 @@ PCA on robust-scaled, unweighted effective-intrinsic active-profile data:
 | --- | ---: | ---: | --- |
 | PC1 | 27.8% | 27.8% | physical scale / range / capacity |
 | PC2 | 21.2% | 49.0% | burst behavior versus long-range/slow-fire role |
-| PC3 | 15.6% | 64.7% | magazine capacity versus burst behavior |
-| PC4 | 8.5% | 73.1% | built-in OCTH to-hit / aim bonuses |
-| PC5 | 5.7% | 78.8% | reliability/repair and intrinsic aiming |
-| PC6 | 4.6% | 83.4% | automatic-fire economy/control mix |
+| PC3 | 15.6% | 64.6% | magazine capacity versus burst behavior |
+| PC4 | 8.4% | 73.0% | built-in OCTH to-hit / aim bonuses |
+| PC5 | 5.7% | 78.7% | reliability/repair and intrinsic aiming |
+| PC6 | 4.7% | 83.3% | automatic-fire economy/control mix |
 
-The first three components now explain about **64.7%** rather than the earlier 72.7%.
+The first three components now explain about **64.6%** rather than the earlier 72.7%.
 That change is expected: adding real burst-AP and intrinsic-control/sight dimensions
 creates additional independent variance.
 
-Eight components explain about **89.9%**.
+Eight components explain about **89.8%**.
 
 PCA remains a diagnostic/visualization technique, not the runtime replacement rule.
 

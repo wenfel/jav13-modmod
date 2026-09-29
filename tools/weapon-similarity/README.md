@@ -203,6 +203,11 @@ Accuracy/control axes depend on the selected CTH system:
   burst/autofire penalties
 - NCTH: NCTH accuracy, handling, aim levels and recoil
 
+The optional NCTH profile currently uses the weapon-level values above but does not fold
+stance-specific `Items.xml` NCTH modifiers into a single effective-intrinsic vector.
+Those modifiers are deliberately stance-dependent, while this model excludes soldier
+stance. Treat NCTH output as exploratory until that policy is calibrated.
+
 Heat endurance is included only when overheating is enabled.
 
 The checked-in snapshot currently represents `NCTH = FALSE` and
