@@ -46,8 +46,11 @@ class WeaponCatalogTests(unittest.TestCase):
 
     def test_family_normalization_is_conservative(self):
         self.assertEqual(wc.family_key("AK-74M - folded"), wc.family_key("AK-74M"))
+        self.assertEqual(wc.family_key("AK-74M III/)-|"), wc.family_key("AK-74M"))
         self.assertNotEqual(wc.family_key("M16A1"), wc.family_key("M16A2"))
         self.assertNotEqual(wc.family_key('HK 416 10"'), wc.family_key('HK 416 16"'))
+        self.assertNotEqual(wc.family_key("Model III"), wc.family_key("Model"))
+        self.assertNotEqual(wc.family_key("Browning Hi-Power Mk III"), wc.family_key("Browning Hi-Power Mk"))
 
     def test_index_and_query(self):
         data = wc.build_index(self.root / "Items.xml", self.root / "Weapons.xml", "test")
@@ -127,6 +130,60 @@ class WeaponCatalogTests(unittest.TestCase):
             "attachments", "--attachments", "x.xml", "--limit", "100000"
         ])
         self.assertEqual(args.limit, wc.HARD_STDOUT_LIMIT)
+
+    def test_validate_and_index_fail_on_invalid_ids(self):
+        bad_items = ITEMS.replace(
+            "</ITEMLIST>",
+            "<ITEM><uiIndex>not-an-id</uiIndex><szItemName>Broken</szItemName></ITEM></ITEMLIST>",
+        )
+        bad_weapons = WEAPONS.replace(
+            "</WEAPONLIST>",
+            "<WEAPON><uiIndex>not-an-id</uiIndex><szWeaponName>Broken</szWeaponName></WEAPON></WEAPONLIST>",
+        )
+        cases = [
+            ("bad-items", bad_items, WEAPONS),
+            ("bad-weapons", ITEMS, bad_weapons),
+        ]
+        for label, items_xml, weapons_xml in cases:
+            with self.subTest(label=label):
+                items_path = self.root / f"{label}-Items.xml"
+                weapons_path = self.root / f"{label}-Weapons.xml"
+                output_path = self.root / f"{label}-index.json"
+                items_path.write_text(items_xml, encoding="utf-8")
+                weapons_path.write_text(weapons_xml, encoding="utf-8")
+                validate_args = type("Args", (), {
+                    "items": str(items_path), "weapons": str(weapons_path),
+                    "source": label, "output": None,
+                })()
+                index_args = type("Args", (), {
+                    "items": str(items_path), "weapons": str(weapons_path),
+                    "source": label, "output": str(output_path),
+                })()
+                with redirect_stdout(io.StringIO()):
+                    self.assertEqual(wc.cmd_validate(validate_args), 2)
+                    self.assertEqual(wc.cmd_index(index_args), 2)
+
+    def test_validate_and_index_fail_on_missing_item_record(self):
+        orphan_weapons = WEAPONS.replace(
+            "</WEAPONLIST>",
+            "<WEAPON><uiIndex>99</uiIndex><szWeaponName>Orphan Carbine</szWeaponName>"
+            "<ubWeaponClass>3</ubWeaponClass><ubWeaponType>6</ubWeaponType>"
+            "<ubCalibre>8</ubCalibre><ubMagSize>30</ubMagSize></WEAPON></WEAPONLIST>",
+        )
+        weapons_path = self.root / "Orphan-Weapons.xml"
+        output_path = self.root / "orphan-index.json"
+        weapons_path.write_text(orphan_weapons, encoding="utf-8")
+        validate_args = type("Args", (), {
+            "items": str(self.root / "Items.xml"), "weapons": str(weapons_path),
+            "source": "orphan", "output": None,
+        })()
+        index_args = type("Args", (), {
+            "items": str(self.root / "Items.xml"), "weapons": str(weapons_path),
+            "source": "orphan", "output": str(output_path),
+        })()
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(wc.cmd_validate(validate_args), 2)
+            self.assertEqual(wc.cmd_index(index_args), 2)
 
     def test_validate_and_lobot_are_bounded(self):
         validate_args = type("Args", (), {
