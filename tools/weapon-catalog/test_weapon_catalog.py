@@ -1,6 +1,8 @@
+import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 import weapon_catalog as wc
@@ -68,6 +70,79 @@ class WeaponCatalogTests(unittest.TestCase):
         result = wc.compare_indexes(base, [("other", other)])
         self.assertEqual(result["comparisons"]["other"]["missing_unique_families"], 1)
         self.assertEqual(result["comparisons"]["other"]["missing"][0]["canonical_name"], "STEN Mk.II")
+
+    def test_compare_does_not_merge_shared_short_alias(self):
+        base = wc.build_index(self.root / "Items.xml", self.root / "Weapons.xml", "base")
+        other = json.loads(json.dumps(base))
+        base["weapons"] = [{
+            "id": 10, "canonical_name": "HK 416 10 inch", "family_name": "HK 416 10 inch",
+            "canonical_family_key": wc.family_key("HK 416 10 inch"),
+            "identity_keys": [wc.identity_key("HK 416 10 inch"), wc.identity_key("HK 416")],
+            "family_keys": [wc.family_key("HK 416 10 inch"), wc.family_key("HK 416")],
+            "aliases": ["HK 416 10 inch", "HK 416"], "calibre": 5,
+        }]
+        other["weapons"] = [{
+            "id": 11, "canonical_name": "HK 416 16 inch", "family_name": "HK 416 16 inch",
+            "canonical_family_key": wc.family_key("HK 416 16 inch"),
+            "identity_keys": [wc.identity_key("HK 416 16 inch"), wc.identity_key("HK 416")],
+            "family_keys": [wc.family_key("HK 416 16 inch"), wc.family_key("HK 416")],
+            "aliases": ["HK 416 16 inch", "HK 416"], "calibre": 5,
+        }]
+        result = wc.compare_indexes(base, [("other", other)])
+        self.assertEqual(result["comparisons"]["other"]["overlapping_records"], 0)
+        self.assertEqual(result["comparisons"]["other"]["missing_unique_signatures"], 1)
+
+    def test_compare_keeps_calibre_variants_distinct(self):
+        base = {"source": "base", "weapons": [{
+            "id": 20, "canonical_name": "Example Carbine", "canonical_family_key": wc.family_key("Example Carbine"),
+            "calibre": 1,
+        }]}
+        other = {"source": "other", "weapons": [{
+            "id": 21, "canonical_name": "Example Carbine", "canonical_family_key": wc.family_key("Example Carbine"),
+            "calibre": 2,
+        }]}
+        result = wc.compare_indexes(base, [("other", other)])
+        self.assertEqual(result["comparisons"]["other"]["overlapping_records"], 0)
+        self.assertEqual(result["comparisons"]["other"]["missing_unique_signatures"], 1)
+
+    def test_generic_descriptive_alias_is_not_equivalence(self):
+        base = {"source": "base", "weapons": [{
+            "id": 30, "canonical_name": "Model Alpha", "canonical_family_key": wc.family_key("Model Alpha"),
+            "family_keys": [wc.family_key("Model Alpha"), wc.family_key("Assault Rifle")],
+            "calibre": 3,
+        }]}
+        other = {"source": "other", "weapons": [{
+            "id": 31, "canonical_name": "Model Beta", "canonical_family_key": wc.family_key("Model Beta"),
+            "family_keys": [wc.family_key("Model Beta"), wc.family_key("Assault Rifle")],
+            "calibre": 3,
+        }]}
+        result = wc.compare_indexes(base, [("other", other)])
+        self.assertEqual(result["comparisons"]["other"]["overlapping_records"], 0)
+
+    def test_stdout_limit_is_clamped(self):
+        self.assertEqual(wc.stdout_limit(100000), wc.HARD_STDOUT_LIMIT)
+        self.assertEqual(wc.stdout_limit(-1), 0)
+
+    def test_validate_and_lobot_are_bounded(self):
+        validate_args = type("Args", (), {
+            "items": str(self.root / "Items.xml"), "weapons": str(self.root / "Weapons.xml"),
+            "source": "test", "output": None,
+        })()
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertEqual(wc.cmd_validate(validate_args), 0)
+        self.assertLessEqual(len(buf.getvalue().splitlines()), 5)
+
+        lobot_args = type("Args", (), {
+            "filters": str(self.root / "Filters.xml"), "id": [3], "donor": [99],
+            "include_generic": True, "limit": 100000, "output": None,
+        })()
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertEqual(wc.cmd_lobot(lobot_args), 0)
+        lines = buf.getvalue().splitlines()
+        self.assertLessEqual(len(lines), wc.HARD_STDOUT_LIMIT + 5)
+        self.assertTrue(any("generic_filters=1" in line for line in lines))
 
     def test_lobot_and_attachments(self):
         lobot = wc.parse_lobot_filters(self.root / "Filters.xml")
