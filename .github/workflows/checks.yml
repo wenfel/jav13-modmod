@@ -48,3 +48,22 @@ jobs:
 
       - name: Check generated weapon feature snapshot
         run: python3 tools/weapon-similarity/check_weapon_features.py
+
+
+  weapon_similarity_analyzer_smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout weapon similarity analyzer
+        uses: actions/checkout@v7
+        with:
+          filter: 'blob:none'
+          sparse-checkout: tools/weapon-similarity
+
+      - name: Install analyzer dependencies
+        run: python3 -m pip install -r tools/weapon-similarity/requirements.txt
+
+      - name: Smoke-test nearest-neighbour analysis
+        run: |
+          python3 tools/weapon-similarity/analyze_weapon_space.py \
+            tools/weapon-similarity/weapon_features.json neighbors \
+            --index 1332 --limit 3
