@@ -268,7 +268,7 @@ def build_index(items_path: Path, weapons_path: Path, source: str) -> dict[str, 
         },
         "stats": {
             "weapon_records": len(rows),
-            "family_keys": len({k for row in rows for k in row["family_keys"]}),
+            "family_keys": len({row["canonical_family_key"] for row in rows if row["canonical_family_key"]}),
             "duplicate_primary_family_keys": sum(1 for v in family_counts.values() if v > 1),
         },
         "weapons": rows,
