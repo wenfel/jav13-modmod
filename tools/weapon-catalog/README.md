@@ -27,7 +27,7 @@ python tools/weapon-catalog/weapon_catalog.py attachments \
   --id 632 --limit 20
 ```
 
-`validate` checks XML roots, parsing, duplicate IDs, missing item records and source hashes without creating an index.
+`validate` checks XML roots, parsing, duplicate/invalid IDs, missing item records and source hashes without creating an index. `validate` and `index` exit nonzero when those ID/reference invariants fail.
 
 ## Context-safety contract
 
