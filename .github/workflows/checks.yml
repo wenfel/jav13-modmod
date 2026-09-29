@@ -43,5 +43,8 @@ jobs:
             /gamedir/Data-1.13/Ja2_Options.INI
             /gamedir/Data-1.13/APBPConstants.ini
 
+      - name: Check weapon similarity Python syntax
+        run: python3 -m py_compile tools/weapon-similarity/*.py
+
       - name: Check generated weapon feature snapshot
         run: python3 tools/weapon-similarity/check_weapon_features.py
