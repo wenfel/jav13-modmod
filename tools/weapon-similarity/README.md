@@ -226,7 +226,11 @@ z = (x - median) / IQR
 ```
 
 This prevents large-unit or outlier-heavy columns from dominating merely because of
-their units.
+their units. Zero-IQR columns fall back to sample standard deviation. Replacement
+distance then applies mechanics-sized minimum scales of 10 CTH points to the sparse
+OCTH `ToHitBonus` and `AimBonus` axes. This prevents a handful of built-in laser/scope
+items from becoming many artificial standard deviations solely because almost every
+weapon has zero in those fields. PCA and k-means keep the unmodified robust scaling.
 
 The tool also reports a role-and-type-relative distance percentile. It compares a
 filtered replacement with the unrestricted tier-0 nearest-neighbour distribution for

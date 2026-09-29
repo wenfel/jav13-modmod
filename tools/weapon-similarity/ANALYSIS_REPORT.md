@@ -234,6 +234,14 @@ z = (x - median(x)) / IQR(x)
 When a conditional column has zero IQR, the implementation falls back to its sample
 standard deviation; a constant column becomes inert.
 
+The manual benchmark exposed one exception needed for replacement distance. Built-in
+OCTH `ToHitBonus` and `AimBonus` occur on only a handful of firearms, so their sample
+standard deviations are about 2.17 and 1.29 even though the engine values themselves are
+10-20 CTH-point laser/scope bonuses. That made one bonus dominate 95-99% of several
+otherwise sensible pair distances. Replacement distance now floors both of those scales
+at **10 CTH points**. The nominal feature weights are unchanged. PCA/k-means retain the
+unmodified robust scaling so exploratory structure is not tuned to the benchmark.
+
 Replacement distance then uses an explicit weighted Euclidean metric:
 
 ```text
@@ -385,8 +393,8 @@ Across 308 conventional weapons with an unrestricted tier-0 neighbour:
 
 - median nearest distance: **0.555**
 - 75th percentile: **0.876**
-- 90th percentile: **1.339**
-- 95th percentile: **1.841**
+- 90th percentile: **1.277**
+- 95th percentile: **1.767**
 
 The distribution remains strongly role/type dependent, so the CLI reports a
 role-and-type-relative distance percentile rather than relying on a universal hard cutoff.
@@ -404,16 +412,19 @@ pistols or shotguns.
 
 ## 16. Intrinsic-bonus outliers
 
-The effective layer intentionally exposes some extreme cases:
+The benchmark decomposition showed that sparse OCTH bonus scaling, rather than the
+nominal weights alone, created the largest artificial outliers:
 
-- OICW's closest unrestricted tier-0 neighbour is still very distant because OICW
-  combines 20% AP reduction, `ToHitBonus=20`, and `AimBonus=15`
-- OTs-39 and Rocket Rifle carry unusual built-in to-hit values
-- MG36 combines AP reduction with an intrinsic aim bonus
+- OTs-39 -> L2A3 was 98.9% `ToHitBonus` contribution under the sample-SD fallback
+- MG36 -> MG36 RAS was 95.0% `AimBonus` contribution
+- OICW's `ToHitBonus=20` and `AimBonus=15` together contributed about 96% of its
+  distance to AK-108
 
-These are not being "fixed" by lowering weights simply to compress the distribution.
-They belong in the manual benchmark set, where we can decide how strongly built-in
-optics/control should influence tactical equivalence.
+After applying the 10-point distance-scale floors, MG36 and MG36 RAS become reciprocal
+tier-0 neighbours at about **1.204** (65th percentile), OTs-39's nearest tier-0 distance
+falls from about **5.913** to **1.412**, while OICW remains a genuine far outlier at about
+**2.484**. This is an evidence-based normalization correction; the feature weights
+themselves are unchanged.
 
 There is a separate semantic issue around special-purpose ordinary-type records such as
 Pepper Spray, Flamethrower and Hand Mortar. That is a role-classification problem, not

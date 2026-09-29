@@ -64,6 +64,15 @@ OVERHEAT_WEIGHTS = {
     "heat_shots_to_jam_threshold": 0.35,
 }
 
+# Sparse built-in OCTH bonuses have zero IQR and very small sample standard
+# deviations. Replacement distance uses mechanics-sized minimum scales so
+# 10-20 point laser/scope bonuses remain important without becoming many
+# artificial standard deviations. PCA/k-means deliberately do not use these.
+DISTANCE_SCALE_FLOORS = {
+    "octh_to_hit_bonus": 10.0,
+    "octh_aim_bonus": 10.0,
+}
+
 TYPE_ADJACENCY = {
     1: {2},          # pistol -> machine pistol
     2: {1, 3},       # machine pistol -> pistol / SMG
@@ -230,6 +239,7 @@ def resolve_profile(
 def robust_scale(
     df: pd.DataFrame,
     features: Iterable[str],
+    scale_floors: dict[str, float] | None = None,
 ) -> tuple[np.ndarray, pd.Series, pd.Series]:
     cols = list(features)
     x = df[cols].astype(float)
@@ -240,6 +250,12 @@ def robust_scale(
     # deviation only for such columns; if still constant, make it inert.
     sd = x.std(axis=0, ddof=1).replace(0.0, np.nan)
     scale = iqr.where(iqr != 0.0, sd).fillna(1.0)
+
+    if scale_floors:
+        for feature, floor in scale_floors.items():
+            if feature in scale.index:
+                scale.loc[feature] = max(float(scale.loc[feature]), float(floor))
+
     z = (x - med) / scale
     return z.to_numpy(dtype=float), med, scale
 
@@ -260,7 +276,11 @@ def distance_matrix(
 ) -> tuple[np.ndarray, list[str], pd.Series]:
     """Weighted matrix for replacement distance."""
     features = [f for f in feature_weights if f in df.columns]
-    z, _, scale = robust_scale(df, features)
+    z, _, scale = robust_scale(
+        df,
+        features,
+        scale_floors=DISTANCE_SCALE_FLOORS,
+    )
     weights = np.array([feature_weights[f] for f in features], dtype=float)
     return z * np.sqrt(weights), features, scale
 
