@@ -279,7 +279,7 @@
 		<szBRName>Glock 17</szBRName>
 		<szBRDesc>Even though most of this Austrian pistol's parts are plastic, it will get detected by airport x-ray machines. The simple design of this recoil-operated self-loader contains only 32 components and is a common army issue worldwide.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1982</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -317,7 +317,7 @@
 		<szBRName>Glock 18</szBRName>
 		<szBRDesc>Of Austrian origin, the Glock 18 is deserving of the classification of machine pistol. As the Glock 17's successor, it was built to offer the option for automatic fire. Sorry, but parts from the Glock 17 and 18 are not interchangeable.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1986</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -355,8 +355,8 @@
 		<szBRName>Beretta 92F</szBRName>
 		<szBRDesc>U.S. Army issued, the Beretta 92F is a standard 9mm Parabellum pistol, with a modified trigger guard to allow a two-handed grip. This is a very functional weapon.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1984</ProductionYearStart>
+		<ProductionYearEnd>1989</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>3</ubClassIndex>
@@ -393,8 +393,8 @@
 		<szBRName>Beretta 93R</szBRName>
 		<szBRDesc>The only pistol you'll ever need. Classified as a machine pistol, it features a fold-down front grip and an extendible steel shoulder stock, that attaches at the rear of the butt to facilitate three-round-mode shooting.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1979</ProductionYearStart>
+		<ProductionYearEnd>1993</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>4</ubClassIndex>
@@ -547,8 +547,8 @@
 		<szBRName>Colt M1911A1</szBRName>
 		<szBRDesc>This American made automatic pistol of classic design is one of the most successful combat pistols ever invented. A proven man-stopper, it creates a wide wound channel that can cause severe nerve trauma.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1926</ProductionYearStart>
+		<ProductionYearEnd>1945</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>8</ubClassIndex>
@@ -583,7 +583,7 @@
 		<szBRName>HK MP5KA4</szBRName>
 		<szBRDesc>Heckler and Koch's MP5K is one of the most compact and deadly German sub-machine guns around. Anti-terrorist groups and drug cartels love this weapon because it's so small and easy to use. This tiny weapon is easily hidden under clothing.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1980</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -622,8 +622,8 @@
 		<szBRName>Ingram M10</szBRName>
 		<szBRDesc>The U.S. Military Armament Corp. Model-10: A real man's submachine gun. Its steadiness allows for single-handed firing and its threaded barrel can fit a 'sound suppressor,' which is similar to a silencer but won't reduce bullet velocity.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1970</ProductionYearStart>
+		<ProductionYearEnd>1973</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>10</ubClassIndex>
@@ -659,8 +659,8 @@
 		<szBRName>Thompson M1A1</szBRName>
 		<szBRDesc>Although heavier than most submachine guns, the 'Tommy Gun' is still favored by Commando and Ranger forces. None have been built since the 1960's, but they are still very common and have definitely weathered the test of time.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1942</ProductionYearStart>
+		<ProductionYearEnd>1944</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>11</ubClassIndex>
@@ -697,7 +697,7 @@
 		<szBRName>Colt M4 Commando</szBRName>
 		<szBRDesc>Very small and yet very deadly, the Colt 733 Commando is an attractively short and concealable assault rifle that was based on the M16 design. It is extremely popular among several US armed forces.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -734,8 +734,8 @@
 		<szBRName>HK 53A3</szBRName>
 		<szBRDesc>Only two inches longer than the MP5 submachine gun, the HK53 provides all the hard-hitting firepower of the 5.56mm caliber in a compact package.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1975</ProductionYearStart>
+		<ProductionYearEnd>2000</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>13</ubClassIndex>
@@ -772,8 +772,8 @@
 		<szBRName>AKS-74U</szBRName>
 		<szBRDesc>Russian in origin, this submachine gun is a shorter version of the AK-74. It's a combat intensive weapon with a bulbous muzzle attachment to compensate for firing 5.45mm Soviet rifle cartridges in a much shorter barrel.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1979</ProductionYearStart>
+		<ProductionYearEnd>1993</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>14</ubClassIndex>
@@ -810,7 +810,7 @@
 		<szBRName>FN P90</szBRName>
 		<szBRDesc>Chews through Kevlar like it was butter. The FN P90 is a blowback machine pistol with truly powerful ballistic capabilities. All controls are fully ambidextrous, with a cocking handle fitted on both sides and two open sights. Comes complete with reflex sight.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -856,7 +856,7 @@
 		<szBRName>Type 85</szBRName>
 		<szBRDesc>Of Chinese design, the Type 85 submachine gun is a plain blowback weapon that is remarkably lightweight due to its rotating bolt system. The weapon's manufacturers claim that it also fires the subsonic type-64 cartridge.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1985</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000080000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -895,7 +895,7 @@
 		<szBRName>SKS</szBRName>
 		<szBRDesc>The Simonov self-loading SKS automatic rifle has a simple design and is easy to operate. Developed during W.W.II, it was later distributed to most Warsaw Pact members. Its only weak spot: It's a little heavy for its cartridge.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1945</ProductionYearStart>
 		<ProductionYearEnd>1956</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -933,7 +933,7 @@
 		<szBRName>Dragunov SVD</szBRName>
 		<szBRDesc>This Russian sniping rifle is known for its accuracy. Standard issues with the rifle are the PSO-1 telescope sight and the image-intensifying NSPU-3 night sight.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1963</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -971,8 +971,8 @@
 		<szBRName>M24</szBRName>
 		<szBRDesc>The Remington M24 is the standard sniping rifle of the US Army. This bolt-action rifle's stock is made of synthetic material with an aluminum bedding lock and comes with an adjustable buttplate.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1988</ProductionYearStart>
+		<ProductionYearEnd>2010</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>19</ubClassIndex>
@@ -1048,8 +1048,8 @@
 		<szBRName>HK G41A2</szBRName>
 		<szBRDesc>Built to NATO weapons standards, this assault rifle is a great piece of German engineering. It features an ejection port dust cover and a hold-open device to keep the bolt open when emptying the mag.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1984</ProductionYearStart>
+		<ProductionYearEnd>1996</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>21</ubClassIndex>
@@ -1086,7 +1086,7 @@
 		<szBRName>Ruger Mini-14</szBRName>
 		<szBRDesc>Considered to be the great American hunting rifle, it's perfect for paramilitary use. It naturally enhances your ability to hit on target because of its low recoil forces.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1973</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -1124,7 +1124,7 @@
 		<szBRName>Diemaco C7A2</szBRName>
 		<szBRDesc>It's the Canadian version of the American M16A2. Trust those crazy Canucks to incorporate such safety devices as a case deflector to prevent empty cases from being flung into the faces of left-handed firers.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000008000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -1162,8 +1162,8 @@
 		<szBRName>FAMAS G2</szBRName>
 		<szBRDesc>The French Army's FA-MAS rifle was the first 'bullpup' design to enter military service. It handles well and shoots quite accurately. A bipod is attached for steadier shooting.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1994</ProductionYearStart>
+		<ProductionYearEnd>2000</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000040</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>24</ubClassIndex>
@@ -1201,8 +1201,8 @@
 		<szBRName>AK-74</szBRName>
 		<szBRDesc>Used as the Soviet infantry's standard automatic rifle, the AK-74 is a smaller caliber version of the AKM. While highly efficient and steady, with minimal recoil, it can be nasty to bystanders, as muzzle gases are diverted sideways.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1974</ProductionYearStart>
+		<ProductionYearEnd>1991</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>25</ubClassIndex>
@@ -1239,8 +1239,8 @@
 		<szBRName>AKM</szBRName>
 		<szBRDesc>As the modernized version of the AK-47 automatic rifle, it was one of the best and most widely distributed Soviet weapons. Designed for mass production, you'll find one of these automatic rifles slung over every frugal mercenary's shoulder.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1959</ProductionYearStart>
+		<ProductionYearEnd>1977</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>26</ubClassIndex>
@@ -1277,7 +1277,7 @@
 		<szBRName>M14</szBRName>
 		<szBRDesc>Truly American through and through. This lighter automatic rifle offers multiple firing options, but is best kept locked at semi-automatic. Unfortunately, without the ability to change its barrel, it can overheat with sustained firing.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1959</ProductionYearStart>
 		<ProductionYearEnd>1964</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -1314,8 +1314,8 @@
 		<szBRName>FN FAL</szBRName>
 		<szBRDesc>This Belgian automatic rifle set a new standard in weaponry in the early 1950's. Its robust and reliable design made it simple to use and maintain, despite its tendency for excessive climbing in automatic mode.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1953</ProductionYearStart>
+		<ProductionYearEnd>1988</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>28</ubClassIndex>
@@ -1352,8 +1352,8 @@
 		<szBRName>HK G3A3</szBRName>
 		<szBRDesc>Made from sheet metal stampings and plastic furniture, this Heckler and Koch automatic rifle sure ain't pretty, but it is definitely robust, reliable, and highly effective.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1963</ProductionYearStart>
+		<ProductionYearEnd>1997</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>29</ubClassIndex>
@@ -1435,7 +1435,7 @@
 		<szBRName>Remington M870</szBRName>
 		<szBRDesc>A cherished 12-gauge shotgun for its smooth pump-action, it's a favorite of many police forces around the world. Commonly used as a hunting rifle, it can be found for sale in most local hardware stores.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1950</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -1517,8 +1517,8 @@
 		<szBRName>HK CAWS</szBRName>
 		<szBRDesc>Though canceled by the US Military, we're sure you'll love the CAWS! We've just received a limited shipment of these experimental, fully automatic shotguns and their special ammo. Turn your enemies into a gory mess at 240RPM. Comes with built-in scope.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1984</ProductionYearStart>
+		<ProductionYearEnd>1989</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>33</ubClassIndex>
@@ -1597,8 +1597,8 @@
 		<szBRName>RPK-74</szBRName>
 		<szBRDesc>This Russian light machine gun is simply a heavy-barreled version of the AK74 rifle. Its only drawback is that it tends to shoot the rifling out of its barrel within 5,000 rounds.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1974</ProductionYearStart>
+		<ProductionYearEnd>1991</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>35</ubClassIndex>
@@ -1637,7 +1637,7 @@
 		<szBRName>HK 21E</szBRName>
 		<szBRDesc>The German Heckler and Koch 21 is a fantastic all-purpose machine gun, featuring a heavy yet easily changeable barrel. Its bipod offers 3 height settings on which the gun can pivot 30 degrees in either direction.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1982</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -1817,7 +1817,7 @@
 		<szBRName>M224 Mortar</szBRName>
 		<szBRDesc>Commonly referred to as the battalion commander's artillery, the M224 mortar is a must-have for the serious mercenary commandant. It is a 60mm caliber lightweight mortar with a finned barrel, sight, M7 base plate, and bipod, that was built to specifically accommodate HE shells.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1978</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -2085,7 +2085,7 @@
 		<szBRName>M72A4 LAW</szBRName>
 		<szBRDesc>The M72A4 Light Anti-Tank Weapon is a light-weight shoulder-fired rocket launcher which can penetrate a foot of tank armor or destroy small battlefield fortifications. A one-shot weapon of awesome destructive power.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -2627,7 +2627,7 @@
 		<szBRName>Calico M-950</szBRName>
 		<szBRDesc>An American made pistol version of the M960. Using only semi-automatic and limited burst fire &amp; the same 50-round clip, it could probably only be classified a pistol in the U.S.A.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -2663,7 +2663,7 @@
 		<szBRName>Calico M-900</szBRName>
 		<szBRDesc>Another reincarnation of the M960, this version has an unusually long barrel for a 9mm weapon and semi-auto-fires with the same 50-round clip.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1985</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -2700,7 +2700,7 @@
 		<szBRName>Calico M-960A</szBRName>
 		<szBRDesc>Known as the "Mini Submachine Gun", this American model uses a helical-feed 50-round magazine of 9mm bullets and has been making things right since 1990.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -9922,7 +9922,7 @@
 		<szBRName>Micro-Uzi</szBRName>
 		<szBRDesc>The name says it all, it's an Uzi. First there was the Mini-Uzi, now the Micro-Uzi. One can only wonder when the Pocket-Uzi will roll-off the Israeli assembly line.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1986</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -9965,7 +9965,7 @@
 		<szBRName>Enfield L85A2</szBRName>
 		<szBRDesc>This British weapon was actually made in Nottingham, not Enfield, where computer controlled tools were finally able to eliminate all of its serious defects.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000080</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10002,7 +10002,7 @@
 		<szBRName>Tavor TAR 21</szBRName>
 		<szBRDesc>This new Israeli high-tech machine gun will bullpup your socks off. Weighing only 5.5 pounds empty, this weapon of death can fire off 900 5.56mm bullets a minute.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10040,7 +10040,7 @@
 		<szBRName>VSS Vintorez</szBRName>
 		<szBRDesc>This silent sniper rifle from Russia fires heavy 9mm bullets at subsonic speeds and apparently can pierce all types of body armor at over 400 meters.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1987</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10082,7 +10082,7 @@
 		<szBRName>HK PSG1</szBRName>
 		<szBRDesc>This German made weapon exemplifies the country's reputation for precision and is a sniper's weapon of choice.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1972</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10122,8 +10122,8 @@
 		<szBRName>Barrett M82A2</szBRName>
 		<szBRDesc>This modified M82A2's bullpup layout places the action and barrel further back in the stock, retaining its barrel length while shortening its overall size.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1987</ProductionYearStart>
+		<ProductionYearEnd>1987</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>335</ubClassIndex>
@@ -10165,7 +10165,7 @@
 		<szBRName>SIG P226R</szBRName>
 		<szBRDesc>Reliability and ease of use are key features of this swiss-made handgun. Comes with a short Picatinny rail in front of the triggerguard.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2000</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10203,7 +10203,7 @@
 		<szBRName>FN Five-seveN</szBRName>
 		<szBRDesc>The Five-seveN pistol was designed as a complimentary sidearm for the P90 submachine-gun. The Five-seveN is a delayed blowback operated, semi-automatic firearm. It features a polymer frame with an underbarrel accessory rail.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10243,7 +10243,7 @@
 		<szBRName>MP-443 Grach</szBRName>
 		<szBRDesc>The PYa (Pistolet Yarygina - codenamed Grach) was developed for the Russian Army in the early 1990s. A conservative, but well-balanced and sturdy pistol, with adequate accuracy and decent firepower.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10280,7 +10280,7 @@
 		<szBRName>MP-446 Viking</szBRName>
 		<szBRDesc>The MP-446 Viking is a sporting derivative of the MP-443 Grach pistol. It's similar in design, but its frame is made from advanced composites to reduce wear and tear.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10318,7 +10318,7 @@
 		<szBRName>Saiga 12K</szBRName>
 		<szBRDesc>Modeled after the AK-47, the Saiga is a well-designed and affordable semi-automatic shotgun with a host of personal defense and tactical applications.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10359,7 +10359,7 @@
 		<szBRName>Benelli M3 Convertible</szBRName>
 		<szBRDesc>The M3's ability to switch firing modes is an engineering marvel well worth the expense.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1989</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10399,7 +10399,7 @@
 		<szBRName>HK MP5A4</szBRName>
 		<szBRDesc>The MP5A4 is basically no more than a scaled-down version of the Heckler and Koch G3 battle rifle.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1985</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10437,7 +10437,7 @@
 		<szBRName>HK MP5N</szBRName>
 		<szBRDesc>Modern version of the MP5, developed for US Navy SEALs. The barrel is threaded to accept US-made detachable silencers.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1986</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10476,7 +10476,7 @@
 		<szBRName>HK MP5SD5</szBRName>
 		<szBRDesc>A silenced version of the H&amp;K MP5, with integral silencer and a fixed stock from the A4 version.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1985</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10518,8 +10518,8 @@
 		<szBRName>Uzi</szBRName>
 		<szBRDesc>Since its introduction in 1948, the Uzi has supplanted the Thompson as the household word in SMGs.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1954</ProductionYearStart>
+		<ProductionYearEnd>2002</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>345</ubClassIndex>
@@ -10558,7 +10558,7 @@
 		<szBRName>Colt 9mm SMG</szBRName>
 		<szBRDesc>This light, manageable-sized SMG cranks out 9mm rounds at 900 RPM.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1982</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10597,7 +10597,7 @@
 		<szBRDesc>Universally known and respected amongst assault rifles. Get yours today!</szBRDesc>
 		<usItemClass>2</usItemClass>
 		<ProductionYearStart>1948</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearEnd>1959</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>347</ubClassIndex>
@@ -10674,7 +10674,7 @@
 		<szBRName>Vikhr SR-3 Compact</szBRName>
 		<szBRDesc>Although its design is based on the AS "Val" rifle, this 9x39mm carbine is not as easily suppressed.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -10713,8 +10713,8 @@
 		<szBRName>SIG SG540</szBRName>
 		<szBRDesc>Built on an AK-style platform, this assault rifle went on to father little variants of its own.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1977</ProductionYearStart>
+		<ProductionYearEnd>2002</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>350</ubClassIndex>
@@ -11941,8 +11941,8 @@
 		<szBRName>FN Browning HP-35</szBRName>
 		<szBRDesc>Originally designed in 1925, the High Power didn't see military service until 1935, and was the only sidearm that served both sides in W.W.II. The latest incarnation, the HP-35, is in use today by the Belgian Military.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1935</ProductionYearStart>
+		<ProductionYearEnd>2018</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>397</ubClassIndex>
@@ -17289,7 +17289,7 @@
 		<szBRName>AEK-919K "Kashtan"</szBRName>
 		<szBRDesc>This compact and solid SMG has an extending stock for a faster draw time.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17327,7 +17327,7 @@
 		<szBRName>AEK-971</szBRName>
 		<szBRDesc>Reckoned to be 15-20% more accurate than the AK-74 by some shooters, discerning mercenaries should give this assault rifle a try. This model fires 5.45mm rounds.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1978</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17367,8 +17367,8 @@
 		<szBRName>AEK-973</szBRName>
 		<szBRDesc>Reckoned to be 15-20% more accurate than the AK-74 by some shooters, be sure to give this new assault rifle a try. This model fires 7.62mm WP rounds.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2000</ProductionYearStart>
+		<ProductionYearEnd>2006</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>603</ubClassIndex>
@@ -17406,8 +17406,8 @@
 		<szBRName>Agram 2000</szBRName>
 		<szBRDesc>This 9mm submachine gun is one of the sportiest we have to offer!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1992</ProductionYearStart>
+		<ProductionYearEnd>1997</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000010000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>604</ubClassIndex>
@@ -17450,8 +17450,8 @@
 		<szBRName>AICW</szBRName>
 		<szBRDesc>The Aussies have solved the weight and bulk problems associated with merging an assault rifle caliber firearm with a multi-shot grenade launcher. While the hi-tech 'Metal Storm'-based launcher is compact, it still fires a big 40mm round. The AUG carbine is no compromise either.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2001</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000010000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>605</ubClassIndex>
@@ -17498,7 +17498,7 @@
 		<szBRName>AK-102</szBRName>
 		<szBRDesc>While not as compact as the AKS-74U, this carbine's marginally longer barrel offers better performance.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17537,7 +17537,7 @@
 		<szBRName>AK-103</szBRName>
 		<szBRDesc>Back to the future... The return of the 7.62mm cartridges. More powerful than its predecessor, the AK-74, this rifle employs many of today's new technologies. Long live the AK-47!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17576,7 +17576,7 @@
 		<szBRName>AK-104</szBRName>
 		<szBRDesc>Exported from Izhevsk, straight to the regional/sectarian conflict of your choice.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17615,7 +17615,7 @@
 		<szBRName>AK-105</szBRName>
 		<szBRDesc>The world just could not do without another Avtomat-Kalashnikova carbine, this time in 5.45mm.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17654,7 +17654,7 @@
 		<szBRName>AK-107</szBRName>
 		<szBRDesc>This addition to the new Alexandrov-Kalashnikov family features an impressive rate of fire, sliding tangent rear sights with a U notch, and a fearsome black phosphate finish.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17693,7 +17693,7 @@
 		<szBRName>AK-108</szBRName>
 		<szBRDesc>Who says Russians can't use NATO ammunition? Not the Russians! The AK-108 is built for the 5.56mm round and performs admirably with its foreign partner.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17732,8 +17732,8 @@
 		<szBRName>AKMS</szBRName>
 		<szBRDesc>This version of the AKM comes with a spiffy folding stock. About as comfortable to put against your shoulder as a lawnmower blade, its compact size still makes it ideal for paratroopers, mechanized infantry, and anyone wearing a trenchcoat.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1959</ProductionYearStart>
+		<ProductionYearEnd>1977</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>612</ubClassIndex>
@@ -17772,8 +17772,8 @@
 		<szBRName>AKS-47</szBRName>
 		<szBRDesc>Designed for portability and versatility with BMP APC's in mind, this AK is the Russian equivalent to a walkman: Trendy for its time, practical, and a cause for hearing loss.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1949</ProductionYearStart>
+		<ProductionYearEnd>1959</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>613</ubClassIndex>
@@ -17812,8 +17812,8 @@
 		<szBRName>AKS-74</szBRName>
 		<szBRDesc>If the AKS-47 was a Walkman, this baby is an iPod. The modernized 5.45mm version of the re-released classic comes in just as many colors as its MP3 companion, but is decidedly harder to dance with. That is, of course, unless you're an Islamic Fundamentalist.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1974</ProductionYearStart>
+		<ProductionYearEnd>1991</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>614</ubClassIndex>
@@ -17852,8 +17852,8 @@
 		<szBRName>AMD-65M</szBRName>
 		<szBRDesc>Despite being devoid of the trademark wood, this gun begs the question: "Does the world really need another Kaloshnikov knockoff?" Our answer is an emphatic "Yes."</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1965</ProductionYearStart>
+		<ProductionYearEnd>1980</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000800000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>615</ubClassIndex>
@@ -17897,7 +17897,7 @@
 		<szBRName>AN-94 "Abakan"</szBRName>
 		<szBRDesc>This weapon was designed by Gennadiy Nikonov. Another leap forward in gun making, you can be sure to see it soon on a hijacked airliner near you.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>2008</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17935,7 +17935,7 @@
 		<szBRName>AS Val</szBRName>
 		<szBRDesc>The tactical applications of a silenced assault weapon are limited only by the imagination (and moral inclinations) of the user.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1987</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -17979,7 +17979,7 @@
 		<szBRName>AI AWM</szBRName>
 		<szBRDesc>Designed for extreme range in Arctic environments, the AWM is the last word in any long range engagement - and we do mean any. Firing the incredibly powerful .338 Lapua, this rifle's remarkable performance is rivaled only by its remarkable price tag.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000080</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18024,7 +18024,7 @@
 		<szBRName>SR-2 Veresk</szBRName>
 		<szBRDesc>This SMG is small and light enough for easy carrying, yet fires the powerful 9x21mm round. 30 round mags available now!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18102,7 +18102,7 @@
 		<szBRName>Benelli M4 Super 90</szBRName>
 		<szBRDesc>The M4 uses an inertia recoil semi-automatic system which allows the shooter to lock semi-automatic action, switch to the manually operated pump-action mode and back to semi-automatic in a matter of seconds.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18141,7 +18141,7 @@
 		<szBRName>Beretta 92FS</szBRName>
 		<szBRDesc>The Beretta 92FS is a slightly modified version of the Beretta 92F and is used by the US military. It features a chrome lined barrel, new grip panels, and a lanyard ring.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1989</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18179,7 +18179,7 @@
 		<szBRName>Beretta 96FS Brigadier</szBRName>
 		<szBRDesc>A modified version of the Beretta 92, rechambered for the .40 S&amp;W caliber. Features a redesigned slide and removable front sight blade.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18217,7 +18217,7 @@
 		<szBRName>Beretta AR-70/90</szBRName>
 		<szBRDesc>Yet another Kalashnikov-inspired weapon, this 5.56mm assault rifle has a quality all on its own.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18255,8 +18255,8 @@
 		<szBRName>Beretta M501</szBRName>
 		<szBRDesc>An Italian military exclusive, cousin Lester had to do a few favors so we could carry this exquisite piece of sniping hardware. Order now and we'll throw in some photos of Lester's trip. (Warning: Photos contain adult content. Must be 21 or older.)</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1985</ProductionYearStart>
+		<ProductionYearEnd>1993</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>625</ubClassIndex>
@@ -18296,7 +18296,7 @@
 		<szBRName>Bizon 2-07</szBRName>
 		<szBRDesc>Variety is the spice of life, so try out the SMG in its 7.62 Tk variant.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18335,8 +18335,8 @@
 		<szBRName>Browning M1919 A6</szBRName>
 		<szBRDesc>An oldie but goodie, with a high rate of fire, this classic belt-fed LMG will answer all your offensive and defensive needs.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1943</ProductionYearStart>
+		<ProductionYearEnd>1945</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>627</ubClassIndex>
@@ -18376,8 +18376,8 @@
 		<szBRName>Carl Gustaf M/45B</szBRName>
 		<szBRDesc>No stranger to armed conflict, make this rugged 9mm SMG yours today.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1954</ProductionYearStart>
+		<ProductionYearEnd>1964</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000004000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>628</ubClassIndex>
@@ -18455,7 +18455,7 @@
 		<szBRName>Knight SR-25</szBRName>
 		<szBRDesc>Made by the Knight's Armament Company, the KAC SR-25M can be considered a match version of the AR10 rifle.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18494,7 +18494,7 @@
 		<szBRName>Colt High Capacity M1911A1</szBRName>
 		<szBRDesc>A popular M1911A1 variant, designed to use double-stacked magazines, with up to 14 rounds of .45 caliber power.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18533,7 +18533,7 @@
 		<szBRName>Colt M16A4</szBRName>
 		<szBRDesc>The latest model M16 assault rifle has everything the A2 has, and more. With the built-in Picatinny rail system, it can be outfitted with all the accessories you'll ever need.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18570,7 +18570,7 @@
 		<szBRName>Colt M4A1</szBRName>
 		<szBRDesc>Small, light and deadly, the M4A1 is extremely effective in close quarter battles. If you like the M16, you'll love the M4.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18609,8 +18609,8 @@
 		<szBRName>CZ 700</szBRName>
 		<szBRDesc>With this high-quality, yet affordable bolt-action sniper rifle it's hard to miss your target.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1995</ProductionYearStart>
+		<ProductionYearEnd>1999</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000100000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>634</ubClassIndex>
@@ -18650,8 +18650,8 @@
 		<szBRName>CZ-52</szBRName>
 		<szBRDesc>A Czech handgun for the famous 7.62TT round. Adopted in 1952, the CZ-52 is a powerful and accurate handgun. This weapon has been retired from general military use.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1952</ProductionYearStart>
+		<ProductionYearEnd>1954</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000080000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>635</ubClassIndex>
@@ -18850,8 +18850,8 @@
 		<szBRName>Erma SR-100</szBRName>
 		<szBRDesc>Comes with a muzzle break, forged barrel, 3-lug bolt action, and an adjustable match trigger. If you're planning on competing in the Olympics in-between assignments, this gun's for you.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1997</ProductionYearStart>
+		<ProductionYearEnd>2003</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>640</ubClassIndex>
@@ -18891,7 +18891,7 @@
 		<szBRName>FAMAE Mini SAF</szBRName>
 		<szBRDesc>A Chilean-made clone of Heckler and Koch's MP5K.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000100000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18931,7 +18931,7 @@
 		<szBRName>FAMAE SAF</szBRName>
 		<szBRDesc>Strongly influenced by the Sig 540, the SAF adds to the ranks of quality submachine guns.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000100000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -18969,7 +18969,7 @@
 		<szBRName>FAMAE SAF Silenciada</szBRName>
 		<szBRDesc>This silenced SMG is just the thing for your next covert operation.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000100000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19011,8 +19011,8 @@
 		<szBRName>FN Browning HP-35 .40</szBRName>
 		<szBRDesc>Originally designed in 1925, the High Power didn't see military service until 1935. The latest incarnation, the HP-35, is in use today in the Belgian Military. This one is chambered in .40S&amp;W.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1994</ProductionYearStart>
+		<ProductionYearEnd>2017</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>644</ubClassIndex>
@@ -19048,8 +19048,8 @@
 		<szBRName>FN BDA 9</szBRName>
 		<szBRDesc>The FN BDA 9 is the double-action version of the tried and true Browning High Power semi-automatic pistol.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1977</ProductionYearStart>
+		<ProductionYearEnd>1980</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>645</ubClassIndex>
@@ -19087,7 +19087,7 @@
 		<szBRName>FN F2000</szBRName>
 		<szBRDesc>The F2000 is a gas operated, rotating bolt, select-fire weapon. It features a polymer stock with a bull-pup layout. It comes standard with a 40mm grenade launcher.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19129,8 +19129,8 @@
 		<szBRName>FN FAL Carbine</szBRName>
 		<szBRDesc>The original "Right Arm Of The Free World", without the weight. Grab this 7.62mm spewing baby if you like your extreme prejudice on a diet.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1953</ProductionYearStart>
+		<ProductionYearEnd>1988</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>647</ubClassIndex>
@@ -19208,7 +19208,7 @@
 		<szBRName>FN MAG</szBRName>
 		<szBRDesc>Nail your enemies to the walls with the FN MAG. With a fire rate of 950 rounds per minute, you can draw a deadly line of fire anywhere you need it.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1958</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19250,7 +19250,7 @@
 		<szBRName>FN Minimi SPW</szBRName>
 		<szBRDesc>The Special Forces version of the Minimi is smaller, lighter, and easier to use, but can still kick major ass in any situation.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19293,7 +19293,7 @@
 		<szBRName>FN SCAR-H CQC</szBRName>
 		<szBRDesc>US SOCOM issued a solicitation for the procurement of SOF Combat Assault Rifles (SCAR) in 2003 and this is what FN came up with. Widely customizable and extremely durable; if ever a gun had promise, the SCAR certainly does.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19334,7 +19334,7 @@
 		<szBRName>FN SCAR-L CQC</szBRName>
 		<szBRDesc>The FN SCAR was designed to be more customizable than any other weapon, period. Experts agree: It's nearly perfect. This version is chambered for the lighter 5.56mm NATO round.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19375,8 +19375,8 @@
 		<szBRName>FN FNC</szBRName>
 		<szBRDesc>A red-headed bastard stepchild of the Eastern AK-47 and the Western M16, this Belgian beauty has an integral flash suppressor and a Swedish twin. In the words of Gershwin, who could ask for anything more... except a lighter trigger pull.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1979</ProductionYearStart>
+		<ProductionYearEnd>2004</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>653</ubClassIndex>
@@ -19415,7 +19415,7 @@
 		<szBRName>FR-F2</szBRName>
 		<szBRDesc>The deadliest French representative since Napoleon, albeit completely opposite in its stature, this ambitious sniper rifle fires 7.62mm NATO rounds very accurately due to its bolt action and thermal-shielded barrel.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1986</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000040</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19457,8 +19457,8 @@
 		<szBRName>Galil AR</szBRName>
 		<szBRDesc>The Galil assault rifle is designed for heavy combat. Reliability and lethality in one package.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1972</ProductionYearStart>
+		<ProductionYearEnd>1998</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>655</ubClassIndex>
@@ -19497,8 +19497,8 @@
 		<szBRName>Galil SAR</szBRName>
 		<szBRDesc>This is the shortened version of the Galil AR. It is easier to handle by troops that are used to work under close quarter combat conditions.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1972</ProductionYearStart>
+		<ProductionYearEnd>1998</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>656</ubClassIndex>
@@ -19579,7 +19579,7 @@
 		<szBRName>Glock 19</szBRName>
 		<szBRDesc>A slightly more compact version of the model 17, the model 19 gives you the same reliable 9mm Glock action.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1988</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19617,8 +19617,8 @@
 		<szBRName>Groza OC-14</szBRName>
 		<szBRDesc>The Groza is a neat little weapon, but not recommended for lefties due the placement of its cocking handle, selector switch, and ejection port. This variant comes with an integral GP-25 40mm grenade launcher.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1994</ProductionYearStart>
+		<ProductionYearEnd>1995</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>659</ubClassIndex>
@@ -19700,7 +19700,7 @@
 		<szBRName>HK 23E</szBRName>
 		<szBRDesc>The manufacturer's name says it all. We highly recommend the HK 23E. It's reliable and does the job effectively, with its 100-rounds in a Beta C-Mag. Includes bipod.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1982</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19743,7 +19743,7 @@
 		<szBRName>HK 416 14"</szBRName>
 		<szBRDesc>After fixing England's SA80, now Heckler &amp; Koch wants to improve America's M4. The HK416 is available in both an upgrade kit for M4s or as a complete weapon with a HK-made lower receiver.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2004</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19783,8 +19783,8 @@
 		<szBRName>HK G11 PDW</szBRName>
 		<szBRDesc>SPECIAL! Available for a limited time only: G11 sidearm prototypes with a glow-in-the-dark keychain!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1989</ProductionYearStart>
+		<ProductionYearEnd>1990</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>663</ubClassIndex>
@@ -19824,7 +19824,7 @@
 		<szBRName>HK G36C</szBRName>
 		<szBRDesc>The G36 is a conventional gas-operated, selective fire rifle, made from mostly modern materials and using mostly modern technologies. The G36C is the compact or commando version.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19864,7 +19864,7 @@
 		<szBRName>HK G36 RAS</szBRName>
 		<szBRDesc>The G36 RAS is a conventional gas-operated, selective fire rifle, using mostly modern materials and technologies. Unlike the 'E'-version, the 'RAS' is outfitted with Picatinny rails.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19904,7 +19904,7 @@
 		<szBRName>HK G36K RAS</szBRName>
 		<szBRDesc>The G36 RAS is a conventional gas-operated, selective fire rifle, using mostly modern materials and technologies. The G36K RAS is the carbine version.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -19944,8 +19944,8 @@
 		<szBRName>HK G3KA4</szBRName>
 		<szBRDesc>A smaller version of the venerable G3, this baby packs a killer right hook from both ends. The recoil of these rifles is almost as legendary as their stopping power.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1970</ProductionYearStart>
+		<ProductionYearEnd>1997</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>667</ubClassIndex>
@@ -19983,8 +19983,8 @@
 		<szBRName>HK MG36 RAS</szBRName>
 		<szBRDesc>HK has blessed us with their new, versatile, multi-role squad machine gun. This version is outfitted with Picatinny rails.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1995</ProductionYearStart>
+		<ProductionYearEnd>1995</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>668</ubClassIndex>
@@ -20068,7 +20068,7 @@
 		<szBRName>HK MK23 SOCOM</szBRName>
 		<szBRDesc>A large pistol designed to meet the exacting requirements of the US Special Operations Command. If it's good enough for SOCOM, it's good enough for you!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -20105,8 +20105,8 @@
 		<szBRName>HK MP5/10A3</szBRName>
 		<szBRDesc>The MP5A2's bigger, badder brother. Bringing the impressive 10mm cartridge to bear, this SMG bridges the gap between an MP5 and the UMP-45, and is choice in CQC!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1992</ProductionYearStart>
+		<ProductionYearEnd>2000</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>671</ubClassIndex>
@@ -20241,7 +20241,7 @@
 		<szBRName>HK MSG90A1</szBRName>
 		<szBRDesc>The MSG-90 sniper rifle was made by Heckler-Koch as a "militarized" offspring of their PSG-1 police sniper rifle. It is fitted with barrel threading to accept screw-on silencers.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -20284,8 +20284,8 @@
 		<szBRName>HK P7M8</szBRName>
 		<szBRDesc>The P7 pistols are known for their low barrel axis and slim profile, which makes them accurate and easy to conceal. They are also somewhat expensive, but have a strong following among many shooters.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1983</ProductionYearStart>
+		<ProductionYearEnd>2008</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>675</ubClassIndex>
@@ -20365,7 +20365,7 @@
 		<szBRName>HK UMP45</szBRName>
 		<szBRDesc>The UMP (Universal Machinen-Pistole, Universal Submachine Gun) was developed by the Heckler &amp; Koch company of Germany in the mid- to late-1990s.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -20406,7 +20406,7 @@
 		<szBRName>HK USP</szBRName>
 		<szBRDesc>The HK USP (Universal Self-loading Pistol) appeared in 1993, designed to be a police and military sidearm. All USP pistols are built on the same modified Browning linkless locked breech action, with patented recoil reduction system.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -20482,8 +20482,8 @@
 		<szBRName>Jackhammer Mk3A1</szBRName>
 		<szBRDesc>As the poster child of auto shotguns, the Pancor Jackhammer is proof that almost all problems CAN be solved with violence.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1984</ProductionYearStart>
+		<ProductionYearEnd>1987</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>680</ubClassIndex>
@@ -20523,8 +20523,8 @@
 		<szBRName>Jati-Matic GG-95 PDW</szBRName>
 		<szBRDesc>The Jati-Matic is sleek and easily concealed. Just squeeze the trigger harder for full auto!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1995</ProductionYearStart>
+		<ProductionYearEnd>1995</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000008000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>681</ubClassIndex>
@@ -20566,7 +20566,7 @@
 		<szBRName>KSVK</szBRName>
 		<szBRDesc>In skilled hands, this heavy sniper rifle never fails to deliver. And now it's on discount!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -20609,8 +20609,8 @@
 		<szBRName>M1 Garand</szBRName>
 		<szBRDesc>The first self-loading rifle to be adopted by any army, the M1 has seen service from Normandy and Guadalcanal to the Chosin Reservoir, Khe Sahn, and beyond.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1936</ProductionYearStart>
+		<ProductionYearEnd>1957</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>683</ubClassIndex>
@@ -20648,8 +20648,8 @@
 		<szBRName>M21 Tactical</szBRName>
 		<szBRDesc>The M21 sniper rifle is a semi-automatic version of the M14 and is fitted with a longer barrel for increased range and accuracy.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1969</ProductionYearStart>
+		<ProductionYearEnd>1988</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>684</ubClassIndex>
@@ -20690,8 +20690,8 @@
 		<szBRName>M40A1</szBRName>
 		<szBRDesc>SPECIAL PRICE! The USMC standard issue M40A1 sniper rifle is being replaced by the M40A3, which means we are receiving more shipments of these babies than we can handle and they all must go! Get one for yourself, one for your old lady, and one for your kid!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1977</ProductionYearStart>
+		<ProductionYearEnd>2001</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>685</ubClassIndex>
@@ -20729,8 +20729,8 @@
 		<szBRName>Metal Storm Surf Zone</szBRName>
 		<szBRDesc>Metal Storm's obscene rate of fire is always an attention grabber. Featherweight reliable mass firepower sells it. It makes sense that the Surf Zone is secured by an electronic fingerprint lock.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2001</ProductionYearStart>
+		<ProductionYearEnd>2002</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000010000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>686</ubClassIndex>
@@ -20775,8 +20775,8 @@
 		<szBRName>M60E3</szBRName>
 		<szBRDesc>Always wanted to be like Rambo? Now you can! With the M60E3, you'll always look good taking out a drug cartel, mowing down local mob bosses, and stopping an entire invasion force on your own. Comes with integral bipod and foregrip.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1986</ProductionYearStart>
+		<ProductionYearEnd>2000</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>687</ubClassIndex>
@@ -20817,8 +20817,8 @@
 		<szBRName>Cobray M11/9</szBRName>
 		<szBRDesc>A first choice among many, on both sides of the law, for close quarters dispatch with negligible penetration. The 1200rpm cyclic rate makes for a lot of muzzle climbing, so aim low.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1983</ProductionYearStart>
+		<ProductionYearEnd>1994</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>688</ubClassIndex>
@@ -20894,7 +20894,7 @@
 		<szBRName>Makarov PMM</szBRName>
 		<szBRDesc>A modified version of the Makarov PM, developed during the 1990s. This model attempts to address the original's deficiencies: A small clip size and low stopping power.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -20931,7 +20931,7 @@
 		<szBRName>Micro Galil</szBRName>
 		<szBRDesc>A redesigned version of the Galil MAR, with a completely new, thicker, and a much better protecting hand guard, a carbon-fibre folding stock instead of a steel one, and an extra standard rail.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -20970,7 +20970,7 @@
 		<szBRName>Mini-Uzi</szBRName>
 		<szBRDesc>The Mini-Uzi provides tremendous firepower in a travel size package.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1980</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21009,8 +21009,8 @@
 		<szBRName>Mosin-Nagant M1891/30</szBRName>
 		<szBRDesc>Used by snipers from Stalingrad to Saigon, budding Zaitsevs everywhere will love the Mosin-Nagant.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1930</ProductionYearStart>
+		<ProductionYearEnd>1945</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>693</ubClassIndex>
@@ -21047,7 +21047,7 @@
 		<szBRName>Baikal MP-133</szBRName>
 		<szBRDesc>For decades, Baikal has been designing and producing exellent shotguns.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2000</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21088,7 +21088,7 @@
 		<szBRName>MP-445 Varjag</szBRName>
 		<szBRDesc>One of the newest handgun models in use by the Russian military, the Varjag features a frame made from super strong thermosetting plastic material.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2000</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21165,7 +21165,7 @@
 		<szBRName>OSV-96</szBRName>
 		<szBRDesc>This Russian monstrosity is a counter-sniper/anti-materiel rifle. At nearly 2 meters in length, this rifle is also useful for polevaulting.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21208,8 +21208,8 @@
 		<szBRName>Parker Hale M82</szBRName>
 		<szBRDesc>This sniper rifles comes with iron sights, adjustable trigger, and a rotating bolt. Designed in 1982, it has proven so formidable that it's currently still in service with the British, Canadian, New Zealand, and Australian armed forces.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1973</ProductionYearStart>
+		<ProductionYearEnd>1985</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000080</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>698</ubClassIndex>
@@ -21248,7 +21248,7 @@
 		<szBRName>Pecheneg</szBRName>
 		<szBRDesc>An upgraded PKM, the Pecheneg is slightly lighter and has a higher rate of fire.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21287,7 +21287,7 @@
 		<szBRName>PKM</szBRName>
 		<szBRDesc>Around since the 1960s, the PKM is one of the most famous Russian MGs and is used all over the world. Now you have the chance to show your enemies that old school Soviet weapons are still superior!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1969</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21332,7 +21332,7 @@
 		<szBRName>PP-93</szBRName>
 		<szBRDesc>A true machine pistol, the Pp-93 offers compact concealability in a slim, stamped metal package.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1993</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21371,8 +21371,8 @@
 		<szBRName>PPsh-41</szBRName>
 		<szBRDesc>Known as the "Burp-gun" for the sound produced by its high cyclic rate, the PPsh-41 belches death at 900rpm.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1941</ProductionYearStart>
+		<ProductionYearEnd>1947</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>702</ubClassIndex>
@@ -21409,7 +21409,7 @@
 		<szBRName>PSM</szBRName>
 		<szBRDesc>The PSM was designed in the 1970s as a self-defense firearm for top commanders in the Soviet armed forces. It is an ultra-light, ultra-fast weapon with good stopping power.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1973</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21446,7 +21446,7 @@
 		<szBRName>QBZ-97</szBRName>
 		<szBRDesc>This export version of the Chinese assault rifle attempts to further tip the trade balance in China's favor, although the annoying little features of this gun (no provision for lefties, high sights, and an odd selector switch) certainly earn it the stamp "Made in China."</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000080000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21484,8 +21484,8 @@
 		<szBRName>RPD</szBRName>
 		<szBRDesc>Its full-auto bark has been heard in nearly every corner of the globe. If you need a squad automatic, look no further.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1944</ProductionYearStart>
+		<ProductionYearEnd>1961</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>705</ubClassIndex>
@@ -21522,8 +21522,8 @@
 		<szBRName>RPK</szBRName>
 		<szBRDesc>The RPK is essentially an AK-47 with a heavier barrel and stock. It can empty a 30 round magazine or a 75 round drum at 600rpm.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1961</ProductionYearStart>
+		<ProductionYearEnd>1978</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>706</ubClassIndex>
@@ -21600,8 +21600,8 @@
 		<szBRName>SA vz.58</szBRName>
 		<szBRDesc>In case you want a 7.62mm WP assault rifle, reconsider from getting a cheap AK clone, made in someone's backyard. Take this Czech rifle instead. It may cost a bit more, but it also offers higher quality.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1958</ProductionYearStart>
+		<ProductionYearEnd>1984</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000080000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>708</ubClassIndex>
@@ -21640,7 +21640,7 @@
 		<szBRName>Sako TRG 22</szBRName>
 		<szBRDesc>The Finnish Sako sniper rifles are known by their world-class accuracy and strength. Order yours today!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000008000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21681,7 +21681,7 @@
 		<szBRName>Sako TRG 42</szBRName>
 		<szBRDesc>The TRG-42 in .338 Lapua Mag will meet the demands of the most demanding tactical snipers.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000008000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21761,8 +21761,8 @@
 		<szBRName>SIG SG542</szBRName>
 		<szBRDesc>Swiss-made weapons are the standard for dependability and the SG542 is no exception.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1977</ProductionYearStart>
+		<ProductionYearEnd>2002</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>712</ubClassIndex>
@@ -21798,7 +21798,7 @@
 		<szBRName>SIG SG550</szBRName>
 		<szBRDesc>A Swiss 5.56mm rifle with removable bipod and integral flash suppressor, this one will leave your enemies like cheese of the same nationality.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1986</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21842,7 +21842,7 @@
 		<szBRName>SIG SG551 SWAT</szBRName>
 		<szBRDesc>The shorter barrel of this SIG 550 variant is a heck of a lot more convenient in closer quarters. Includes flash suppressor.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1990</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21883,7 +21883,7 @@
 		<szBRName>SIG SG552 Commando</szBRName>
 		<szBRDesc>The 552 is a extraordinarily well-made carbine. Equipped with a side-folding skeletonized stock and a flash suppressor. Order one now and get a free folding bipod with your purchase!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -21924,8 +21924,8 @@
 		<szBRName>SIG P210</szBRName>
 		<szBRDesc>The SIG P210 was developed by Schweizerische Industrie Gesellschaft (SIG) in 1938-1945, and was adopted by the Swiss Military in 1949. The P210 is a recoil-operated, locked breech handgun with a slightly modified Browning HI-Power style barrel locking.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1949</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>716</ubClassIndex>
@@ -21962,7 +21962,7 @@
 		<szBRName>SIG P226R .40</szBRName>
 		<szBRDesc>The SIG P226 first appeared in 1983, and is the official sidearm of the US Navy SEALs. This variant has been re-chambered for the .40 S&amp;W round and has a Picatinny Rail.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2000</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22001,7 +22001,7 @@
 		<szBRName>SIG P229R</szBRName>
 		<szBRDesc>This is a modernized version of the P228. It is available in several different calibers (this is the 9x19mm version) and has a short Picatinny Rail in front of the trigger guard.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2000</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22115,8 +22115,8 @@
 		<szBRName>Sphinx 3000</szBRName>
 		<szBRDesc>The Sphinx 3000 is more than suitable for competitive match shooting or service applications.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2003</ProductionYearStart>
+		<ProductionYearEnd>2016</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000400</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>721</ubClassIndex>
@@ -22153,7 +22153,7 @@
 		<szBRName>Springfield XD</szBRName>
 		<szBRDesc>A quite reliable pistol, this is a Croatian design for use in harsh environments. Testimonial from Hamous of Metavira: "Me like that gun!"</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2002</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000010000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22191,7 +22191,7 @@
 		<szBRName>SR-1 Gyurza</szBRName>
 		<szBRDesc>The 9x21mm round used by this Makarov clone was specially designed to pierce Kevlar AND Titanium plates at 100 meters. This long forgotten Russian pistol is now the side arm of choice for the Russian Federation.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22230,8 +22230,8 @@
 		<szBRName>Stechkin APS</szBRName>
 		<szBRDesc>The APS is surprisingly fast for a weapon of its size, and is invaluable in mopping up any mess when shit hits the fan.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1951</ProductionYearStart>
+		<ProductionYearEnd>1958</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>724</ubClassIndex>
@@ -22268,8 +22268,8 @@
 		<szBRName>Sterling L2A3</szBRName>
 		<szBRDesc>This SMG provided more than fifty years of reliability and accuracy to British armed forces.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1956</ProductionYearStart>
+		<ProductionYearEnd>1988</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000080</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>725</ubClassIndex>
@@ -22306,7 +22306,7 @@
 		<szBRName>Steyr AUG HBAR</szBRName>
 		<szBRDesc>Otherwise very similar to the AUG, the HBAR features a heavier barrel, integral bipod, and can use larger magazines.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1978</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22346,7 +22346,7 @@
 		<szBRName>Steyr AUG Para</szBRName>
 		<szBRDesc>A shortened AUG chambered to fire 9mm rounds in a tidy, bullpup configuration.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1988</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22386,7 +22386,7 @@
 		<szBRName>Steyr Scout Tactical</szBRName>
 		<szBRDesc>Looking for a lightweight, compact, accurate, easy to use sniper rifle? Look no further! This bolt action .308 is the size of a carbine and packs a wallop, even from a few hundred meters.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1998</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22426,8 +22426,8 @@
 		<szBRName>Steyr SSG-P1</szBRName>
 		<szBRDesc>Cousin Lester took this gun out shooting for the elk hunt last year... then he took it out when his daughter came home pregnant. He bagged both bucks at over 600 yards.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1969</ProductionYearStart>
+		<ProductionYearEnd>2015</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>729</ubClassIndex>
@@ -22467,8 +22467,8 @@
 		<szBRName>Steyr TMP</szBRName>
 		<szBRDesc>The TMP is the perfect compromise between firepower and concealability.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1992</ProductionYearStart>
+		<ProductionYearEnd>2001</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>730</ubClassIndex>
@@ -22551,8 +22551,8 @@
 		<szBRName>Super-Shorty Mini-Shotgun</szBRName>
 		<szBRDesc>Are you looking for a cut-down scattergun? With Serbu's Super-Shorty you can forgo time-consuming hacksaw work.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1996</ProductionYearStart>
+		<ProductionYearEnd>2022</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>732</ubClassIndex>
@@ -22639,7 +22639,7 @@
 		<szBRName>Dragunov SVDS</szBRName>
 		<szBRDesc>The Dragunov has been deadly in the hands of snipers for nearly 40 years. The SVDS is the smaller, but heavier, cousin of the SVD.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1991</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22678,7 +22678,7 @@
 		<szBRName>SVU</szBRName>
 		<szBRDesc>This rifle is more compact and has a somewhat shorter effective range than the SVD. It's also more silent since the muzzle also has a flash and noise suppressor.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22755,8 +22755,8 @@
 		<szBRName>Thompson M1928</szBRName>
 		<szBRDesc>Employed by gangsters and G-Men alike, the Tommy gun's status as an antique shouldn't deter modern users from making use of its firepower.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1928</ProductionYearStart>
+		<ProductionYearEnd>1942</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>737</ubClassIndex>
@@ -22796,7 +22796,7 @@
 		<szBRName>Tokarev TT-33</szBRName>
 		<szBRDesc>Developed in the late 1920's, this pistol was the official side arm of the Red Army in W.W.II. For its time, the TT was a formidable weapon, with good penetration and range.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1933</ProductionYearStart>
 		<ProductionYearEnd>1952</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22834,7 +22834,7 @@
 		<szBRName>U-94S UDAR</szBRName>
 		<szBRDesc>A large caliber (12.5 mm) revolver with high stopping power, used by private security forces and special operations.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22872,7 +22872,7 @@
 		<szBRName>Ultimax</szBRName>
 		<szBRDesc>Reliable and comparatively light-weight, our ST Kinetics' Ultimaxes have been modified to accept 5.56mm Beta C-Mags. Comes with integral bipod and foregrip.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1982</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0010000000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22914,7 +22914,7 @@
 		<szBRName>USAS-12</szBRName>
 		<szBRDesc>Capable of fully automatic fire, the USAS-12 is designed to provide sustained firepower in close combat scenarios.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1989</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000400000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -22953,8 +22953,8 @@
 		<szBRName>Valmet M76</szBRName>
 		<szBRDesc>This Valmet M76, made from high quality steel and plastic parts, is one of the best AK-47 assault rifle variants in the world.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1976</ProductionYearStart>
+		<ProductionYearEnd>1986</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000008000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>742</ubClassIndex>
@@ -22992,8 +22992,8 @@
 		<szBRName>Valmet M82</szBRName>
 		<szBRDesc>Originally constructed on the AK's internals, this hardy weapon can stand up to tons of abuse.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1978</ProductionYearStart>
+		<ProductionYearEnd>1986</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000008000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>743</ubClassIndex>
@@ -23031,8 +23031,8 @@
 		<szBRName>VIS-35</szBRName>
 		<szBRDesc>The VIS-35 was the standard issue sidearm of the Polish military in W.W.II. It is still manufactured today, in limited quantities for collectors. According to some sources, it is one of the best handguns ever built.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1936</ProductionYearStart>
+		<ProductionYearEnd>1945</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000400000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>744</ubClassIndex>
@@ -23069,7 +23069,7 @@
 		<szBRName>VSk-94</szBRName>
 		<szBRDesc>This silenced sniper rifle is made by a company known for manufacturing aircraft cannons and anti-tank missiles. Who could ask for anything more? Oh, and did we mention it can go full auto?</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -23111,8 +23111,8 @@
 		<szBRName>Walther WA 2000</szBRName>
 		<szBRDesc>Now back in stock! The WA 2000 is no longer in production, but we were able to locate a few, and they're on sale for the low, low price of only $7940! Get yours now while supplies last!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1982</ProductionYearStart>
+		<ProductionYearEnd>1988</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>746</ubClassIndex>
@@ -23153,8 +23153,8 @@
 		<szBRName>Winchester 94 Trapper</szBRName>
 		<szBRDesc>Through range wars and gunfights, the Winchester rifle has always been a solid choice.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1985</ProductionYearStart>
+		<ProductionYearEnd>2006</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>747</ubClassIndex>
@@ -23190,8 +23190,8 @@
 		<szBRName>XM-29 OICW</szBRName>
 		<szBRDesc>The XM-29 is a combination weapon, part 20mm magazine-fed grenade launcher and part 5.56mm assault rifle. Both parts are assembled into a single, one-man portable unit, with a built-in target acquisition and fire control system (TA/FCS).</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1996</ProductionYearStart>
+		<ProductionYearEnd>2004</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>748</ubClassIndex>
@@ -23250,8 +23250,8 @@
 		<szBRName>XM8 Automatic</szBRName>
 		<szBRDesc>Originally commissioned by the U.S. military, HK is now producing this 5.56mm multi-role weapon for the highest bidder. Lucky you.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2002</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>749</ubClassIndex>
@@ -23291,8 +23291,8 @@
 		<szBRName>XM8 Baseline Carbine</szBRName>
 		<szBRDesc>The new XM8 family of weapons is spearheading the "next gen" infantry weapons movement, after the OICW contract went belly up.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2002</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>750</ubClassIndex>
@@ -23332,8 +23332,8 @@
 		<szBRName>XM8 Compact Carbine</szBRName>
 		<szBRDesc>The Compact is a short version of the XM8, outfitted specifically for short-range engagements, notably urban operations.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2002</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>751</ubClassIndex>
@@ -23375,8 +23375,8 @@
 		<szBRName>XM8 Sharpshooter</szBRName>
 		<szBRDesc>The Sharpshooter version of the XM8 is the next generation designated marksman rifle, featuring a much longer, match grade, long-twist barrel, for accuracy over longer ranges.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2002</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>752</ubClassIndex>
@@ -23416,7 +23416,7 @@
 		<szBRName>Zastava M76</szBRName>
 		<szBRDesc>A Serbian conversion of the classic AK-47, a semi-automatic sniper rifle that is relatively accurate, yet antiquated.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1976</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000004000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -23455,7 +23455,7 @@
 		<szBRName>Baikal MP-233B</szBRName>
 		<szBRDesc>One of the many finely-produced sporting shotguns on the market, from Baikal.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -23494,7 +23494,7 @@
 		<szBRName>HK G36</szBRName>
 		<szBRDesc>The G36 is a conventional gas operated, selective fire rifle, made from mostly modern materials and using mostly modern technologies. This non-export model comes standard with a built-in reflex scope.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -23540,7 +23540,7 @@
 		<szBRName>HK G36K</szBRName>
 		<szBRDesc>The G36 is a conventional gas operated, selective fire rifle, made from mostly modern materials and using mostly modern technologies. The G36K is the carbine version and comes standard with a built-in reflex scope.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -23623,8 +23623,8 @@
 		<szBRName>LAR Grizzly .50 AE</szBRName>
 		<szBRDesc>A competitor to the .50 AE Desert Eagle, and a fine American piece of work.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1991</ProductionYearStart>
+		<ProductionYearEnd>1999</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>758</ubClassIndex>
@@ -23660,8 +23660,8 @@
 		<szBRName>MAB PA-15</szBRName>
 		<szBRDesc>Discontinued when MAB went out of business. Buy while stock lasts.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1966</ProductionYearStart>
+		<ProductionYearEnd>1982</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000040</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>759</ubClassIndex>
@@ -23698,7 +23698,7 @@
 		<szBRName>.50 Beowulf Rifle</szBRName>
 		<szBRDesc>Use what the U.S Coast Guard uses: they know what they're doing.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -23777,8 +23777,8 @@
 		<szBRName>Colt M16A1</szBRName>
 		<szBRDesc>The M16's deficiencies began to dissolve with this model. Ammo was now loaded with powders that produce much less residue in the gun action. Barrel, chamber, and bolt are chrome-lined to improve corrosion resistance.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1967</ProductionYearStart>
+		<ProductionYearEnd>1982</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>762</ubClassIndex>
@@ -23815,8 +23815,8 @@
 		<szBRName>Colt XM177-E1</szBRName>
 		<szBRDesc>Initially, the CAR-15 showed some problems. It was too loud and the muzzle flash was terrible. Colt partially solved this problem by installing a new, longer flash suppressor. This model was officially adopted as the XM177-E1.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1966</ProductionYearStart>
+		<ProductionYearEnd>1967</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>763</ubClassIndex>
@@ -23856,7 +23856,7 @@
 		<szBRName>CMMG 7.3</szBRName>
 		<szBRDesc>A CMMG 7.3" four rail pistol. Features a chrome-lined 1/7" twist and 5.56mm barrel. Other features include: A feed cut ramp, a padded pistol buffer assembly, a sling adapter, and a T-marked receiver. Lifetime warranty included.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -23934,8 +23934,8 @@
 		<szBRName>Automag IV</szBRName>
 		<szBRDesc>The .45 Winchester Magnum version of Galena's line of Automag pistols.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1991</ProductionYearStart>
+		<ProductionYearEnd>1997</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>766</ubClassIndex>
@@ -23970,7 +23970,7 @@
 		<szBRName>LAR Grizzly .45 WM</szBRName>
 		<szBRDesc>The Grizzly pistols are based on the Colt 1911, as their looks already told you, but they have been beefed up to shoot more powerful ammo.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1983</ProductionYearStart>
 		<ProductionYearEnd>2000</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24006,8 +24006,8 @@
 		<szBRName>Wildey Survivor</szBRName>
 		<szBRDesc>If you are seeing red, do like Charles Bronson did: Pack this one!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1980</ProductionYearStart>
+		<ProductionYearEnd>2011</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>768</ubClassIndex>
@@ -24046,7 +24046,7 @@
 		<szBRName>ColtCanada C7CT</szBRName>
 		<szBRDesc>The C7 "Custom Tactical" is a designated marksman rifle, suitable for the spotter of a sniper/spotter team. Sold with our rugged battle scope.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2005</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000008000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24088,7 +24088,7 @@
 		<szBRName>Contender Encore</szBRName>
 		<szBRDesc>The Thompson Contender Encore is a one-shot target pistol that can also be used for hunting, if equipped with a suitable scope. Chambered for .454 Casull, this is a most powerful gun.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1983</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24166,7 +24166,7 @@
 		<szBRName>Fr. Arms M83 PG</szBRName>
 		<szBRDesc>The Freedom Arms Model 83 Premier Grade may look like one of the very first revolvers that used cartridges, but it is quite new, and fires the all-powerful .454 Casull.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1983</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24204,7 +24204,7 @@
 		<szBRName>KP M/31 Suomi</szBRName>
 		<szBRDesc>The Suomi was used with great sucess during the war of 1940 against the Soviet Union, where this SMG showed the importance of SMGs to modern warfare. Manufacture of the Suomi ceased in 1944, but Finland used it well into the 1990s, when it was finally replaced by assault rifles.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1931</ProductionYearStart>
 		<ProductionYearEnd>1944</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000008000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24241,7 +24241,7 @@
 		<szBRName>VSSK Vykhlop</szBRName>
 		<szBRDesc>Quite new on the market, the Russian Vykhlop (which means 'Exhaust') coughs up something more substantial (and more deadly) than carbon monoxide. Comes with an integral bipod and battle scope.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2004</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24284,7 +24284,7 @@
 		<szBRName>SPAS-12</szBRName>
 		<szBRDesc>A semi-automatic shotgun, designed for police use and Hollywood action movies. For lighter loads and special ammunition, switch to pump-action.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1979</ProductionYearStart>
 		<ProductionYearEnd>2000</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24363,7 +24363,7 @@
 		<szBRName>Benelli R-1</szBRName>
 		<szBRDesc>The Benelli R-1 is another semi-automatic competitor on the sniper rifle market, and a beautifully designed one.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24403,8 +24403,8 @@
 		<szBRName>Blaser R93 LRS2</szBRName>
 		<szBRDesc>The Blaser R93 Tactical is another futuristic german design. It has a quick interchangeable barrel system that allows changing barrels without the need to readjust the scope. This .300 WinMag model is widely used by German and Dutch police.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1997</ProductionYearStart>
+		<ProductionYearEnd>2017</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>778</ubClassIndex>
@@ -24522,7 +24522,7 @@
 		<szBRName>SAR 21</szBRName>
 		<szBRDesc>This version of the SAR 21 bullpup assault rifle has several attachment points and is considered more versatile compared to the standard model.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0010000000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24677,8 +24677,8 @@
 		<szBRName>AKMSU</szBRName>
 		<szBRDesc>This even more shortened variant of the AKM comes with a folding stock that allows folding/unfolding while a magazine is in the gun. It was developed for paratroopers and special units, and is quite functional, despite the rather unusual foregrip.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1988</ProductionYearStart>
+		<ProductionYearEnd>1988</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>785</ubClassIndex>
@@ -24723,8 +24723,8 @@
 		<szBRName>Colt Delta Elite</szBRName>
 		<szBRDesc>Colt's entry into the 10mm pistol market. All you expect from a Colt pistol, and more.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1987</ProductionYearStart>
+		<ProductionYearEnd>1996</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>786</ubClassIndex>
@@ -24761,7 +24761,7 @@
 		<szBRName>FN SCAR-H SV</szBRName>
 		<szBRDesc>Not for sale through BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24800,7 +24800,7 @@
 		<szBRName>FN SCAR-L SV</szBRName>
 		<szBRDesc>Not for sale through BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24839,8 +24839,8 @@
 		<szBRName>Steyr ACR</szBRName>
 		<szBRDesc>Prototype of a new generation of assault rifles, the Steyr ACR fires fin-stabilized darts. This is the future weapon of choice.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1987</ProductionYearStart>
+		<ProductionYearEnd>1990</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>789</ubClassIndex>
@@ -24880,7 +24880,7 @@
 		<szBRName>FN SCAR-WP CQC</szBRName>
 		<szBRDesc>Not for sale through BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24919,7 +24919,7 @@
 		<szBRName>FN SCAR-WP SV</szBRName>
 		<szBRDesc>Not for sale through BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24958,7 +24958,7 @@
 		<szBRName>FN SCAR-68 CQC</szBRName>
 		<szBRDesc>Not for sale through BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -24999,7 +24999,7 @@
 		<szBRName>FN SCAR-68 SV</szBRName>
 		<szBRDesc>Not for sale through BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2007</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000101</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -25040,8 +25040,8 @@
 		<szBRName>HK MP5/40A3</szBRName>
 		<szBRDesc>The more popular one of the new caliber MP5's, this is the .40 S&amp;W version.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1992</ProductionYearStart>
+		<ProductionYearEnd>2000</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>794</ubClassIndex>
@@ -25117,7 +25117,7 @@
 		<szBRName>Bushmaster M4A3</szBRName>
 		<szBRDesc>Bushmaster's famous M4A3, now in 6.8mm SPC. As an added bonus, this is the military/LE full auto variant.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1999</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -25234,7 +25234,7 @@
 		<szBRName>SIG P226 SAS</szBRName>
 		<szBRDesc>Reliability and ease of use are key features of this Swiss-made handgun. Improved with the SIG Anti-Snag system.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2005</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -25271,7 +25271,7 @@
 		<szBRName>SIG P226 SAS .40</szBRName>
 		<szBRDesc>A stainless steel slide and the SIG Anti-Snag system (for easier concealed carrying) are improvements over the standard version.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2005</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -28634,8 +28634,8 @@
 		<szBRName>FN FNP-45</szBRName>
 		<szBRDesc>Brand new in the line of FN's new pistols (Forty-Nine, PRO-9), this one is chambered for the good old and never dying .45ACP round.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2006</ProductionYearStart>
+		<ProductionYearEnd>2011</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>891</ubClassIndex>
@@ -28671,7 +28671,7 @@
 		<szBRName>Smith &amp; Wesson M29</szBRName>
 		<szBRDesc>Probably the most famous Magnum revolver, due to its appearance in the Dirty Harry movies.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1957</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -28747,7 +28747,7 @@
 		<szBRName>Manurhin MR-73</szBRName>
 		<szBRDesc>A French police revolver, in use with GIGN, the French counter-terrorist unit, which tells a lot about the quality of this gun.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1973</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000040</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -28811,7 +28811,7 @@
 		<szBRName>M14 EBR</szBRName>
 		<szBRDesc>Not buyable at BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -28847,7 +28847,7 @@
 		<szBRName>M21 EBR</szBRName>
 		<szBRDesc>Not buyable at BR.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -28965,7 +28965,7 @@
 		<szBRName>Kimber Eclipse Pro II</szBRName>
 		<szBRDesc>Produced from stainless steel and to very tight tolerances, the Kimber Eclipse is a high quality pistol. The Pro II is the intermediate version between the Ultra II and the Custom II, and like the Custom II, it can be equipped with better sights.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2002</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -29042,7 +29042,7 @@
 		<szBRName>Colt M203PI Grenade Launcher</szBRName>
 		<szBRDesc>Everyone wanted an M203, and now they can. The much improved M203PI does not only work with the M16 and M4, but with several European and some Israeli rifles as well.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1987</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
@@ -29081,7 +29081,7 @@
 		<szBRName>GM-94 Grenade Launcher</szBRName>
 		<szBRDesc>Compact and light-weight, this launcher can quickly dispense a variety of deadly payloads.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1994</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>2</nasLayoutClass>
@@ -29121,7 +29121,7 @@
 		<szBRName>GP-30 Grenade Launcher</szBRName>
 		<szBRDesc>An improved model of the GP-25 Kostyor, the GP-30 Obuvka features a sighting reticle and a recoil buffer to protect the rifle to which it is attached. The GP-30 fires 40mm VOG-25 and VOG-25P grenades.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1989</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
@@ -29161,7 +29161,7 @@
 		<szBRName>HK AG36 Grenade Launcher</szBRName>
 		<szBRDesc>Need some extra firepower on your G36? This oversized pistol does the trick. Can launch all standard NATO 40mm grenades.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1997</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
@@ -29203,7 +29203,7 @@
 		<szBRName>Milkor MGL-140 Grenade Launcher</szBRName>
 		<szBRDesc>The Milkor MGL six-shot 40mm grenade launcher is the world's first mass-produced, multi-shot, rapid-fire, 40mm hand-held weapon. The MGL can fire six shots in less than three seconds, making it essential in dealing with ambush situations and urban warfare.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2005</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000020000000000</WeaponOriginFlags>
 		<nasLayoutClass>2</nasLayoutClass>
@@ -29326,8 +29326,8 @@
 		<szBRName>Not for sale</szBRName>
 		<szBRDesc>The AICW comes with an integrated 40mm grenade launcher.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2001</ProductionYearStart>
+		<ProductionYearEnd>2005</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000010000000000</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
 		<nasLayoutClass>2</nasLayoutClass>
@@ -29367,7 +29367,7 @@
 		<szBRName>Not for sale</szBRName>
 		<szBRDesc>The FN F2000 comes with an integrated 40mm grenade launcher.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2001</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
@@ -29406,7 +29406,7 @@
 		<szBRName>Not for sale</szBRName>
 		<szBRDesc>This model of the Groza comes with an integrated 40mm GP-25 Kostyor grenade launcher.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1978</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
@@ -29445,8 +29445,8 @@
 		<szBRName>Not for sale</szBRName>
 		<szBRDesc>The XM-29 OICW comes with an integrated 20mm grenade launcher.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1996</ProductionYearStart>
+		<ProductionYearEnd>2004</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000009</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -29486,7 +29486,7 @@
 		<szBRName>HK 79 Grenade Launcher</szBRName>
 		<szBRDesc>This is the German equivalent to the American M203 underbarrel grenade launcher. The HK 79 is slightly longer and will fit only on older HK rifles. It can fire all NATO 40mm grenades on the market today.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1979</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
@@ -29526,7 +29526,7 @@
 		<szBRName>RPG-7</szBRName>
 		<szBRDesc>The Rocket Propelled Grenade, or RPG, is a cheap, single-shot weapon. Its main purpose is to provide an inexpensive, albeit devastating weapon against soft targets.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1961</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -29567,8 +29567,8 @@
 		<szBRName>RPG-16 Grom</szBRName>
 		<szBRDesc>Once your enemy sees you packing the kind of firepower an RPG provides, have mercy on him and let him run away in fear. Or not.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1970</ProductionYearStart>
+		<ProductionYearEnd>1980</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>915</ubClassIndex>
@@ -29608,7 +29608,7 @@
 		<szBRName>RPG-26 Aglen</szBRName>
 		<szBRDesc>For the times when flowers just don't cut it: Say it with high explosive, rocket-propelled grenades.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1985</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -29651,7 +29651,7 @@
 		<szBRName>RPG-27 Tavolga</szBRName>
 		<szBRDesc>The RPG-27 Tavolga is a further development of rocket-propelled grenade launchers and is endowed with increased range and accuracy.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1989</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -29694,7 +29694,7 @@
 		<szBRName>RPO-M Shmel</szBRName>
 		<szBRDesc>With the RPO-A Shmel thermobaric rocket launcher, you can turn a pool party into a BBQ. Literally. News update: We now stock the improved Shmel-M.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2003</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000004</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -29761,7 +29761,7 @@
 		<szBRName>M203 Colt Launcher System</szBRName>
 		<szBRDesc>After the success the HK 69 grenade pistol had within the Special Forces community, Colt decided to issue a standalone grenade launcher as well.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -29841,7 +29841,7 @@
 		<szBRName>KAC M203 KAC Launcher System</szBRName>
 		<szBRDesc>KAC decided to copy Colt in making some gear that makes the M203 launcher usable without a rifle. We have decided to stock the long-barreled version.</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1996</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34134,8 +34134,8 @@
 		<szBRName>SIG P239 SAS</szBRName>
 		<szBRDesc>Want something more compact than a P228? The P239 SAS makes for easy concealed carrying, with SIG's reduced snag design.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2005</ProductionYearStart>
+		<ProductionYearEnd>2018</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1064</ubClassIndex>
@@ -34171,7 +34171,7 @@
 		<szBRName>Steyr AUG-A3</szBRName>
 		<szBRDesc>This latest version of the famous Steyr AUG has rails instead of a fixed optical sight and foregrip. Chambered in the new 6.8x43mm SPC caliber.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2004</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000200</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34211,7 +34211,7 @@
 		<szBRName>HK 416 10"</szBRName>
 		<szBRDesc>This is just a HK 416 with a shorter barrel, for those who often find themselves in close quarters combat.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2004</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34251,7 +34251,7 @@
 		<szBRName>Beretta M12</szBRName>
 		<szBRDesc>The built-in foregrip on this older Beretta SMG lets you handle the gun with ease, even when the folding stock has not been deployed.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1959</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34322,7 +34322,7 @@
 		<szBRName>Galil Sniper</szBRName>
 		<szBRDesc>This was a standard Galil, until someone decided to make a sniper rifle out of it.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1983</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34364,7 +34364,7 @@
 		<szBRName>HK 416 16"</szBRName>
 		<szBRDesc>If you want more range than a standard 416 has, try this one.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2004</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34446,7 +34446,7 @@
 		<szBRName>HK 416 20"</szBRName>
 		<szBRDesc>A designated marksman rifle, based on the Heckler &amp; Koch 416.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2004</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34527,7 +34527,7 @@
 		<szBRName>HEZI SM-1</szBRName>
 		<szBRDesc>A very new weapon for an old caliber, the HEZI is quite effective, despite its odd shape.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1992</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000001000000000</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34566,7 +34566,7 @@
 		<szBRName>Rheinmetall MG3</szBRName>
 		<szBRDesc>Despite various nicknames, this is a dead serious gun. With attachment points for both a bipod or a tripod, an anti-air sight, and very easily replaced barrels, you can see why this is THE general-purpose machine gun.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1959</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -34649,7 +34649,7 @@
 		<szBRName>HK 417</szBRName>
 		<szBRDesc>This is the 7.62x51mm version of Heckler &amp; Koch's new HK 416.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2006</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -37931,8 +37931,8 @@
 		<szBRName>Spectre M4</szBRName>
 		<szBRDesc>This Italian SMG is very reliable due to some very interesting design features, like forcing air around the barrel with every shot, so to keep it cool.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1984</ProductionYearStart>
+		<ProductionYearEnd>1997</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000800</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1177</ubClassIndex>
@@ -38295,8 +38295,8 @@
 		<szBRName>HK MG36</szBRName>
 		<szBRDesc>HK has blessed us with their new versatile, multi-role squad machine gun. This version has a Bundeswehr grip with integrated optics.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1995</ProductionYearStart>
+		<ProductionYearEnd>1995</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000008</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1187</ubClassIndex>
@@ -38447,8 +38447,8 @@
 		<szBRName>Magpul PDR-D</szBRName>
 		<szBRDesc>Just out of the prototype stage, this new PDW is chambered for 6x35mm rounds. Its Sci-Fi look does not diminish its effectiveness.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>2006</ProductionYearStart>
+		<ProductionYearEnd>2011</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1191</ubClassIndex>
@@ -38487,8 +38487,8 @@
 		<szBRName>Automag V</szBRName>
 		<szBRDesc>The .50 Action Express version of Galena's line of Automag pistols.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1993</ProductionYearStart>
+		<ProductionYearEnd>1997</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1192</ubClassIndex>
@@ -47113,7 +47113,7 @@
 		<szBRName>KAC Masterkey</szBRName>
 		<szBRDesc>Tired of having to pack an assault rifle and an additional shotgun? With this specially adapted shotgun, you can carry 2 in 1!</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>1985</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasAttachmentClass>512</nasAttachmentClass>
@@ -52973,8 +52973,8 @@
 		<szBRName>9k32 Strela-2</szBRName>
 		<szBRDesc>Another famous Russian export, this MANPADS is comparable to certain western counterparts, but is a lot cheaper. Get yours now!</szBRDesc>
 		<usItemClass>16</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
-		<ProductionYearEnd>0</ProductionYearEnd>
+		<ProductionYearStart>1968</ProductionYearStart>
+		<ProductionYearEnd>1983</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000002</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
 		<ubClassIndex>1736</ubClassIndex>
@@ -53746,7 +53746,7 @@
 		<szBRName>FN PS90</szBRName>
 		<szBRDesc>This civilian-legal younger sibling of the FN P90 comes with a lengthened 16-inch barrel and a Picatinny rail for easy mounting of a variety of different sights.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>0</ProductionYearStart>
+		<ProductionYearStart>2005</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000100</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
@@ -54157,7 +54157,7 @@
 		<szBRName>Barrett M82A1</szBRName>
 		<szBRDesc>The Model 82 series rifle is a rugged, dependable semi-automatic rifle. In simple terms, it has earned unmatched respect because it works in battlefield conditions. Chambered for .50 BMG rounds, you can expect it to pack a punch.</szBRDesc>
 		<usItemClass>2</usItemClass>
-		<ProductionYearStart>1982</ProductionYearStart>
+		<ProductionYearStart>1986</ProductionYearStart>
 		<ProductionYearEnd>0</ProductionYearEnd>
 		<WeaponOriginFlags>0x0000000000000001</WeaponOriginFlags>
 		<nasLayoutClass>1</nasLayoutClass>
