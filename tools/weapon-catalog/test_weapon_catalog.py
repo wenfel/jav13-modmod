@@ -121,7 +121,12 @@ class WeaponCatalogTests(unittest.TestCase):
 
     def test_stdout_limit_is_clamped(self):
         self.assertEqual(wc.stdout_limit(100000), wc.HARD_STDOUT_LIMIT)
+        self.assertEqual(wc.stdout_limit("100000"), wc.HARD_STDOUT_LIMIT)
         self.assertEqual(wc.stdout_limit(-1), 0)
+        args = wc.parser().parse_args([
+            "attachments", "--attachments", "x.xml", "--limit", "100000"
+        ])
+        self.assertEqual(args.limit, wc.HARD_STDOUT_LIMIT)
 
     def test_validate_and_lobot_are_bounded(self):
         validate_args = type("Args", (), {
