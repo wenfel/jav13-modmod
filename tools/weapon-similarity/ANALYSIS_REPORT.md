@@ -158,7 +158,7 @@ single-shot and autofire economy. Example P90:
 
 - reference AP/shot: 18 -> 15
 - reference 5-round autofire surcharge: 16 -> 12
-- autofire penalty: 7 -> 2 because of its built-in `AutoFireToHitBonus=5`
+- autofire penalty: 7 -> 5 because `AutoFireToHitBonus=5` is applied through the configured 5x percentage-reduction path
 
 Burst AP is now an explicit rapid-fire feature. It mirrors the configured
 `CalcAPsToBurst` arithmetic for the reference soldier and includes inherent general /

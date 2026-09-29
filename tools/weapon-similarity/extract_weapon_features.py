@@ -509,9 +509,13 @@ def main() -> int:
             base_ready_ap * max(0, 100 - percent_ready) // 100
         )
 
-        base_reload_ap = int(parse_number(w.get("APsToReload")) * reload_mod)
+        raw_reload_ap = parse_number(w.get("APsToReload"))
+        base_reload_ap = int(raw_reload_ap * reload_mod)
         intrinsic_reload_ap = int(
-            base_reload_ap * max(0, 100 - percent_reload) / 100.0
+            raw_reload_ap
+            * reload_mod
+            * max(0, 100 - percent_reload)
+            / 100.0
         )
 
         base_burst_ap = (
