@@ -241,4 +241,6 @@ report `unknown` instead of a misleading percentile:
 - 75th-95th: `stretched`
 - > 95th: `far`
 
-Weights remain provisional until a manual benchmark set has been reviewed.
+The first 40-case manual benchmark and country-filter probes are recorded in
+`BENCHMARK_CASES.md`. Nominal weights remain provisional until the remaining tier-policy
+and calibre-policy questions are resolved.

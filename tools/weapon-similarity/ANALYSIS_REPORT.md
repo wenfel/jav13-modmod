@@ -459,25 +459,21 @@ The offline design should continue to use:
 6. PCA/k-means strictly for analysis;
 7. explicit benchmark review before freezing weights.
 
-The next calibration set should include both obvious variants and difficult cases:
+The checked-in `BENCHMARK_CASES.md` records 40 unrestricted cases plus
+country-filter probes. It covers obvious family anchors, automatic and short shotguns,
+intrinsic-bonus outliers, the Rocket Rifle family, and singleton special-purpose
+weapons. The first evidence-based normalization calibration pass is complete.
 
-- Glock 17 / Glock 19
-- AK-74 / AKS-74
-- SVD / SVDS
-- G36 family and MG36
-- P90
-- OICW
-- OTs-39
-- Rocket Rifle / A. R. Rifle
-- automatic shotguns
-- one-handed short shotguns
-- Pepper Spray
-- Flamethrower
-- Hand Mortar
+Two design questions remain before freezing runtime policy:
 
-Where a substitution is conceptually impossible, fix semantics/eligibility/tiering.
-Where two semantically valid weapons are merely ranked poorly, then tune numerical
-weights.
+- whether cross-type members of an obvious weapon family should ever override the current
+  semantic tier order (for example AR57 16" versus its SMG-length variants);
+- how calibre should interact with tactical similarity versus loadout/logistical
+  equivalence.
+
+Conceptually impossible substitutions must continue to be fixed with semantics,
+eligibility or tiering rather than weight changes. Numerical tuning is appropriate only
+inside a semantically valid candidate set.
 
 Do not port PCA, k-means or the exploratory Python stack to C++. Once calibration is
 stable, the runtime port only needs the finalized intrinsic feature extraction,
