@@ -228,9 +228,10 @@ z = (x - median) / IQR
 This prevents large-unit or outlier-heavy columns from dominating merely because of
 their units.
 
-The tool also reports a type-relative distance percentile. It compares a filtered
-replacement with the unrestricted tier-0 nearest-neighbour distribution for the same
-weapon type:
+The tool also reports a role-and-type-relative distance percentile. It compares a
+filtered replacement with the unrestricted tier-0 nearest-neighbour distribution for
+the same tactical role and weapon type. Cohorts with fewer than five reference weapons
+report `unknown` instead of a misleading percentile:
 
 - <= 75th percentile: `typical`
 - 75th-95th: `stretched`

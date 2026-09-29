@@ -377,9 +377,9 @@ def filter_is_eligible(
 def nearest_tier0_reference(
     df: pd.DataFrame,
     matrix: np.ndarray,
-) -> dict[str, np.ndarray]:
-    """Empirical best-neighbour distance distributions by weapon type."""
-    values: dict[str, list[float]] = {}
+) -> dict[tuple[str, str], np.ndarray]:
+    """Empirical best-neighbour distributions by tactical role and weapon type."""
+    values: dict[tuple[str, str], list[float]] = {}
 
     for target_pos, target in df.iterrows():
         distances = []
@@ -390,21 +390,24 @@ def nearest_tier0_reference(
             distances.append(float(np.sqrt(np.dot(delta, delta))))
 
         if distances:
-            values.setdefault(target["weapon_type_name"], []).append(min(distances))
+            key = (str(target["tactical_role"]), str(target["weapon_type_name"]))
+            values.setdefault(key, []).append(min(distances))
 
     return {
-        weapon_type: np.sort(np.asarray(distances, dtype=float))
-        for weapon_type, distances in values.items()
+        key: np.sort(np.asarray(distances, dtype=float))
+        for key, distances in values.items()
     }
 
 
 def distance_percentile(
-    reference: dict[str, np.ndarray],
+    reference: dict[tuple[str, str], np.ndarray],
+    tactical_role: str,
     weapon_type: str,
     distance: float,
 ) -> float:
-    values = reference.get(weapon_type)
-    if values is None or len(values) == 0:
+    values = reference.get((tactical_role, weapon_type))
+    # A tiny special-role cohort cannot support a useful empirical percentile.
+    if values is None or len(values) < 5:
         return float("nan")
     rank = np.searchsorted(values, distance, side="right")
     return 100.0 * float(rank) / float(len(values))
@@ -455,6 +458,7 @@ def cmd_neighbors(
         distance = float(np.sqrt(np.dot(delta, delta)))
         percentile = distance_percentile(
             reference,
+            target["tactical_role"],
             target["weapon_type_name"],
             distance,
         )
@@ -486,7 +490,7 @@ def cmd_neighbors(
     print("metric features:", ", ".join(features))
     print(
         "distance percentile compares this distance with unrestricted tier-0 "
-        "nearest-neighbour distances for the target weapon type"
+        "nearest-neighbour distances for the target tactical role and weapon type"
     )
 
     if result.empty:
@@ -574,6 +578,7 @@ def cmd_coverage(
             ):
                 percentile = distance_percentile(
                     reference,
+                    target["tactical_role"],
                     target["weapon_type_name"],
                     distance,
                 )

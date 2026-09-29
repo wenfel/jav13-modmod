@@ -381,21 +381,26 @@ precedence over artificial 100% coverage.
 
 ## 15. Distance calibration after intrinsic correction
 
-Across 309 weapons with an unrestricted tier-0 neighbour:
+Across 308 conventional weapons with an unrestricted tier-0 neighbour:
 
 - median nearest distance: **0.555**
-- 75th percentile: **0.879**
-- 90th percentile: **1.343**
-- 95th percentile: **1.874**
+- 75th percentile: **0.876**
+- 90th percentile: **1.339**
+- 95th percentile: **1.841**
 
-The distribution remains strongly weapon-type dependent, so the CLI reports a
-type-relative distance percentile rather than relying on a universal hard cutoff.
+The distribution remains strongly role/type dependent, so the CLI reports a
+role-and-type-relative distance percentile rather than relying on a universal hard cutoff.
 
 The existing bands remain diagnostics:
 
 - <= 75th percentile: `typical`
 - >75th to 95th: `stretched`
 - >95th: `far`
+
+Percentiles are calibrated within the same tactical-role + weapon-type cohort. Cohorts
+with fewer than five tier-0 reference weapons return `unknown`; special-purpose
+singleton/near-singleton roles are therefore not judged against ordinary rifles,
+pistols or shotguns.
 
 ## 16. Intrinsic-bonus outliers
 
