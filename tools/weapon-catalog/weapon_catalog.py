@@ -28,7 +28,6 @@ MANUFACTURER_ALIASES = (
 FAMILY_SUFFIXES = (
     re.compile(r"\s*(?:-|\(|\[)?\s*(?:folded|collapsed)\s*[\)\]]?\s*$", re.I),
     re.compile(r"\s+(?:ras|tactical)\s*$", re.I),
-    re.compile(r"\s+(?:iii)(?:\s*/\s*)?\s*$", re.I),
     re.compile(r"\s*(?:iii\s*/\s*)?\)\-\|\s*$", re.I),
     re.compile(r"\s*\(<\)\s*$", re.I),
 )
@@ -423,13 +422,32 @@ def parse_attachments(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def validation_ok(data: dict[str, Any]) -> bool:
+    validation = data["validation"]
+    items = data["source_files"]["items"]
+    weapons = data["source_files"]["weapons"]
+    return (
+        validation["unique_item_ids"]
+        and validation["unique_weapon_ids"]
+        and items["invalid_id_records"] == 0
+        and weapons["invalid_id_records"] == 0
+        and not validation["weapon_ids_missing_item_record"]
+    )
+
+
 def cmd_index(args: argparse.Namespace) -> int:
     data = build_index(Path(args.items), Path(args.weapons), args.source)
     write_json(Path(args.output), data)
     print(f"indexed {data['stats']['weapon_records']} weapon records; {data['stats']['family_keys']} family keys; output={args.output}")
     v = data["validation"]
-    print(f"validation: item_ids_unique={v['unique_item_ids']} weapon_ids_unique={v['unique_weapon_ids']} weapon_ids_missing_items={len(v['weapon_ids_missing_item_record'])}")
-    return 0 if v["unique_item_ids"] and v["unique_weapon_ids"] else 2
+    items = data["source_files"]["items"]
+    weapons = data["source_files"]["weapons"]
+    print(
+        f"validation: item_ids_unique={v['unique_item_ids']} weapon_ids_unique={v['unique_weapon_ids']} "
+        f"item_invalid_ids={items['invalid_id_records']} weapon_invalid_ids={weapons['invalid_id_records']} "
+        f"weapon_ids_missing_items={len(v['weapon_ids_missing_item_record'])}"
+    )
+    return 0 if validation_ok(data) else 2
 
 
 def cmd_validate(args: argparse.Namespace) -> int:
@@ -446,8 +464,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
     print(f"validation: item_ids_unique={validation['unique_item_ids']} weapon_ids_unique={validation['unique_weapon_ids']} weapon_ids_missing_items={len(validation['weapon_ids_missing_item_record'])}")
     if args.output:
         print(f"full_report={args.output}")
-    ok = validation["unique_item_ids"] and validation["unique_weapon_ids"]
-    return 0 if ok else 2
+    return 0 if validation_ok(data) else 2
 
 
 def cmd_query(args: argparse.Namespace) -> int:
