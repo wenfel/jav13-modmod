@@ -51,6 +51,14 @@ WEAPON_CLASS_NAMES = {
     7: "monster",
 }
 
+SPECIAL_TACTICAL_ROLES_BY_CALIBRE = {
+    "Dart": "dart_projector",
+    "flame": "flame_projector",
+    "Pepper Spray": "chemical_sprayer",
+    "Cannon Ball": "hand_mortar",
+    "Rocket": "rocket_rifle",
+}
+
 NUMERIC_WEAPON_FIELDS = (
     "ubWeaponClass",
     "ubWeaponType",
@@ -550,6 +558,10 @@ def main() -> int:
             "weapon_type_name": WEAPON_TYPE_NAMES.get(weapon_type, f"type_{weapon_type}"),
             "calibre": calibre,
             "calibre_name": ammo_names.get(calibre, str(calibre)),
+            "tactical_role": SPECIAL_TACTICAL_ROLES_BY_CALIBRE.get(
+                ammo_names.get(calibre, str(calibre)),
+                "conventional",
+            ),
             "two_handed": bool(parse_int(item.get("TwoHanded"))),
             "heavy_gun": bool(parse_int(w.get("HeavyGun"))),
             "has_semi_auto": not bool(parse_int(w.get("NoSemiAuto"))),
@@ -650,7 +662,7 @@ def main() -> int:
         rows.append(row)
 
     payload = {
-        "schema_version": 3,
+        "schema_version": 4,
         "source": {
             "weapons_xml": str(weapons_path.relative_to(repo)),
             "items_xml": str(items_path.relative_to(repo)),

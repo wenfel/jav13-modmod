@@ -325,51 +325,68 @@ Heavy-gun status is never relaxed.
 The explicit adjacency graph is used instead of `weapon_class`, because the XML class
 field is inconsistent for machine pistols and several LMGs.
 
-## 14. Country-filter stress tests with effective intrinsic distance
+## 14. Special-purpose tactical roles and country-filter stress tests
 
-The semantic coverage result is unchanged by the intrinsic-stat correction.
+The benchmark review found a categorical failure that weights cannot solve: Pepper Spray,
+Flamethrower, Hand Mortar and Dart Gun were being compared with ordinary weapons solely
+because their XML weapon types are pistol, rifle or shotgun. The Rocket Rifle family had
+the same problem when country filtering removed both family members.
+
+Schema v4 therefore adds a derived `tactical_role` gate:
+
+- `conventional` for ordinary firearms
+- `dart_projector` for Dart Gun
+- `flame_projector` for Flamethrower
+- `chemical_sprayer` for Pepper Spray
+- `hand_mortar` for Hand Mortar
+- `rocket_rifle` for Rocket Rifle / A. R. Rifle
+
+Tactical role is a hard semantic constraint and is never relaxed. A special-purpose
+weapon with no eligible same-role candidate is reported unresolved rather than receiving
+a numerically close but conceptually invalid ordinary firearm.
 
 ### USA-only origin pool
 
 - eligible: 92
 - replacements required: 222
-- tier 0: 200
+- tier 0: 195
 - tier 1: 4
-- tier 2: 3
+- tier 2: 2
 - tier 4: 15
-- unresolved: **0**
+- unresolved: **6**
 
 ### Soviet / Russia lineage pool
 
 - eligible: 56
 - replacements required: 258
-- tier 0: 237
+- tier 0: 232
 - tier 1: 15
-- tier 2: 1
 - tier 3: 2
 - tier 5: 3
-- unresolved: **0**
+- unresolved: **6**
 
 ### German-lineage pool
 
 - eligible: 59
 - replacements required: 255
-- tier 0: 250
-- tier 2: 3
+- tier 0: 245
+- tier 2: 2
 - tier 3: 2
-- unresolved: **0**
+- unresolved: **6**
 
-Full coverage here means "a semantic fallback exists"; it does not mean every fallback
-is equally close.
+The six unresolved targets in each of these three lineage-only pools are the two Rocket
+rifles plus Dart Gun, Flamethrower, Hand Mortar and Pepper Spray. None has an eligible
+same-role weapon in those pools. This is intentional: semantic correctness takes
+precedence over artificial 100% coverage.
 
 ## 15. Distance calibration after intrinsic correction
 
-Across 313 weapons with an unrestricted tier-0 neighbour:
+Across 309 weapons with an unrestricted tier-0 neighbour:
 
-- median nearest distance: **0.561**
-- 75th percentile: **0.898**
-- 90th percentile: **1.494**
-- 95th percentile: **1.967**
+- median nearest distance: **0.555**
+- 75th percentile: **0.879**
+- 90th percentile: **1.343**
+- 95th percentile: **1.874**
 
 The distribution remains strongly weapon-type dependent, so the CLI reports a
 type-relative distance percentile rather than relying on a universal hard cutoff.

@@ -268,8 +268,9 @@ def distance_matrix(
 def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
     """Return a semantic fallback tier, or None if the candidate is unsuitable.
 
-    Heavy-gun status is never relaxed. Candidate type may be the same as the
-    target or one explicitly adjacent tactical type from TYPE_ADJACENCY.
+    Tactical role and heavy-gun status are never relaxed. Candidate type may
+    be the same as the target or one explicitly adjacent tactical type from
+    TYPE_ADJACENCY.
 
     0 same type, same handedness, preserve each required fire mode
     1 same type, same handedness, preserve broad rapid-fire capability
@@ -282,6 +283,8 @@ def candidate_tier(target: pd.Series, candidate: pd.Series) -> int | None:
     8 adjacent type, relax handedness, allow fire-mode downgrade
     """
     if int(candidate["uiIndex"]) == int(target["uiIndex"]):
+        return None
+    if str(candidate["tactical_role"]) != str(target["tactical_role"]):
         return None
     if bool(candidate["heavy_gun"]) != bool(target["heavy_gun"]):
         return None

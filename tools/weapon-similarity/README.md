@@ -175,9 +175,14 @@ statistical distance:
 7. same type, relax handedness, allow fire-mode downgrade
 8. adjacent tactical type, relax handedness, allow fire-mode downgrade
 
-Heavy-gun status is never relaxed. The adjacency graph is explicit in
-`analyze_weapon_space.py`; it is used instead of `weapon_class` because the XML
-class field is not fully consistent for machine pistols and some LMGs.
+Tactical role and heavy-gun status are never relaxed. The role gate separates
+special-purpose records that happen to use ordinary gun types: Dart Gun, Flamethrower,
+Pepper Spray, Hand Mortar, and the Rocket Rifle family. The role is derived from their
+distinctive calibre/ammunition identity; ordinary firearms use `conventional`.
+
+The adjacency graph is explicit in `analyze_weapon_space.py`; it is used instead of
+`weapon_class` because the XML class field is not fully consistent for machine pistols
+and some LMGs.
 
 The candidate with the smallest distance is chosen only inside the best available tier.
 
