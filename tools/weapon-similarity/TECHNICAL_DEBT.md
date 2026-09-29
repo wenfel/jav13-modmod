@@ -100,8 +100,11 @@ Before changing the model in a later session:
 
 1. verify the live `country-filter` head and whether newer PRs changed the source XML or
    configuration inputs;
-2. run `python tools/weapon-similarity/check_weapon_features.py`;
-3. run the analyzer smoke/benchmark cases relevant to the proposed change;
-4. distinguish semantic-policy changes from numeric-weight/normalization changes;
-5. update this ledger when debt is added, resolved, or invalidated by later repository
+2. for catalogue/XML discovery, comparison, LOBOT, attachment, and source-hash work,
+   reuse `tools/weapon-catalog/weapon_catalog.py` rather than inventing another bulk
+   parser; this toolkit was integrated after PR #5;
+3. run `python tools/weapon-similarity/check_weapon_features.py`;
+4. run the analyzer smoke/benchmark cases relevant to the proposed change;
+5. distinguish semantic-policy changes from numeric-weight/normalization changes;
+6. update this ledger when debt is added, resolved, or invalidated by later repository
    changes.
