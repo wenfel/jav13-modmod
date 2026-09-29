@@ -180,11 +180,35 @@ special-purpose records that happen to use ordinary gun types: Dart Gun, Flameth
 Pepper Spray, Hand Mortar, and the Rocket Rifle family. The role is derived from their
 distinctive calibre/ammunition identity; ordinary firearms use `conventional`.
 
+Schema v5 also adds an explicit `replacement_family` tag for benchmark-audited cases.
+It is deliberately not inferred from display names. The current asserted families are
+the G36 rifle line, the MG36 pair, and the three AR57 barrel-length variants. An empty
+family tag means "no family preference asserted", not "unrelated in real life".
+
+Family affinity may bridge an adjacent weapon-type boundary, but only when the candidate
+also has the same calibre and handedness and preserves every fire mode required by the
+target. Family therefore does **not** compensate for lost tactical capability. This is
+why AR57 16" may prefer AR57 11", while G36C does not prefer a non-burst G36 rifle merely
+because the model lineage matches.
+
 The adjacency graph is explicit in `analyze_weapon_space.py`; it is used instead of
 `weapon_class` because the XML class field is not fully consistent for machine pistols
 and some LMGs.
 
-The candidate with the smallest distance is chosen only inside the best available tier.
+Calibre is a logistics preference, not a default hard tactical constraint. After family
+priority and semantic tier are fixed, a same-calibre candidate is preferred only when
+its mechanical distance is no more than **5%** worse than the mechanically closest
+candidate in that same group. This bounds the cost of ammunition compatibility. Use
+`--same-calibre` when the scenario requires strict ammunition compatibility.
+
+Selection order is therefore:
+
+1. eligibility filters;
+2. hard tactical-role / heavy-gun compatibility;
+3. audited capability-preserving replacement-family priority;
+4. semantic fallback tier;
+5. bounded same-calibre near-tie preference;
+6. mechanical distance.
 
 ## Mechanics-aware distance profile
 
@@ -241,6 +265,7 @@ report `unknown` instead of a misleading percentile:
 - 75th-95th: `stretched`
 - > 95th: `far`
 
-The first 40-case manual benchmark and country-filter probes are recorded in
-`BENCHMARK_CASES.md`. Nominal weights remain provisional until the remaining tier-policy
-and calibre-policy questions are resolved.
+The manual benchmark and country-filter probes are recorded in
+`BENCHMARK_CASES.md`. The cross-type family policy and default calibre policy are now
+resolved for the active OCTH model. NCTH remains exploratory because stance-specific
+intrinsic modifiers still lack a finalized aggregation policy.

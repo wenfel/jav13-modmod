@@ -330,8 +330,29 @@ statistical distance:
 
 Heavy-gun status is never relaxed.
 
+Schema v5 adds explicit benchmark-audited `replacement_family` tags. Family priority is
+stronger than the ordinary type tier only when all of these hold:
+
+- target and candidate share a non-empty asserted replacement family;
+- calibre is identical;
+- handedness is identical;
+- every fire mode required by the target is preserved;
+- the ordinary type relationship is still same-type or explicitly adjacent.
+
+This resolves the cross-type family question without turning model names into a blanket
+override. AR57 16" can promote AR57 11" across the assault-rifle/SMG boundary. G36C does
+not promote the non-burst G36 rifle variants, because family identity never excuses loss
+of a required burst mode. MG36 is tagged separately from the G36 rifle line so shared
+technical lineage does not automatically collapse rifle and support-weapon roles.
+
 The explicit adjacency graph is used instead of `weapon_class`, because the XML class
 field is inconsistent for machine pistols and several LMGs.
+
+Calibre is resolved as a bounded logistics preference. Within the same family-priority
+and semantic-tier group, a same-calibre candidate may displace the mechanical best only
+if its distance is at most **1.05x** the best distance. This makes calibre useful for
+near-equivalent choices without allowing ammunition compatibility to dominate tactical
+similarity. `--same-calibre` remains available as an explicit hard filter.
 
 ## 14. Special-purpose tactical roles and country-filter stress tests
 
@@ -340,7 +361,8 @@ Flamethrower, Hand Mortar and Dart Gun were being compared with ordinary weapons
 because their XML weapon types are pistol, rifle or shotgun. The Rocket Rifle family had
 the same problem when country filtering removed both family members.
 
-Schema v4 therefore adds a derived `tactical_role` gate:
+Schema v5 retains the derived `tactical_role` gate introduced in v4 and adds
+the explicit replacement-family field described above. Tactical roles are:
 
 - `conventional` for ordinary firearms
 - `dart_projector` for Dart Gun
@@ -449,31 +471,26 @@ population has not been produced.
 
 ## 18. Current recommendation before a C++ port
 
-The offline design should continue to use:
+The active-OCTH offline design is now:
 
-1. external eligibility filtering first;
-2. the lowest available semantic fallback tier;
-3. effective-intrinsic features by default;
-4. robust-scaled weighted distance only inside that tier;
-5. tier and distance percentile in diagnostics/logging;
-6. PCA/k-means strictly for analysis;
-7. explicit benchmark review before freezing weights.
+1. apply external eligibility filtering first;
+2. enforce tactical-role and heavy-gun compatibility;
+3. promote only explicit benchmark-audited replacement-family candidates that preserve
+   target fire modes, calibre and handedness;
+4. choose the lowest available semantic fallback tier inside that family-priority class;
+5. allow a same-calibre candidate to win only as a <=5% mechanical near-tie;
+6. otherwise choose the smallest robust-scaled weighted distance;
+7. report tier, family/calibre diagnostics and distance percentile;
+8. keep PCA/k-means strictly exploratory.
 
-The checked-in `BENCHMARK_CASES.md` records 40 unrestricted cases plus
-country-filter probes. It covers obvious family anchors, automatic and short shotguns,
-intrinsic-bonus outliers, the Rocket Rifle family, and singleton special-purpose
-weapons. The first evidence-based normalization calibration pass is complete.
-
-Two design questions remain before freezing runtime policy:
-
-- whether cross-type members of an obvious weapon family should ever override the current
-  semantic tier order (for example AR57 16" versus its SMG-length variants);
-- how calibre should interact with tactical similarity versus loadout/logistical
-  equivalence.
+The checked-in `BENCHMARK_CASES.md` covers the original 40 cases plus explicit
+family/calibre policy probes. The cross-type family and calibre decisions are therefore
+no longer open design questions for the active OCTH model.
 
 Conceptually impossible substitutions must continue to be fixed with semantics,
 eligibility or tiering rather than weight changes. Numerical tuning is appropriate only
-inside a semantically valid candidate set.
+inside a semantically valid candidate set. NCTH still requires its separate stance-aware
+calibration before any runtime port should claim NCTH equivalence.
 
 Do not port PCA, k-means or the exploratory Python stack to C++. Once calibration is
 stable, the runtime port only needs the finalized intrinsic feature extraction,
